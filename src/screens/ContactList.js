@@ -1,9 +1,12 @@
 import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 import { Text } from 'react-native-paper';
+import { Appbar } from 'react-native-paper';
+import { Platform } from 'react-native';
 import Contact from '../components/Contact'
 import { createStackNavigator } from '@react-navigation/stack';
 import {Chatting} from '../screens/Chatting';
+const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
 //<FlatList
 //    data={[
@@ -64,9 +67,18 @@ export function MyChatStack() {
     );
 }
 
+const ChatAppbar = () => (
+    <Appbar.Header>
+       <Appbar.Content title="Chats" subtitle={'Subtitle'} />
+        <Appbar.Action icon="magnify" onPress={() => {}} />
+        <Appbar.Action icon={MORE_ICON} onPress={() => {}} />
+    </Appbar.Header>
+);
+
 function ContactList(props) {
     return (
-        <View style={{ marginLeft: '5%', width: '90%' }}>
+        <View style={{  }}>
+            <ChatAppbar></ChatAppbar>
             <Contact ></Contact>
             <Contact ></Contact>
             <Contact ></Contact>

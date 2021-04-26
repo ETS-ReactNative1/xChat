@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { withTheme, Card, Text, Title, Paragraph, DefaultTheme as PaperDefaultTheme, DarkTheme as PaperDarkTheme, Appbar, Provider as PaperProvider } from 'react-native-paper';
 import MyNavigator from './src/components/MyNavigator'
+import { PreferencesContext } from './PreferencesContext';
+
 import {
   NavigationContainer,
   DarkTheme as NavigationDarkTheme,
@@ -13,12 +15,29 @@ const CombinedDarkTheme = merge(PaperDarkTheme, NavigationDarkTheme);
 
 
 function App() {
+  const [isThemeDark, setIsThemeDark] = React.useState(false);
+
+  let theme = isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme;
+
+  const toggleTheme = React.useCallback(() => {
+    return setIsThemeDark(!isThemeDark);
+  }, [isThemeDark]);
+
+  const preferences = React.useMemo(
+    () => ({
+      toggleTheme,
+      isThemeDark,
+    }),
+    [toggleTheme, isThemeDark]
+  );
   return (
-    <PaperProvider theme={dark}>
-      <NavigationContainer theme={dark}>
-        <MyNavigator />
-      </NavigationContainer>
-    </PaperProvider>
+    <PreferencesContext.Provider value={preferences}>
+      <PaperProvider theme={theme}>
+        <NavigationContainer theme={theme}>
+          <MyNavigator />
+        </NavigationContainer>
+      </PaperProvider>
+    </PreferencesContext.Provider>
   );
 }
 
@@ -29,12 +48,11 @@ export default withTheme(App);
 // ! ::::::::::::::::::::::::::: THEMES ::::::::::::::::::::::::::: !
 
 const light = {
-  ...PaperDefaultTheme,
-  ...NavigationDefaultTheme,
+  ...CombinedDefaultTheme,
   dark: false,
   roundness: 4,
   colors: {
-    ...PaperDefaultTheme.colors,
+    ...CombinedDefaultTheme.colors,
     ...NavigationDefaultTheme.colors,
     primary: '#705080',
     separator: '#EEE',
@@ -42,13 +60,11 @@ const light = {
 };
 
 const dark = {
-  ...PaperDarkTheme,
-  ...NavigationDarkTheme,
+  ...CombinedDarkTheme,
   dark: true,
   roundness: 4,
   colors: {
-    ...PaperDarkTheme.colors,
-    ...NavigationDarkTheme.colors,
+    ...CombinedDarkTheme.colors,
     primary: '#502090',
     separator: '#111',
     accent: '#03dac5',
