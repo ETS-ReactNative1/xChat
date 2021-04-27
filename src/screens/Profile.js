@@ -11,12 +11,13 @@ import { FAB } from 'react-native-paper';
 
 //Icono custom para decorar la foto de perfil:
 
+
+
 function Profile(props) {
 
     const theme = useTheme();
     return (
         <View>
-
             <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: 50, width: '100%', backgroundColor: theme.colors.primary }}>
                 <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'center', color: theme.colors.lightText }}>@Admin</Text>
             </View>
@@ -102,6 +103,18 @@ function Profile(props) {
 
                 </View>
             </ScrollView>
+            <FAB
+                big
+                label="Editar"
+                style={{
+                    position: 'absolute',
+                    margin: 16,
+                    right: 20,
+                    bottom: 60,
+                }}
+                icon="pencil"
+                onPress={() => alert("FAB PRESSED")}
+            />
         </View>
     );
 }
