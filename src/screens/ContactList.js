@@ -32,7 +32,7 @@ export function MyChatStack() {
 
 const ChatAppbar = () => (
     <Appbar.Header>
-        <Appbar.Content title="Chats" subtitle={'Subtitle'} />
+        <Appbar.Content title="Chats" subtitle={''} />
         <Appbar.Action icon="magnify" onPress={() => { }} />
         <Appbar.Action icon={MORE_ICON} onPress={() => { }} />
     </Appbar.Header>
@@ -45,30 +45,30 @@ function ContactList(props) {
             <View style={{ marginTop: 10, paddingBottom: 20 }}>
                 <FlatList style={{ }}
                     data={[
-                        { key: 'LiLPandemio🚀' },
-                        { key: 'Will Smith' },
-                        { key: 'Papa' },
-                        { key: 'Jesucristo' },
-                        { key: 'Dan' },
-                        { key: 'Dominic' },
-                        { key: 'Jackson' },
-                        { key: 'James' },
-                        { key: 'Joel' },
-                        { key: 'John' },
-                        { key: 'Jillian' },
-                        { key: 'Jimmy' },
-                        { key: 'Julie' },
-                        { key: 'MrDan' },
-                        { key: 'MrDominic' },
-                        { key: 'MrJackson' },
-                        { key: 'MrJames' },
-                        { key: 'MrJoel' },
-                        { key: 'MrJohn' },
-                        { key: 'MrJillian' },
-                        { key: 'MrJimmy' },
-                        { key: 'MrJulie' },
+                        { key: 'LiLPandemio🚀', lastMSG: 'Tengo comprar el pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/1'},
+                        { key: 'Will Smith', lastMSG: 'Tengo queprar el pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/2'},
+                        { key: 'Papa', lastMSG: 'Tengo que ir a l pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/3'},
+                        { key: 'Jesucristo', lastMSG: 'Tengo queprar el pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/4'},
+                        { key: 'Dan', lastMSG: 'Tengo que ir a c pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/5'},
+                        { key: 'Dominic', lastMSG: 'Tengo que irr el pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/6'},
+                        { key: 'Jackson', lastMSG: 'Tengo que irr el pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/7'},
+                        { key: 'James', lastMSG: 'Tengo que ir ael pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/8'},
+                        { key: 'Joel', lastMSG: 'Tengo que ir a l pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/9'},
+                        { key: 'John', lastMSG: 'Tengo que ir a l pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/10'},
+                        { key: 'Jillian', lastMSG: 'Tengo que irr el pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/11'},
+                        { key: 'Jimmy', lastMSG: 'Tengo que ir ael pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/12'},
+                        { key: 'Julie', lastMSG: 'Tengo que ir ael pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/13'},
+                        { key: 'MrDan', lastMSG: 'Tengo que ir ael pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/14'},
+                        { key: 'MrDominic', lastMSG: 'Tengo que rar el pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/15'},
+                        { key: 'MrJackson', lastMSG: 'Tengo que rar el pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/16'},
+                        { key: 'MrJames', lastMSG: 'Tengo que irr el pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/17'},
+                        { key: 'MrJoel', lastMSG: 'Tengo que ir  el pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/18'},
+                        { key: 'MrJohn', lastMSG: 'Tengo que ir  el pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/19'},
+                        { key: 'MrJillian', lastMSG: 'Tengo que rar el pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/20'},
+                        { key: 'MrJimmy', lastMSG: 'Tengo que irr el pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/21'},
+                        { key: 'MrJulie', lastMSG: 'Tengo que irr el pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/22'},
                     ]}
-                    renderItem={({ item }) => <Contact contactName={item.key}></Contact>}
+                    renderItem={({ item }) => <Contact profilePicURL={item.profilePicURL} contactName={item.key} time={item.time} lastMSG={item.lastMSG}></Contact>}
                 />
 
             </View>

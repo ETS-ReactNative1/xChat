@@ -11,15 +11,15 @@ function Contact(props) {
   return (
     <View>
       <View style={{ marginLeft: 15, marginTop: 5 }}>
-        <View style={{ boxShadow: 5, shadowColor: theme.colors.primary, elevation: 2, shadowOffset: { width: -1, height: 1 }, ShadowRadius: 15, paddingVertical: 10, borderBottomLeftRadius: 50, borderTopLeftRadius: 50, flexDirection: 'row', height: 65, width: '100%' }}>
+        <View style={{ paddingVertical: 20, borderBottomLeftRadius: 50, borderTopLeftRadius: 50, flexDirection: 'row', width: '100%', backgroundColor: theme.colors.widgetBG }}>
           <TouchableRipple onPress={() => { navigation.navigate("Chatting"); }}>
             <View style={{ flexDirection: 'column' }}>
               <View>
                 <View style={{ position: 'relative', left: 3, top: 1, flexDirection: 'row' }}>
                   <View style={{ flexDirection: 'row', width: 57.5 }}>
-                    <Avatar.Image style={{ marginTop: -2, marginLeft: 8 }} size={48} source={{ uri: 'https://www.societyplus.net/upload/photos/2020/11/9FP6DaNMH4PU9Mth9pI4_06_219caf368060b509948cf08a0102afdc_avatar.jpg' }} />
+                    <Avatar.Image style={{ marginTop: -2, marginLeft: 15 }} size={48} source={{ uri: props.profilePicURL }} />
                   </View>
-                  <View style={{ flexDirection: 'column', width: '70%', marginLeft: 6, flexGrow: 1, }}>
+                  <View style={{ flexDirection: 'column', width: '67.5%', marginLeft: 15, flexGrow: 1, }}>
                     <View style={{ flexDirection: 'row' }}>
                       <View style={{ flexDirection: 'row' }}>
                         <View>
@@ -28,11 +28,11 @@ function Contact(props) {
                       </View>
                     </View>
                     <View style={{ flexDirection: 'row', paddingBottom: 6 }}>
-                      <Text style={{ fontWeight: 'bold' }}>Tengo que ir a comprar pan LOL <Text style={{ color: '#888' }}>19:54</Text></Text>
+                      <Text style={{ fontWeight: 'bold' }}>{props.lastMSG} <Text style={{ color: '#888' }}>{props.time}</Text></Text>
                     </View>
                   </View>
                   <View style={{ position: 'relative', top: 6, width: 30 }}>
-                    <Icon name='rightcircleo' size={28}></Icon>
+                    <Icon color={theme.colors.text} name='rightcircleo' size={28}></Icon>
                   </View>
                 </View>
               </View>

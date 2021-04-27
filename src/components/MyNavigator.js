@@ -3,13 +3,13 @@ import { BottomNavigation, Text, useTheme } from 'react-native-paper';
 import MyChatStack from '../screens/ContactList';
 import Settings from '../screens/Settings';
 //import CustomIcon from './CustomIcon.js'
-import Story from '../../assets/svg/Story.svg'
+import Stories from '../screens/Stories'
 import Icon from 'react-native-vector-icons/Entypo'
 import { ThemeContext } from 'styled-components';
 
 //-------------------------------------------------------TAB NAVIGATOR
 
-const StoriesRoute = () => <Text>Stories</Text>;
+const StoriesRoute = () => <Stories></Stories>;
 
 const ChatsRoute = () => <MyChatStack></MyChatStack>;
 
