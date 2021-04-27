@@ -1,17 +1,42 @@
 import * as React from 'react';
-import { withTheme, Card, Text, Title, Paragraph, DefaultTheme as PaperDefaultTheme, DarkTheme as PaperDarkTheme, Appbar, Provider as PaperProvider } from 'react-native-paper';
-import MyNavigator from './src/components/MyNavigator'
-import { PreferencesContext } from './PreferencesContext';
 
+//Basic libraries
+import { withTheme, Card, Text, Title, Paragraph, DefaultTheme as PaperDefaultTheme, DarkTheme as PaperDarkTheme, Appbar, Provider as PaperProvider } from 'react-native-paper';
+import MyNavigator from './src/components/MyNavigator';
+
+//Themes and customization
+import { PreferencesContext } from './PreferencesContext';
+import merge from 'deepmerge';
+
+//Basic app navigation
 import {
   NavigationContainer,
   DarkTheme as NavigationDarkTheme,
   DefaultTheme as NavigationDefaultTheme,
 } from '@react-navigation/native';
-import merge from 'deepmerge';
 
+//Mixing libraries
 const CombinedDefaultTheme = merge(PaperDefaultTheme, NavigationDefaultTheme);
 const CombinedDarkTheme = merge(PaperDarkTheme, NavigationDarkTheme);
+
+//Custimizing light theme
+CombinedDefaultTheme.colors.primary = '#8403fc';
+CombinedDefaultTheme.colors.secondary = '#fc0362';
+CombinedDefaultTheme.colors.background = '#ffffff88';
+CombinedDefaultTheme.colors.ok = '#cfcfcfff';
+CombinedDefaultTheme.colors.error = '#cfcfcfff';
+CombinedDefaultTheme.colors.warning = '#cfcfcfff';
+CombinedDefaultTheme.colors.info = '#cfcfcfff';
+//Custimizing dark theme
+CombinedDarkTheme.colors.primary = '#8403fc';
+CombinedDarkTheme.colors.secondary = '#fc0362';
+CombinedDarkTheme.colors.background = '#292929ff';
+CombinedDarkTheme.colors.ok = '#292929ff';
+CombinedDarkTheme.colors.error = '#292929ff';
+CombinedDarkTheme.colors.warning = '#292929ff';
+CombinedDarkTheme.colors.info = '#292929ff';
+
+
 
 
 function App() {
@@ -53,9 +78,7 @@ const light = {
   roundness: 4,
   colors: {
     ...CombinedDefaultTheme.colors,
-    ...NavigationDefaultTheme.colors,
-    primary: '#705080',
-    separator: '#EEE',
+    primary: '#ff0',
   },
 };
 
@@ -65,17 +88,6 @@ const dark = {
   roundness: 4,
   colors: {
     ...CombinedDarkTheme.colors,
-    primary: '#502090',
-    separator: '#111',
-    accent: '#03dac5',
-    background: '#121212',
-    surface: '#121212',
-    error: '#B00020',
-    text: '#D8D8D8',
-    onSurface: '#121212',
-    disabled: '#ababab',
-    placeholder: '#828282',
-    backdrop: '#828282',
-    notification: '#E91E63',
+    primary: '#ff0',
   },
 };

@@ -12,8 +12,8 @@ function Settings() {
         <View>
             <Text>ASD</Text>
             <Switch
-                style={[{ backgroundColor: theme.colors.primary }]}
-                color={'red'}
+                style={[{  }]}
+                color={theme.colors.primary}
                 value={isThemeDark}
                 onValueChange={() => { toggleTheme() }}></Switch>
         </View>
