@@ -9,7 +9,7 @@ import { ThemeContext } from 'styled-components';
 
 //-------------------------------------------------------TAB NAVIGATOR
 
-const MusicRoute = () => <Text>Music</Text>;
+const StoriesRoute = () => <Text>Stories</Text>;
 
 const ChatsRoute = () => <MyChatStack></MyChatStack>;
 
@@ -25,15 +25,15 @@ const MyNavigator = () => {
   const theme = useTheme();
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'music', title: 'Stories', icon: () => { return ( <Icon size={20} color={"#cfcfcf"} name="circular-graph" ></Icon>); }, color: '#264653' }, // Custom icon
-    // { key: 'music', title: 'Stories', icon: 'restore', color: '#264653' },
+    { key: 'Stories', title: 'Stories', icon: () => { return ( <Icon size={20} color={"#cfcfcf"} name="circular-graph" ></Icon>); }, color: '#264653' }, // Custom icon
+    // { key: 'Stories', title: 'Stories', icon: 'restore', color: '#264653' },
     { key: 'chats', title: 'Chats', icon: 'chat', color: '#26534f' },
     { key: 'Profile', title: 'Profile', icon: 'account-circle', color: '#706937' },
     { key: 'Settings', title: 'Settings', icon: 'bolt', color: '#513770' },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
-    music: MusicRoute,
+    Stories: StoriesRoute,
     chats: ChatsRoute,
     Profile: ProfileRoute,
     Settings: SettingsRoute,
