@@ -76,24 +76,3 @@ export default withTheme(App);
 
 
 
-// ! ::::::::::::::::::::::::::: THEMES ::::::::::::::::::::::::::: !
-
-const light = {
-  ...CombinedDefaultTheme,
-  dark: false,
-  roundness: 4,
-  colors: {
-    ...CombinedDefaultTheme.colors,
-    primary: '#ff0',
-  },
-};
-
-const dark = {
-  ...CombinedDarkTheme,
-  dark: true,
-  roundness: 4,
-  colors: {
-    ...CombinedDarkTheme.colors,
-    primary: '#ff0',
-  },
-};
