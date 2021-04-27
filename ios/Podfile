@@ -16,6 +16,8 @@ target 'xChat' do
 
   pod 'RNDeviceInfo', :path => '../node_modules/react-native-device-info'
 
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
   target 'xChatTests' do
     inherit! :complete
     # Pods for testing
