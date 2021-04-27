@@ -8,13 +8,7 @@ import { SvgUri } from 'react-native-svg';
 import StoriesMainView from './Stories'
 import { ScrollView } from 'react-native-gesture-handler';
 import { FAB } from 'react-native-paper';
-
-//Icono custom para decorar la foto de perfil:
-
-
-
 function Profile(props) {
-
     const theme = useTheme();
     return (
         <View>
@@ -22,22 +16,15 @@ function Profile(props) {
                 <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'center', color: theme.colors.lightText }}>@Admin</Text>
             </View>
             <ScrollView>
-
-
                 <View style={{ flexDirection: 'column' }}>
-
-
-
                     <View style={{ justifyContent: 'center', position: 'relative', top: 50, alignItems: 'center' }}>
                         <Image source={require('../../assets/img/chroma.gif')} style={{ position: "absolute", width: 250, height: 250 }}
                         />
                         <Avatar.Image style={{ position: "relative" }} size={130} source={{ uri: 'https://cataas.com/cat' }} />
                     </View>
                     <View style={{ flexDirection: 'column', marginTop: "25%" }}>
-
                         <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5 }}>Biografía:</Text>
                         <View style={{ flexDirection: 'row', justifyContent: "center", alignItems: "center" }}>
-
                             <View style={{ backgroundColor: theme.colors.widgetBG, paddingVertical: 10, paddingHorizontal: 20, width: "35%", borderTopLeftRadius: 10, borderBottomLeftRadius: 10, }} >
                                 <Text>Nombre:</Text>
                                 <Text>Edad:</Text>
@@ -67,16 +54,13 @@ function Profile(props) {
                             <TextStoryUnit profilePicURL="https://cataas.com/cat/says/101" time="18:35" txt="Pensando en que pensar cansa"></TextStoryUnit>
                         </View>
                         <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5 }}>Estadísticas de usuario:</Text>
-
                         <View style={{ marginTop: 10, marginBottom: 200 }}>
                             <View style={{ flexDirection: 'row', justifyContent: "center", alignItems: "center" }}>
-
                                 <View style={{ backgroundColor: theme.colors.widgetBG, paddingVertical: 10, paddingHorizontal: 20, width: "35%", borderTopLeftRadius: 10, borderBottomLeftRadius: 10, }} >
                                     <Text>Nombre:</Text>
                                     <Text>TF status</Text>
                                     <Text>P.Confianz:</Text>
                                     <Text>Chats totales:</Text>
-
                                 </View>
                                 <View style={{ backgroundColor: theme.colors.widgetBG, paddingVertical: 10, paddingHorizontal: 20, width: "55%", borderTopRightRadius: 10, borderBottomRightRadius: 10 }} >
                                     <Text style={{ fontWeight: "bold" }}>Marc Moreno</Text>
@@ -85,22 +69,15 @@ function Profile(props) {
                                     <Text style={{ fontWeight: "bold" }}>1.6k</Text>
                                 </View>
                             </View>
-
-
                             <Text style={{ fontSize: 25, marginTop: "7.5%", marginLeft: "2.5%" }}><SuperIcon size={20} type="AntDesign" name="infocirlce"></SuperIcon> Estadísticas</Text>
                             <View style={{ flexDirection: 'row', justifyContent: "center", alignItems: "center", marginTop: 5 }}>
                                 <View style={{ backgroundColor: theme.colors.widgetBG, paddingVertical: 10, paddingHorizontal: 20, width: "90%", borderRadius: 10 }} >
                                     <Text>TF: Es el factor de confianza. Infica la relevancia del usuario al reportar. Disminuir este factor demasiado puede llevar a sanciones <Text style={{ fontWeight: 'bold', color: '#ff0000' }}>temporales y permanentes</Text></Text>
-
                                 </View>
                             </View>
                         </View>
-
-
                         <View></View>
-
                     </View>
-
                 </View>
             </ScrollView>
             <FAB
@@ -118,5 +95,4 @@ function Profile(props) {
         </View>
     );
 }
-
 export default Profile;
