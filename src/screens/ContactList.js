@@ -5,7 +5,8 @@ import { Appbar } from 'react-native-paper';
 import { Platform } from 'react-native';
 import Contact from '../components/Contact'
 import { createStackNavigator } from '@react-navigation/stack';
-import { Chatting } from '../screens/Chatting';
+import Chatting from '../screens/Chatting';
+
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
 const Stack = createStackNavigator();

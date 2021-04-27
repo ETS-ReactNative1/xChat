@@ -27,7 +27,7 @@ const MyNavigator = () => {
   const [routes] = React.useState([
     { key: 'Stories', title: 'Stories', icon: () => { return ( <Icon size={20} color={"#cfcfcf"} name="circular-graph" ></Icon>); }, color: '#264653' }, // Custom icon
     // { key: 'Stories', title: 'Stories', icon: 'restore', color: '#264653' },
-    { key: 'chats', title: 'Chats', icon: 'chat', color: '#26534f' },
+    { key: 'chats', title: 'Chats', icon: 'chat', color: theme.colors.primary },
     { key: 'Profile', title: 'Profile', icon: 'account-circle', color: '#706937' },
     { key: 'Settings', title: 'Settings', icon: 'bolt', color: '#513770' },
   ]);

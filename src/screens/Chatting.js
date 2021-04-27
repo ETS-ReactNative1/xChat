@@ -1,73 +1,81 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { Text, Avatar, TouchableRipple } from 'react-native-paper';
+import { Text, Avatar, TouchableRipple, useTheme } from 'react-native-paper';
 import { Dimensions, KeyboardAvoidingView } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign'
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Platform } from 'react-native';
 import Animated from 'react-native-reanimated'
 import * as Animatable from "react-native-animatable";
-
+import WhatsAppTextInput from '../components/msgInput';
+import { ChatBubble } from '../components/Messages';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
+function Chatting() {
+  const theme = useTheme();
+  return (
+    <KeyboardAvoidingView style={{ flexDirection: 'column', flexGrow: 1 }}>
 
+      <View style={{ height: 20, width: '100%' }}>
+        <View
+          style={{
+            marginTop: 8,
+            marginBottom: 8,
+            marginLeft: '40%',
+            width: '20%',
+            height: '20%',
+            borderRadius: 10,
+            backgroundColor: theme.colors.primary
+          }}
+        />
+      </View>
 
-
-
-export class Chatting extends React.Component {
-  render() {
-    return (
-      <KeyboardAvoidingView style={{ flexDirection: 'column', flexGrow: 1 }}>
-
-        <View style={{ height: 20, width: '100%' }}>
-          <View
-            style={{
-              marginTop: 8,
-              marginBottom: 8,
-              marginLeft: '40%',
-              width: '20%',
-              height: '20%',
-              borderRadius: 10,
-              backgroundColor: '#888'
-            }}
-          />
+      <View style={{ flexDirection: 'row', height: 50, width: '100%', backgroundColor: theme.colors.primary }}>
+        <TouchableRipple style={{ width: 40, justifyContent: 'center', alignItems: 'center' }} onPress={() => console.log('Prezionao')}>
+          <Icon size={20} color={theme.colors.lightText} name="left"></Icon>
+        </TouchableRipple>
+        <View style={{ width: 50 }}>
+          <Avatar.Image style={{ marginTop: 5, marginLeft: 5 }} size={40} source={{ uri: 'https://www.societyplus.net/upload/photos/2020/11/9FP6DaNMH4PU9Mth9pI4_06_219caf368060b509948cf08a0102afdc_avatar.jpg' }} />
         </View>
-
-        <View style={{ flexDirection: 'row', height: 50, width: '100%', backgroundColor: '#888' }}>
-          <TouchableRipple style={{ width: 40, justifyContent: 'center', alignItems: 'center' }} onPress={() => console.log('PRezionao')}>
-            <Icon size={20} name="left"></Icon>
-          </TouchableRipple>
-          <View style={{ width: 50 }}>
-            <Avatar.Image style={{ marginTop: 5, marginLeft: 5 }} size={40} source={{ uri: 'https://www.societyplus.net/upload/photos/2020/11/9FP6DaNMH4PU9Mth9pI4_06_219caf368060b509948cf08a0102afdc_avatar.jpg' }} />
-          </View>
-          <View style={{ flexGrow: 1, flexDirection: 'column', justifyContent: 'center', marginLeft: 10 }}>
-            <Text style={{ marginLeft: 10, fontSize: 16, fontWeight: 'bold' }}>LiLPandemio🚀</Text>
-          </View>
-          <TouchableRipple style={{ width: 50, justifyContent: 'center', alignItems: 'center' }}
+        <View style={{ flexGrow: 1, flexDirection: 'column', justifyContent: 'center', marginLeft: 10 }}>
+          <Text style={{ marginLeft: 10, fontSize: 16, fontWeight: 'bold', color: theme.colors.lightText }}>LiLPandemio🚀</Text>
+        </View>
+        <TouchableRipple style={{ width: 50, justifyContent: 'center', alignItems: 'center' }}
           onPress={() => {
             //Function
           }}>
-            <MaterialIcon name="dots-vertical" size={30}></MaterialIcon>
-          </TouchableRipple>
-        </View>
+          <MaterialIcon name="dots-vertical" color={theme.colors.lightText} size={30}></MaterialIcon>
+        </TouchableRipple>
+      </View>
+      <View style={{ flexGrow: 1, }}>
+        <ChatBubble amITheSender={false} hexBG={theme.colors.primary} message="Holaaa"></ChatBubble>
+        <ChatBubble amITheSender={true} hexBG={theme.colors.primary} message="Heyy que tal!"></ChatBubble>
+        <ChatBubble amITheSender={false} hexBG={theme.colors.primary} message="Bien 😊"></ChatBubble>
+        <ChatBubble amITheSender={false} hexBG={theme.colors.primary} message="Me siento solo T_T"></ChatBubble>
+        <ChatBubble amITheSender={true} hexBG={theme.colors.primary} message="Sientate con alguien :D"></ChatBubble>
 
-        <View style={{ flexGrow: 1, backgroundColor: '#444' }}>
-        </View>
+      </View>
 
-        <View style={{ flexDirection: 'row', height: 50, width: '100%' }}>
-          <View style={{ flexGrow: 1 }}>
+      <WhatsAppTextInput
+        style={{ width: 200 }}
+        backgroundColor={theme.colors.background}
+        borderTopColor={theme.colors.background}
+        placeholderTextColor={theme.colors.primary}
+        messageTextColor={'#000'}
+        textInputBgColor={theme.colors.leftChatBubbleBG}
+        editable={true}
+        multiline={true}
+        keyboardType={'default'}
+        sendButtonBgColor={theme.colors.primary}
+        sendButtonImage={require('../../assets/img/sendIcon.png')}
+        sendButtonDisableColor={'#f5f5f0'}
+        sendButtonEnableColor={'#002080'}
+      />
 
-          </View>
-          <View style={{ width: 50, backgroundColor: '#ff0' }}>
 
-          </View>
+    </KeyboardAvoidingView>
+  );
 
-        </View>
-
-      </KeyboardAvoidingView>
-    )
-  }
 }
-
 export default Chatting;

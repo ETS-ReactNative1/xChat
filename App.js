@@ -20,21 +20,27 @@ const CombinedDefaultTheme = merge(PaperDefaultTheme, NavigationDefaultTheme);
 const CombinedDarkTheme = merge(PaperDarkTheme, NavigationDarkTheme);
 
 //Custimizing light theme
-CombinedDefaultTheme.colors.primary = '#8403fc';
+CombinedDefaultTheme.colors.primary = '#5700a8';
 CombinedDefaultTheme.colors.secondary = '#fc0362';
-CombinedDefaultTheme.colors.background = '#ffffff88';
+CombinedDefaultTheme.colors.background = '#88888844';
+CombinedDefaultTheme.colors.widgetBG = '#ffffff88';
 CombinedDefaultTheme.colors.ok = '#cfcfcfff';
 CombinedDefaultTheme.colors.error = '#cfcfcfff';
 CombinedDefaultTheme.colors.warning = '#cfcfcfff';
 CombinedDefaultTheme.colors.info = '#cfcfcfff';
+CombinedDefaultTheme.colors.lightText = '#cfcfcfff';
+CombinedDefaultTheme.colors.leftChatBubbleBG = '#b887e633';
 //Custimizing dark theme
-CombinedDarkTheme.colors.primary = '#8403fc';
+CombinedDarkTheme.colors.primary = '#5700a8';
 CombinedDarkTheme.colors.secondary = '#fc0362';
 CombinedDarkTheme.colors.background = '#292929ff';
+CombinedDarkTheme.colors.widgetBG = '#11111188';
 CombinedDarkTheme.colors.ok = '#292929ff';
 CombinedDarkTheme.colors.error = '#292929ff';
 CombinedDarkTheme.colors.warning = '#292929ff';
 CombinedDarkTheme.colors.info = '#292929ff';
+CombinedDarkTheme.colors.lightText = '#cfcfcfff';
+CombinedDarkTheme.colors.leftChatBubbleBG = '#ffffff88';
 
 
 

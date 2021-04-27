@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { View } from 'react-native'
-import {useTheme, TouchableRipple, Switch, Text} from 'react-native-paper';
+import { useTheme, TouchableRipple, Switch, Text } from 'react-native-paper';
 import { PreferencesContext } from '../../PreferencesContext';
+import SettingUnit from '../components/SettingUnit';
 
 function Settings() {
     const theme = useTheme();
@@ -10,12 +11,14 @@ function Settings() {
     //Settings screen
     return (
         <View>
-            <Text>ASD</Text>
-            <Switch
-                style={[{  }]}
-                color={theme.colors.primary}
-                value={isThemeDark}
-                onValueChange={() => { toggleTheme() }}></Switch>
+            <View>
+                <SettingUnit settingController={
+                    <Switch
+                        color={theme.colors.primary}
+                        value={isThemeDark}
+                        onValueChange={() => { toggleTheme() }}></Switch>
+                } settingSubTitle="Control principal del tema" settingTitle="Dark mode"></SettingUnit>
+            </View>
         </View>
     )
 }
