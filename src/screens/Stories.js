@@ -18,6 +18,10 @@ export default function StoriesMainView() {
                     { key: "https://cataas.com/cat/says/1002", profilePicURL: "https://cataas.com/cat/says/1006" },
                     { key: "https://cataas.com/cat/says/1003", profilePicURL: "https://cataas.com/cat/says/1007" },
                     { key: "https://cataas.com/cat/says/1004", profilePicURL: "https://cataas.com/cat/says/1008" },
+                    { key: "https://cataas.com/cat/says/10010", profilePicURL: "https://cataas.com/cat/says/10055" },
+                    { key: "https://cataas.com/cat/says/10020", profilePicURL: "https://cataas.com/cat/says/10065" },
+                    { key: "https://cataas.com/cat/says/10030", profilePicURL: "https://cataas.com/cat/says/10075" },
+                    { key: "https://cataas.com/cat/says/10040", profilePicURL: "https://cataas.com/cat/says/10085" },
                 ]}
                 renderItem={({ item }) => <StoryUnit profilePicURL={item.profilePicURL} src={item.key}></StoryUnit>}
             />
