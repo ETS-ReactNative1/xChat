@@ -12,7 +12,7 @@ function Contact(props) {
     <View>
       <View style={{ marginLeft: 15, marginTop: 5 }}>
         <View style={{ paddingVertical: 20, borderBottomLeftRadius: 50, borderTopLeftRadius: 50, flexDirection: 'row', width: '100%', backgroundColor: theme.colors.widgetBG }}>
-          <TouchableRipple onPress={() => { navigation.navigate("Chatting", {contactName: props.contactName}); }}>
+          <TouchableRipple onPress={() => { navigation.navigate("Chatting", {contactName: props.contactName, profilePicURL: props.profilePicURL}); }}>
             <View style={{ flexDirection: 'column' }}>
               <View>
                 <View style={{ position: 'relative', left: 3, top: 1, flexDirection: 'row' }}>
