@@ -12,8 +12,9 @@ import { ChatBubble } from '../components/Messages';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-function Chatting() {
+function Chatting(props) {
   const theme = useTheme();
+  console.log(props.route.params.contactName);
   return (
     <KeyboardAvoidingView style={{ flexDirection: 'column', flexGrow: 1 }}>
 
@@ -39,7 +40,7 @@ function Chatting() {
           <Avatar.Image style={{ marginTop: 5, marginLeft: 5 }} size={40} source={{ uri: 'https://www.societyplus.net/upload/photos/2020/11/9FP6DaNMH4PU9Mth9pI4_06_219caf368060b509948cf08a0102afdc_avatar.jpg' }} />
         </View>
         <View style={{ flexGrow: 1, flexDirection: 'column', justifyContent: 'center', marginLeft: 10 }}>
-          <Text style={{ marginLeft: 10, fontSize: 16, fontWeight: 'bold', color: theme.colors.lightText }}>LiLPandemio🚀</Text>
+          <Text style={{ marginLeft: 10, fontSize: 16, fontWeight: 'bold', color: theme.colors.lightText }}>{props.route.params.contactName}</Text>
         </View>
         <TouchableRipple style={{ width: 50, justifyContent: 'center', alignItems: 'center' }}
           onPress={() => {

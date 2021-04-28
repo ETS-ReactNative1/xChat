@@ -29,7 +29,7 @@ function Profile(props) {
                                 <Text>Nombre:</Text>
                                 <Text>Edad:</Text>
                                 <Text>Genero:</Text>
-                                <Text>Articulo/s:</Text>
+                                <Text>Pronombre/s:</Text>
                             </View>
                             <View style={{ backgroundColor: theme.colors.widgetBG, paddingVertical: 10, paddingHorizontal: 20, width: "55%", borderTopRightRadius: 10, borderBottomRightRadius: 10 }} >
                                 <Text style={{ fontWeight: "bold" }}>Marc Moreno</Text>

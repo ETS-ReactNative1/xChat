@@ -9,6 +9,8 @@ import Chatting from '../screens/Chatting';
 
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
+
+
 const Stack = createStackNavigator();
 
 const wait = (timeout) => {
