@@ -49,6 +49,7 @@ export default class WhatsAppTextInput extends Component {
                             editable={true}
                             multiline={true}
                             placeholder="Mensaje"
+                            autoFocus={this.state.editable}
                             placeholderTextColor={this.props.placeholderTextColor}
                             placeholderStyle={[styles.placeholderStyle, { color: this.props.placeholderTextColor }]}
                             underlineColorAndroid='transparent'
