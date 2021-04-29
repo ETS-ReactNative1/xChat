@@ -1,14 +1,9 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
 
 import React, { Component } from 'react';
 import { View, TextInput, Image, Animated, Keyboard, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import DeviceInfo from "react-native-device-info";
 
-export default class WhatsAppTextInput extends Component {
+export default class MessageInput extends Component {
     constructor(props) {
         super(props);
         this.state = {

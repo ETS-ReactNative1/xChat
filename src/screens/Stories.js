@@ -1,33 +1,30 @@
 import React from 'react'
-import { View, FlatList } from 'react-native'
-import { TouchableRipple } from 'react-native-paper'
-import StoryUnit from '../components/StoryUnit'
-import TextStoryUnit from '../components/TextStoryUnit'
-import { Text } from 'react-native-paper'
+import { View, Platform } from 'react-native'
+import { Appbar, Text } from 'react-native-paper'
+import VisualStories from '../components/VisualStories'
+import TextStories from '../components/TextStories'
+const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
-//https://www.societyplus.net/upload/photos/2021/04/RVAf686VGEfHPTVtucdi_13_6123d3fc2b919e2ab22a895b2a0a1dd6_avatar.jpeg //Bryan
-//https://www.societyplus.net/upload/photos/2020/11/9FP6DaNMH4PU9Mth9pI4_06_219caf368060b509948cf08a0102afdc_avatar.jpg //Mark
-const exampleImage = 'https://mfiles.alphacoders.com/719/719887.jpg'
-export default function StoriesMainView() {
+//<VisualStoryUnit StoryPreview="https://cataas.com/cat/says/1000" ProfilePicture="https://cataas.com/cat/says/1001"></VisualStoryUnit>
+const Stories = () => {
     return (
-        <View style={{ marginTop: 0, marginLeft: "2.5%" }}>
-            <Text style={{ fontSize: 25, marginTop: "1%" }}>Historias visuales:</Text>
-            <FlatList style={{}} horizontal
-                data={[
-                    { key: "https://cataas.com/cat/says/1001", profilePicURL: "https://cataas.com/cat/says/1005" },
-                    { key: "https://cataas.com/cat/says/1002", profilePicURL: "https://cataas.com/cat/says/1006" },
-                    { key: "https://cataas.com/cat/says/1003", profilePicURL: "https://cataas.com/cat/says/1007" },
-                    { key: "https://cataas.com/cat/says/1004", profilePicURL: "https://cataas.com/cat/says/1008" },
-                    { key: "https://cataas.com/cat/says/10010", profilePicURL: "https://cataas.com/cat/says/10055" },
-                    { key: "https://cataas.com/cat/says/10020", profilePicURL: "https://cataas.com/cat/says/10065" },
-                    { key: "https://cataas.com/cat/says/10030", profilePicURL: "https://cataas.com/cat/says/10075" },
-                    { key: "https://cataas.com/cat/says/10040", profilePicURL: "https://cataas.com/cat/says/10085" },
-                ]}
-                renderItem={({ item }) => <StoryUnit profilePicURL={item.profilePicURL} src={item.key}></StoryUnit>}
-            />
-            <Text style={{ fontSize: 25, marginTop: "7.5%" }}>Historias de Texto:</Text>
-            <TextStoryUnit profilePicURL="https://cataas.com/cat/says/100" time="15:35" txt="Cria cuervos y te sacaran los ojos"></TextStoryUnit>
-            <TextStoryUnit profilePicURL="https://cataas.com/cat/says/101" time="18:35" txt="Pensando en que pensar cansa"></TextStoryUnit>
+        <View>
+
+            <Appbar.Header>
+                <Appbar.Content title="Quicks" subtitle={''} />
+                <Appbar.Action icon="magnify" onPress={() => { }} />
+                <Appbar.Action icon={MORE_ICON} onPress={() => { }} />
+            </Appbar.Header>
+            
+            <View style={{ marginTop: 0, marginLeft: "2.5%" }}>
+                <Text style={{ fontSize: 25, marginTop: "4%" }}>QuickPics:</Text>
+                <VisualStories></VisualStories>
+                <Text style={{ fontSize: 25, marginTop: "4%" }}>QuickText:</Text>
+                <TextStories></TextStories>
+            </View>
+
         </View>
     )
 }
+
+export default Stories

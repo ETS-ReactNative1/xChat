@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-const Settings = () => {
+const ViewProfile = () => {
     return (
         <View>
             <Text></Text>
@@ -9,4 +9,4 @@ const Settings = () => {
     )
 }
 
-export default Settings
+export default ViewProfile
