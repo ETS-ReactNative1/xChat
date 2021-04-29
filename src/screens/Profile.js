@@ -6,8 +6,11 @@ import SuperIcon from '../components/SuperIcon';
 import VisualStories from '../components/VisualStories'
 import { ScrollView } from 'react-native-gesture-handler';
 import { FAB } from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
+
 function Profile(props) {
     const theme = useTheme();
+    const navigation = useNavigation();
     return (
         <View>
             <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: 50, width: '100%', backgroundColor: theme.colors.primary }}>
@@ -78,7 +81,7 @@ function Profile(props) {
                     bottom: 60,
                 }}
                 icon="pencil"
-                onPress={() => alert("FAB PRESSED")}
+                onPress={() => navigation.navigate("EditProfile") }
             />
         </View>
     );
