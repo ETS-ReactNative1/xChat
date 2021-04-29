@@ -4,6 +4,8 @@ import { Text, TouchableRipple, Avatar, useTheme, Button } from 'react-native-pa
 import Modal from 'react-native-modal';
 import WhatsAppTextInput from './msgInput'
 import ContactPresentationCard from './ContactPresentationCard'
+import { useNavigation } from '@react-navigation/native';
+
 
 const TextStoryUnit = (props) => {
     const theme = useTheme()
@@ -11,18 +13,20 @@ const TextStoryUnit = (props) => {
     const toggleModal = () => {
         setModalVisible(!isModalVisible);
     };
+    const navigation = useNavigation();
+
     return (
         <View>
             <Modal onBackdropPress={(isModalVisible) => { if(isModalVisible) {toggleModal()} }} onBackButtonPress={(isModalVisible) => { if(isModalVisible) {toggleModal()} }} isVisible={isModalVisible} style={{ alignItems: "center" }} animationIn="zoomIn" animationOut="fadeOutDown">
                 <View style={{ backgroundColor: theme.colors.background, borderRadius: 15 }}>
-                    <Button title="Hide modal" color={theme.colors.secondary} onPress={toggleModal}>Cancelar</Button>
+                    <Button title="Hide modal" color={theme.colors.error} onPress={toggleModal}>Cancelar</Button>
                     <ContactPresentationCard></ContactPresentationCard>
-                    <View style={{ flexDirection: "row", borderTopWidth: 1, borderTopColor: theme.colors.secondary }}>
+                    <View style={{ flexDirection: "row", borderTopWidth: 1, borderTopColor: theme.colors.error }}>
                         <View style={{ width: "50%", alignItems: "center" }} >
-                            <Button style={{width: "100%"}} color={theme.colors.secondary} onPress={() => {}}>Seguir</Button>
+                            <Button style={{width: "100%"}} color={theme.colors.error} onPress={() => {}}>Seguir</Button>
                         </View>
                         <View style={{ width: "50%", alignItems: "center" }} >
-                            <Button style={{width: "100%"}} color={theme.colors.secondary} onPress={() => {}}>Abrir chat</Button>
+                            <Button style={{width: "100%"}} color={theme.colors.error} onPress={() => navigation.navigate("Chatting", {contactName: "The fucking name", profilePicURL: "https://cataas.com/cat"}) }>Abrir chat</Button>
                         </View>
                     </View>
                 </View>

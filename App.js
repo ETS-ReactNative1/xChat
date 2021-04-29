@@ -31,23 +31,23 @@ const CombinedDarkTheme = merge(PaperDarkTheme, NavigationDarkTheme);
 CombinedDefaultTheme.colors.primary = '#5700a8';
 CombinedDefaultTheme.colors.text = '#000';
 CombinedDefaultTheme.colors.secondary = '#fc0362';
-CombinedDefaultTheme.colors.background = '#ffffffdd';
+CombinedDefaultTheme.colors.background = '#ffffffff';
 CombinedDefaultTheme.colors.widgetBG = '#ffffff88';
 CombinedDefaultTheme.colors.ok = '#cfcfcfff';
-CombinedDefaultTheme.colors.error = '#cfcfcfff';
+CombinedDefaultTheme.colors.error = '#C14242EE';
 CombinedDefaultTheme.colors.warning = '#cfcfcfff';
 CombinedDefaultTheme.colors.info = '#cfcfcfff';
 CombinedDefaultTheme.colors.lightText = '#cfcfcfff';
 CombinedDefaultTheme.colors.leftChatBubbleBG = '#b887e633';
 
 //Custimizing dark theme
-CombinedDarkTheme.colors.primary = '#5700a8';
+CombinedDarkTheme.colors.primary = '#fc0362';
 CombinedDarkTheme.colors.text = '#fff';
-CombinedDarkTheme.colors.secondary = '#fc0362';
-CombinedDarkTheme.colors.background = '#292929dd';
+CombinedDarkTheme.colors.secondary = '#5700a8';
+CombinedDarkTheme.colors.background = '#292929ff';
 CombinedDarkTheme.colors.widgetBG = '#11111188';
 CombinedDarkTheme.colors.ok = '#292929ff';
-CombinedDarkTheme.colors.error = '#292929ff';
+CombinedDarkTheme.colors.error = '#C14242EE';
 CombinedDarkTheme.colors.warning = '#292929ff';
 CombinedDarkTheme.colors.info = '#292929ff';
 CombinedDarkTheme.colors.lightText = '#cfcfcfff';
@@ -58,8 +58,8 @@ function App() {
   const [isThemeDark, setIsThemeDark] = React.useState(false);
 
   //! LEAVE ONLY 1 UNCOMMENTED
-  let theme = isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme; //Default theme is light
-  //let theme = isThemeDark ? CombinedDefaultTheme : CombinedDarkTheme ; //Default theme is dark
+  //let theme = isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme; //Default theme is light
+  let theme = isThemeDark ? CombinedDefaultTheme : CombinedDarkTheme ; //Default theme is dark
 
   const toggleTheme = React.useCallback(() => {
     return setIsThemeDark(!isThemeDark);

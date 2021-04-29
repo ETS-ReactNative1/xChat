@@ -3,11 +3,12 @@ import { View, useWindowDimensions } from 'react-native';
 import { TabView, SceneMap } from 'react-native-tab-view';
 import EditPublicProfile from './EditPublicProfile'
 import EditPrivateProfile from './EditPrivateProfile'
-
-import { FAB, Text } from 'react-native-paper';
+import {useTheme, FAB, Text} from 'react-native-paper'
 
 const EditProfile = () => {
     const layout = useWindowDimensions();
+
+    const theme = useTheme();
 
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
@@ -23,6 +24,7 @@ const EditProfile = () => {
     return (
         <View style={{ flex: 1 }}>
             <TabView
+                theme={theme}
                 navigationState={{ index, routes }}
                 renderScene={renderScene}
                 onIndexChange={setIndex}
