@@ -10,6 +10,7 @@ import {
 
 //Stacked screens import:
 import Chat from './src/screens/Chat';                //Importing screen: Chat
+import Chatting from './src/screens/Chatting';                //Importing screen: Chatting (OLD)
 import EditProfile from './src/screens/EditProfile';  //Importing screen: EditProfile
 import FlashChat from './src/screens/FlashChat';      //Importing screen: FlashChat
 import Login from './src/screens/Login';              //Importing screen: Login
@@ -57,8 +58,8 @@ function App() {
   const [isThemeDark, setIsThemeDark] = React.useState(false);
 
   //! LEAVE ONLY 1 UNCOMMENTED
-  //let theme = isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme; //Default theme is light
-  let theme = isThemeDark ? CombinedDefaultTheme : CombinedDarkTheme ; //Default theme is dark
+  let theme = isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme; //Default theme is light
+  //let theme = isThemeDark ? CombinedDefaultTheme : CombinedDarkTheme ; //Default theme is dark
 
   const toggleTheme = React.useCallback(() => {
     return setIsThemeDark(!isThemeDark);
@@ -95,6 +96,7 @@ function MyStack() {                   //Main app component
       <Stack.Screen name="MainScreen" component={MainScreen} />
       <Stack.Screen name="EditProfile" component={EditProfile} />
       <Stack.Screen name="Chat" component={Chat} />
+      <Stack.Screen name="Chatting" component={Chatting} />
       <Stack.Screen name="FlashChat" component={FlashChat} />
       <Stack.Screen name="Story" component={Story} />
       <Stack.Screen name="ViewProfile" component={ViewProfile} />

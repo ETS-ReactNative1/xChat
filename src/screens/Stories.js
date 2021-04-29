@@ -15,12 +15,20 @@ const Stories = () => {
                 <Appbar.Action icon="magnify" onPress={() => { }} />
                 <Appbar.Action icon={MORE_ICON} onPress={() => { }} />
             </Appbar.Header>
-            
+
             <View style={{ marginTop: 0, marginLeft: "2.5%" }}>
-                <Text style={{ fontSize: 25, marginTop: "4%" }}>QuickPics:</Text>
-                <VisualStories></VisualStories>
-                <Text style={{ fontSize: 25, marginTop: "4%" }}>QuickText:</Text>
-                <TextStories></TextStories>
+                <View>
+                    <Text style={{ fontSize: 25, marginTop: "4%" }}>QuickPics:</Text>
+                </View>
+                <View>
+                    <VisualStories></VisualStories>
+                </View>
+                <View>
+                    <Text style={{ fontSize: 25, marginTop: "4%" }}>QuickText:</Text>
+                </View>
+                <View>
+                    <TextStories></TextStories>
+                </View>
             </View>
 
         </View>

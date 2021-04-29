@@ -1,22 +1,68 @@
 import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
-import { Platform, RefreshControl } from 'react-native';
+import { Text } from 'react-native-paper';
 import { Appbar } from 'react-native-paper';
+import { Platform, RefreshControl } from 'react-native';
 import Contact from '../components/Contact'
+import { createStackNavigator } from '@react-navigation/stack';
+import Chatting from '../screens/Chatting';
 
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
 
-const Chats = () => {
+
+const Stack = createStackNavigator();
+
+const wait = (timeout) => {
+    return new Promise(resolve => setTimeout(resolve, timeout));
+}
+
+export function MyChatStack() {
     return (
-        <View>
-            <Appbar.Header>
-                <Appbar.Content title="Chats" subtitle={''} />
-                <Appbar.Action icon="magnify" onPress={() => { }} />
-                <Appbar.Action icon={MORE_ICON} onPress={() => { }} />
-            </Appbar.Header>
+        <Stack.Navigator
+            initialRouteName="Chats"
+            options={{
+            }}
+            screenOptions={({ route, navigation }) => ({
+                headerShown: false,
+                gestureEnabled: true,
+                gestureDirection: 'vertical',
+                cardOverlayEnabled: true,
+            })}
+            mode="modal">
+            <Stack.Screen name="Chats" component={ContactList} />
+            <Stack.Screen name="Chatting" component={Chatting} />
+        </Stack.Navigator>
+    );
+}
+
+const ChatAppbar = () => (
+    <Appbar.Header>
+        <Appbar.Content title="Chats" subtitle={''} />
+        <Appbar.Action icon="magnify" onPress={() => { }} />
+        <Appbar.Action icon={MORE_ICON} onPress={() => { }} />
+    </Appbar.Header>
+);
+
+function ContactList(props) {
+    const [refreshing, setRefreshing] = React.useState(false);
+
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+        wait(2000).then(() => setRefreshing(false));
+    }, []);
+
+    return (
+        <View style={{}}>
+            <ChatAppbar></ChatAppbar>
             <View style={{ marginTop: 10, paddingBottom: 20 }}>
                 <FlatList
+                    refreshControl={
+                        <RefreshControl
+                            refreshing={refreshing}
+                            onRefresh={onRefresh}
+                        />
+                    } style={{}}
                     data={[
                         { key: 'LiLPandemio🚀', lastMSG: 'Tengo comprar el pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/1' },
                         { key: 'Will Smith', lastMSG: 'Tengo queprar el pan LOL', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/2' },
@@ -46,7 +92,7 @@ const Chats = () => {
 
             </View>
         </View>
-    )
+    );
 }
 
-export default Chats
+export default MyChatStack;

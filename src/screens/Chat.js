@@ -1,14 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
-import { useTheme } from 'react-native-paper';
-import { Dimensions, KeyboardAvoidingView } from 'react-native';
-
-import { ChatTopBar } from '../components/ChatTopBar';
-import { DragIndicator } from '../components/DragIndicator';
+import { useTheme, TouchableRipple, Avatar, Text } from 'react-native-paper';
+import { KeyboardAvoidingView } from 'react-native';
+import { ChatBubble } from '../components/ChatBubble'
 import { MessageInput } from '../components/MessageInput';
-
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+import SuperIcon from '../components/SuperIcon'
 
 function Chat(props) {
     const theme = useTheme();
@@ -17,9 +13,37 @@ function Chat(props) {
     return (
         <KeyboardAvoidingView style={{ flexDirection: 'column', flexGrow: 1 }}>
 
-            <DragIndicator></DragIndicator>
+            <View style={{ height: 20, width: '100%' }}>
+                <View
+                    style={{
+                        marginTop: 8,
+                        marginBottom: 8,
+                        marginLeft: '40%',
+                        width: '20%',
+                        height: '20%',
+                        borderRadius: 10,
+                        backgroundColor: theme.colors.primary
+                    }}
+                />
+            </View>
 
-            <ChatTopBar></ChatTopBar>
+            <View style={{ flexDirection: 'row', height: 50, width: '100%', backgroundColor: theme.colors.primary }}>
+                <TouchableRipple style={{ width: 40, justifyContent: 'center', alignItems: 'center' }} onPress={() => console.log('Prezionao')}>
+                    <Text>{"<"}</Text>
+                </TouchableRipple>
+                <View style={{ width: 50 }}>
+                    <Avatar.Image style={{ marginTop: 5, marginLeft: 5 }} size={40} source={{ uri: "https://cataas.com/cat/says/1942" }} />
+                </View>
+                <View style={{ flexGrow: 1, flexDirection: 'column', justifyContent: 'center', marginLeft: 10 }}>
+                    <Text style={{ marginLeft: 10, fontSize: 16, fontWeight: 'bold', color: theme.colors.lightText }}>{"AAAAAAA"}</Text>
+                </View>
+                <TouchableRipple style={{ width: 50, justifyContent: 'center', alignItems: 'center' }}
+                    onPress={() => {
+                        //Function
+                    }}>
+                    <SuperIcon type="MaterialIcons" name="dots-vertical" color={theme.colors.lightText} size={30}></SuperIcon>
+                </TouchableRipple>
+            </View>
 
             <View style={{ flexGrow: 1 }}>
                 <ChatBubble amITheSender={false} hexBG={theme.colors.primary} message="Holaaa"></ChatBubble>
@@ -50,4 +74,4 @@ function Chat(props) {
     );
 
 }
-export default Chat;
+export default Chat

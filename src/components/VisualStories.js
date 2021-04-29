@@ -7,14 +7,14 @@ const VisualStories = () => {
         <View>
             <FlatList style={{}} horizontal showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}
                 data={[
-                    { key: "https://cataas.com/cat/says/1001", profilePicURL: "https://cataas.com/cat/says/1005" },
-                    { key: "https://cataas.com/cat/says/1002", profilePicURL: "https://cataas.com/cat/says/1006" },
-                    { key: "https://cataas.com/cat/says/1003", profilePicURL: "https://cataas.com/cat/says/1007" },
-                    { key: "https://cataas.com/cat/says/1004", profilePicURL: "https://cataas.com/cat/says/1008" },
-                    { key: "https://cataas.com/cat/says/10010", profilePicURL: "https://cataas.com/cat/says/10055" },
-                    { key: "https://cataas.com/cat/says/10020", profilePicURL: "https://cataas.com/cat/says/10065" },
-                    { key: "https://cataas.com/cat/says/10030", profilePicURL: "https://cataas.com/cat/says/10075" },
-                    { key: "https://cataas.com/cat/says/10040", profilePicURL: "https://cataas.com/cat/says/10085" },
+                    { key: "https://cataas.com/cat/says/10d10", profilePicURL: "https://cataas.com/cat/says/1a05" },
+                    { key: "https://cataas.com/cat/says/1as020", profilePicURL: "https://cataas.com/cat/says/10sd06" },
+                    { key: "https://cataas.com/cat/says/1d030", profilePicURL: "https://cataas.com/cat/says/10as07" },
+                    { key: "https://cataas.com/cat/says/1d0as40", profilePicURL: "https://cataas.com/cat/says/10da08" },
+                    { key: "https://cataas.com/cat/says/1asd0100", profilePicURL: "https://cataas.com/cat/says/1sd0055" },
+                    { key: "https://cataas.com/cat/says/1as0200", profilePicURL: "https://cataas.com/cat/says/10as065" },
+                    { key: "https://cataas.com/cat/says/10da300", profilePicURL: "https://cataas.com/cat/says/10ds075" },
+                    { key: "https://cataas.com/cat/says/1ds0400", profilePicURL: "https://cataas.com/cat/says/10ad085" },
                 ]}
                 renderItem={({ item }) => <VisualStoryUnit ProfilePicture={item.profilePicURL} StoryPreview={item.key} />}
             />
