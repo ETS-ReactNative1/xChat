@@ -5,26 +5,42 @@ const TextStories = (props) => {
     //<TextStoryUnit profilePicURL="https://cataas.com/cat/says/1001" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
     return (
         <View>
-            <ScrollView>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/12d42" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/1gd442" time="11:39" txt="Buah huele a peo"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/14d22" time="11:39" txt="Pensar cansa mucho"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/1dgd442" time="11:39" txt="Auxilio me desmayo, callese viejo lesbiano"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/5142" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/7" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/1842" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/1942" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/1dfg42" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/1942" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/1042" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/1dfg42" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/1'42" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/1dgd42" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/1d42" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/14fgd2" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/1v42" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/14df2" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
-                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/14df2" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
+            <ScrollView style={{paddingBottom: "5%"}}>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/a2dh42" time="11:39" txt="Fua tmprar pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/a2h42" time="11:39" txt="Fu Viva Jesucristo mprar pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/adhd42" time="11:39" txt="Fu Viva Jesucristo mprar pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/a2dd42" time="11:39" txt="Fu Viva Jesucristo mprar pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/a2dhd2" time="11:39" txt="Fu Viva Jesucristo mprar pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/agdhddh442" time="11:39" txt="B Viva Jesucristo o"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/agddh442" time="11:39" txt="B Viva Jesucristo o"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/agddhddhdh442" time="11:39" txt="B Viva Jesucristo o"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/agddhd442" time="11:39" txt="B Viva Jesucristo o"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/aghd442" time="11:39" txt="B Viva Jesucristo o"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/a4dhhrd22" time="11:39" txt="Pe Viva Jesucristo ho"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/a4dhd22" time="11:39" txt="Pe Viva Jesucristo ho"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/ahe4dhr22" time="11:39" txt="Pe Viva Jesucristo ho"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/aeh4d22" time="11:39" txt="Pe Viva Jesucristo ho"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/a4dhdhd22" time="11:39" txt="Pe Viva Jesucristo ho"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/ahrdgd442" time="11:39" txt=" Viva Jesucristo mayo, callese viejo lesbiano"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/adaagd442" time="11:39" txt=" Viva Jesucristo mayo, callese viejo lesbiano"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/adsgd442" time="11:39" txt=" Viva Jesucristo mayo, callese viejo lesbiano"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/adrhrdgd442" time="11:39" txt=" Viva Jesucristo mayo, callese viejo lesbiano"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/adfgd442" time="11:39" txt=" Viva Jesucristo mayo, callese viejo lesbiano"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/aghr142" time="11:39" txt="Fua Viva Jesucristo prar pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/ah1ss42" time="11:39" txt="Fua Viva Jesucristo prar pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/aj1sd42" time="11:39" txt="Fua Viva Jesucristo prar pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/ak142" time="11:39" txt="Fua Viva Jesucristo prar pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/alsda142" time="11:39" txt="Fua Viva Jesucristo prar pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/añds" time="11:39" txt="Fua te Viva Jesucristo r pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/adsa" time="11:39" txt="Fua te Viva Jesucristo r pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/dasa" time="11:39" txt="Fua te Viva Jesucristo r pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/adsd" time="11:39" txt="Fua te Viva Jesucristo r pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/asds" time="11:39" txt="Fua te Viva Jesucristo r pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/a8as42" time="11:39" txt="Fua Viva Jesucristo prar pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/sd" time="11:39" txt="Fua Viva Jesucristo prar pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/a8d42" time="11:39" txt="Fua Viva Jesucristo prar pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/a8as42" time="11:39" txt="Fua Viva Jesucristo prar pan"></TextStoryUnit>
+                <TextStoryUnit profilePicURL="https://cataas.com/cat/says/a8d42" time="11:39" txt="Fua Viva Jesucristo prar pan"></TextStoryUnit>
             </ScrollView>
         </View>
     )

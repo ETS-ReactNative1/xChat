@@ -58,6 +58,7 @@ const MyNavigator = () => {
             navigationState={{ index, routes }}
             onIndexChange={setIndex}
             renderScene={renderScene}
+            
         />
     );
 };

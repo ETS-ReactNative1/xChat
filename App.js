@@ -17,11 +17,16 @@ import Login from './src/screens/Login';              //Importing screen: Login
 import Story from './src/screens/Story';              //Importing screen: Story
 import ViewProfile from './src/screens/ViewProfile';  //Importing screen: ViewProfile
 import MainScreen from './src/screens/MainScreen';  //Importing screen: MainScreen
+import PicEditor from './src/screens/PicEditor';  //Importing: PicEditor
+import StoryCamera from './src/screens/StoryCamera';  //Importing: StoryCamera
+import StoryViewer from './src/screens/StoryViewer';  //Importing: StoryViewer
+import TextStoryCreator from './src/screens/TextStoryCreator';  //Importing: TextStoryCreator
 
 //Preferences context import + Tools
 import { withTheme, Card, Text, Title, Paragraph, DefaultTheme as PaperDefaultTheme, DarkTheme as PaperDarkTheme, Appbar, Provider as PaperProvider } from 'react-native-paper';
 import { PreferencesContext } from './PreferencesContext';
 import merge from 'deepmerge';
+import Profile from './src/screens/Profile';
 
 //Mixing libraries
 const CombinedDefaultTheme = merge(PaperDefaultTheme, NavigationDefaultTheme);
@@ -59,7 +64,7 @@ function App() {
 
   //! LEAVE ONLY 1 UNCOMMENTED
   //let theme = isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme; //Default theme is light
-  let theme = isThemeDark ? CombinedDefaultTheme : CombinedDarkTheme ; //Default theme is dark
+  let theme = isThemeDark ? CombinedDefaultTheme : CombinedDarkTheme; //Default theme is dark
 
   const toggleTheme = React.useCallback(() => {
     return setIsThemeDark(!isThemeDark);
@@ -100,6 +105,10 @@ function MyStack() {                   //Main app component
       <Stack.Screen name="FlashChat" component={FlashChat} />
       <Stack.Screen name="Story" component={Story} />
       <Stack.Screen name="ViewProfile" component={ViewProfile} />
+      <Stack.Screen name="PicEditor" component={PicEditor} />
+      <Stack.Screen name="StoryCamera" component={StoryCamera} />
+      <Stack.Screen name="StoryViewer" component={StoryViewer} />
+      <Stack.Screen name="TextStoryCreator" component={TextStoryCreator} />
     </Stack.Navigator>
   );
 }

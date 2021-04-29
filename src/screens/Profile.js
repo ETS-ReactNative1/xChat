@@ -4,6 +4,7 @@ import { View, ImageBackground, Image, FlatList } from 'react-native';
 import TextStoryUnit from '../components/TextStoryUnit'
 import SuperIcon from '../components/SuperIcon';
 import VisualStories from '../components/VisualStories'
+import TextStories from '../components/TextStories'
 import { ScrollView } from 'react-native-gesture-handler';
 import { FAB } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
@@ -24,7 +25,7 @@ function Profile(props) {
                         <Avatar.Image style={{ position: "relative" }} size={130} source={{ uri: 'https://cataas.com/cat' }} />
                     </View>
                     <View style={{ flexDirection: 'column', marginTop: "25%" }}>
-                        <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5 }}>Biografía:</Text>
+                        <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5 }}>Resumen:</Text>
                         <View style={{ flexDirection: 'row', justifyContent: "center", alignItems: "center" }}>
                             <View style={{ backgroundColor: theme.colors.widgetBG, paddingVertical: 10, paddingHorizontal: 20, width: "35%", borderTopLeftRadius: 10, borderBottomLeftRadius: 10, }} >
                                 <Text>Nombre:</Text>
@@ -39,10 +40,16 @@ function Profile(props) {
                                 <Text style={{ fontWeight: "bold" }}>El / Los</Text>
                             </View>
                         </View>
-                        <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5 }}>Biografía:</Text>
+                        <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5 }}>QuickPics:</Text>
 
                         <View style={{ paddingLeft: 20 }}>
                             <VisualStories></VisualStories>
+                        </View>
+
+                        <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5 }}>QuickTexts:</Text>
+
+                        <View style={{ paddingLeft: 10 }}>
+                            <TextStories></TextStories>
                         </View>
                         <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5 }}>Estadísticas de usuario:</Text>
                         <View style={{ marginTop: 10, marginBottom: 200 }}>
