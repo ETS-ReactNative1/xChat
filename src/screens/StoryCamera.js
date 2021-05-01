@@ -17,16 +17,22 @@ const PendingView = () => (
     </View>
 );
 
-export default class StoryCamera extends PureComponent {
-    render() {
-        let targetCam = "front";
-        //console.log(this.props.navigator.navigate)
 
+export default class StoryCamera extends PureComponent {
+    constructor(props) {
+        super(props);
+        this.state = {
+            cameraType: 'back',
+            mirrorMode: true
+        };
+    }
+    render() {
         return (
             <View style={styles.container}>
                 <RNCamera
                     style={styles.preview}
-                    type={RNCamera.Constants.Type.back}
+                    type={this.state.cameraType}
+                    mirrorImage={this.state.mirrorMode}
                     flashMode={RNCamera.Constants.FlashMode.on}
                     androidCameraPermissionOptions={{
                         title: 'Permission to use camera',
@@ -56,9 +62,21 @@ export default class StoryCamera extends PureComponent {
                                     </TouchableRipple>
                                 </View>
                                 <View style={styles.threeZones}>
-                                    <TouchableRipple onPress={() => {
-
-                                    }} style={{ padding: 12, borderRadius: 100, borderWidth: 3, borderColor: "#fff" }}>
+                                    <TouchableRipple onPress={
+                                        () => {
+                                            if (this.state.cameraType === 'back') {
+                                                this.setState({
+                                                    cameraType: 'front',
+                                                    mirror: true
+                                                });
+                                            } else {
+                                                this.setState({
+                                                    cameraType: 'back',
+                                                    mirror: false
+                                                });
+                                            }
+                                        }
+                                    } style={{ padding: 12, borderRadius: 100, borderWidth: 3, borderColor: "#fff" }}>
                                         <SuperIcon type="MaterialIcons" name="flip-camera-ios" size={48} color="#fff"></SuperIcon>
                                     </TouchableRipple>
                                 </View>
