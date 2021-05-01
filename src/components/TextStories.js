@@ -5,7 +5,7 @@ const TextStories = (props) => {
     //<TextStoryUnit profilePicURL="https://cataas.com/cat/says/1001" time="11:39" txt="Fua tengo que comprar pan"></TextStoryUnit>
     return (
         <View>
-            <ScrollView style={{paddingBottom: "5%"}}>
+            <ScrollView style={{ paddingBottom: "5%" }}>
                 <TextStoryUnit profilePicURL="https://cataas.com/cat/says/a2dh42" time="11:39" txt="Fua tmprar pan"></TextStoryUnit>
                 <TextStoryUnit profilePicURL="https://cataas.com/cat/says/a2h42" time="11:39" txt="Fu Viva Jesucristo mprar pan"></TextStoryUnit>
                 <TextStoryUnit profilePicURL="https://cataas.com/cat/says/adhd42" time="11:39" txt="Fu Viva Jesucristo mprar pan"></TextStoryUnit>
