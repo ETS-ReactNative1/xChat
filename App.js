@@ -7,6 +7,7 @@ import {
   DarkTheme as NavigationDarkTheme,
   DefaultTheme as NavigationDefaultTheme,
 } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 //Stacked screens import:
 import Chat from './src/screens/Chat';                //Importing screen: Chat
@@ -21,6 +22,7 @@ import PicEditor from './src/screens/PicEditor';  //Importing: PicEditor
 import StoryCamera from './src/screens/StoryCamera';  //Importing: StoryCamera
 import StoryViewer from './src/screens/StoryViewer';  //Importing: StoryViewer
 import TextStoryCreator from './src/screens/TextStoryCreator';  //Importing: TextStoryCreator
+import VisualStoryEditor from './src/screens/VisualStoryEditor';  //Importing: VisualStoryEditor
 
 //Preferences context import + Tools
 import { withTheme, Card, Text, Title, Paragraph, DefaultTheme as PaperDefaultTheme, DarkTheme as PaperDarkTheme, Appbar, Provider as PaperProvider } from 'react-native-paper';
@@ -106,11 +108,17 @@ function MyStack() {                   //Main app component
       <Stack.Screen name="Story" component={Story} />
       <Stack.Screen name="ViewProfile" component={ViewProfile} />
       <Stack.Screen name="PicEditor" component={PicEditor} />
-      <Stack.Screen name="StoryCamera" component={StoryCamera} />
+      <Stack.Screen name="StoryCamera" component={NavStoryCamera} />
       <Stack.Screen name="StoryViewer" component={StoryViewer} />
       <Stack.Screen name="TextStoryCreator" component={TextStoryCreator} />
+      <Stack.Screen name="VisualStoryEditor" component={VisualStoryEditor} />
     </Stack.Navigator>
   );
+}
+
+function NavStoryCamera () {
+  const navigator = useNavigation();
+  return <StoryCamera navigator={navigator}/>
 }
 
 export default withTheme(App)
