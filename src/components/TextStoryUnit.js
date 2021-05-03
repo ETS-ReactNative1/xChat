@@ -6,8 +6,6 @@ import WhatsAppTextInput from './msgInput'
 import ContactPresentationCard from './ContactPresentationCard'
 import { useNavigation } from '@react-navigation/native';
 
-import Draggable from 'react-native-draggable';
-
 const TextStoryUnit = (props) => {
     const theme = useTheme()
     const [isModalVisible, setModalVisible] = useState(false);
