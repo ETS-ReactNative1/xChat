@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 
 //Stack navigator container import:
 import {
@@ -35,26 +35,26 @@ const CombinedDefaultTheme = merge(PaperDefaultTheme, NavigationDefaultTheme);
 const CombinedDarkTheme = merge(PaperDarkTheme, NavigationDarkTheme);
 
 //Custimizing light theme
-CombinedDefaultTheme.colors.primary = '#5700a8';
+CombinedDefaultTheme.colors.primary = '#a84848';
 CombinedDefaultTheme.colors.text = '#000';
-CombinedDefaultTheme.colors.secondary = '#fc0362';
+CombinedDefaultTheme.colors.secondary = '#a84848';
 CombinedDefaultTheme.colors.background = '#ffffffff';
 CombinedDefaultTheme.colors.widgetBG = '#ffffff88';
 CombinedDefaultTheme.colors.ok = '#cfcfcfff';
-CombinedDefaultTheme.colors.error = '#C14242EE';
+CombinedDefaultTheme.colors.error = '#a84848';
 CombinedDefaultTheme.colors.warning = '#cfcfcfff';
 CombinedDefaultTheme.colors.info = '#cfcfcfff';
 CombinedDefaultTheme.colors.lightText = '#cfcfcfff';
 CombinedDefaultTheme.colors.leftChatBubbleBG = '#b887e633';
 
 //Custimizing dark theme
-CombinedDarkTheme.colors.primary = '#fc0362';
+CombinedDarkTheme.colors.primary = '#a84848';
 CombinedDarkTheme.colors.text = '#fff';
 CombinedDarkTheme.colors.secondary = '#5700a8';
 CombinedDarkTheme.colors.background = '#292929ff';
 CombinedDarkTheme.colors.widgetBG = '#11111188';
 CombinedDarkTheme.colors.ok = '#292929ff';
-CombinedDarkTheme.colors.error = '#C14242EE';
+CombinedDarkTheme.colors.error = '#a84848';
 CombinedDarkTheme.colors.warning = '#292929ff';
 CombinedDarkTheme.colors.info = '#292929ff';
 CombinedDarkTheme.colors.lightText = '#cfcfcfff';
@@ -92,20 +92,21 @@ function App() {
   );
 }
 
-const Stack = createStackNavigator();                 //Creating the stack navigator.
+const Stack = createStackNavigator();  //Creating the stack navigator.
 
-function MyStack() {                   //Main app component
+function MyStack() {                    //Main app component
   return (
     <Stack.Navigator
       initialRouteName="MainScreen" // !set this to MainScreen on production! ---------------------------------------------------------------------------------------
-      headerMode="none" >
+      headerMode="none"
+      >
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="MainScreen" component={MainScreen} />
       <Stack.Screen name="EditProfile" component={EditProfile} />
       <Stack.Screen name="Chat" component={Chat} />
-      <Stack.Screen name="Chatting" component={Chatting} />
+      <Stack.Screen options={{gestureEnabled: true, gestureDirection: 'vertical', gestureResponseDistance: 30}} name="Chatting" component={Chatting} />
       <Stack.Screen name="FlashChat" component={FlashChat} />
-      <Stack.Screen name="Story" component={Story} />
+      <Stack.Screen options={{gestureEnabled: true, gestureDirection: 'vertical', gestureResponseDistance: 1000}} name="Story" component={Story} />
       <Stack.Screen name="ViewProfile" component={ViewProfile} />
       <Stack.Screen name="PicEditor" component={PicEditor} />
       <Stack.Screen name="StoryCamera" component={NavStoryCamera} />
@@ -116,9 +117,9 @@ function MyStack() {                   //Main app component
   );
 }
 
-function NavStoryCamera () {
+function NavStoryCamera() {
   const navigator = useNavigation();
-  return <StoryCamera navigator={navigator}/>
+  return <StoryCamera navigator={navigator} />
 }
 
 export default withTheme(App)

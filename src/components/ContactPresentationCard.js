@@ -19,7 +19,7 @@ function ContactPresentationCard(props) {
             />
             <Avatar.Image style={{ position: "relative" }} size={ProfilePictureSize} source={{ uri: 'https://cataas.com/cat' }} />
           </View>
-          <Text style={{ marginTop: 10 }}>LiLPandemio</Text>
+          <Text style={{ marginTop: 10 }}>LiLPandemio <SuperIcon type="MaterialCommunity" name="check-decagram"></SuperIcon></Text>
         </View>
         <View style={{ flexDirection: "column", width: "70%" }}>
           <View style={{ flexDirection: "row", width: "95%", marginHorizontal: 2.5 }}>
@@ -47,9 +47,10 @@ function ContactPresentationCard(props) {
         <View style={{ flexDirection: "row" }}>
           <View style={{ paddingVertical: 10 }}>
             <Text style={{ lineHeight: 40 }}>
-              <Chip icon="star" style={{ flex: -1, margin: 5, backgroundColor: "#111" }} selectedColor="#ff0" onPress={() => Alert.alert('Info', 'Esta medalla indica que este miembro es el propietario de QuickMeet')}>Owner</Chip>{'\u00A0'}
-              <Chip icon={() => { return (<SuperIcon type="AntDesign" size={20} color={"#388700"} name="checkcircle"></SuperIcon>); }} style={{ flex: -1, margin: 5, backgroundColor: theme.colors.background }} selectedColor={theme.colors.text} onPress={() => Alert.alert('Info', 'Esta medalla indica que el perfil es verificado y se trata de una persona real.')}>Verificado</Chip>{'\u00A0'}
-              <Chip icon="star" style={{ flex: -1, margin: 5, backgroundColor: theme.colors.background }} selectedColor={theme.colors.text} onPress={() => Alert.alert('Info', 'Esta medalla indica que el usuario es miembro desde 2021.')}>2021 Team</Chip>{'\u00A0'}
+              <Chip icon="star" style={{ borderWidth: 1, borderColor: theme.colors.error, flex: -1, margin: 5, backgroundColor: "#111" }} selectedColor="#ff0" onPress={() => Alert.alert('Info', 'Esta medalla indica que este miembro es el propietario de QuickMeet')}>Owner</Chip>{'\u00A0'}
+              <Chip icon={() => { return (<SuperIcon type="AntDesign" size={20} color={"#388700"} name="checkcircle"></SuperIcon>); }} style={{ borderWidth: 1, borderColor: theme.colors.error, flex: -1, margin: 5, backgroundColor: theme.colors.background }} selectedColor={theme.colors.text} onPress={() => Alert.alert('Info', 'Esta medalla indica que el perfil es verificado y se trata de una persona real.')}>Verificado</Chip>{'\u00A0'}
+              <Chip icon="star" style={{ borderWidth: 1, borderColor: theme.colors.error, flex: -1, margin: 5, backgroundColor: theme.colors.background }} selectedColor={theme.colors.text} onPress={() => Alert.alert('Info', 'Esta medalla indica que el usuario es miembro desde 2021.')}>2021 Team</Chip>{'\u00A0'}
+              <Chip icon={() => { return (<SuperIcon type="Entypo" size={20} color={"#f56042"} name="code"></SuperIcon>); }} style={{ borderWidth: 1, borderColor: theme.colors.error, flex: -1, margin: 5, backgroundColor: theme.colors.background }} selectedColor={theme.colors.text} onPress={() => Alert.alert('Info', 'Esta medalla indica que el usuario ha participado en el desarrollo de la aplicacion.')}>Desarrollador</Chip>{'\u00A0'}
             </Text>
           </View>
         </View>
