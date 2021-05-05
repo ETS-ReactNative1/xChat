@@ -9,11 +9,15 @@ import Animated from 'react-native-reanimated'
 import * as Animatable from "react-native-animatable";
 import WhatsAppTextInput from '../components/msgInput';
 import { ChatBubble } from '../components/ChatBubble';
+import { useNavigation } from '@react-navigation/native';
+
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 function Chatting(props) {
   const theme = useTheme();
+  const navigation = useNavigation();
+
   //console.log(props.route.params.contactName);
   //console.log(props.route.params.profilePicURL);
   return (
@@ -34,7 +38,7 @@ function Chatting(props) {
       </View>
 
       <View style={{ flexDirection: 'row', height: 50, width: '100%', backgroundColor: theme.colors.primary }}>
-        <TouchableRipple style={{ width: 40, justifyContent: 'center', alignItems: 'center' }} onPress={() => console.log('Prezionao')}>
+        <TouchableRipple style={{ width: 40, justifyContent: 'center', alignItems: 'center' }} onPress={() => navigation.goBack()}>
           <Icon size={20} color={theme.colors.lightText} name="left"></Icon>
         </TouchableRipple>
         <View style={{ width: 50 }}>

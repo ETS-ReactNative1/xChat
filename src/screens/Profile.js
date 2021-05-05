@@ -49,7 +49,7 @@ function Profile(props) {
                         <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5 }}>QuickTexts:</Text>
 
                         <View style={{ paddingLeft: 10 }}>
-                            <TextStories></TextStories>
+                            <TextStories bottomPadding={10}></TextStories>
                         </View>
                         <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5 }}>Estadísticas de usuario:</Text>
                         <View style={{ marginTop: 10, marginBottom: 200 }}>

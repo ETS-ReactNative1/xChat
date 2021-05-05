@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Badge, useTheme, Text, Avatar, TouchableRipple } from 'react-native-paper';
-import { View, TouchableNativeFeedback } from 'react-native';
+import { Badge, useTheme, Text, Avatar } from 'react-native-paper';
+import { View, TouchableNativeFeedback, TouchableWithoutFeedback } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/AntDesign'
 
@@ -11,8 +11,8 @@ function Contact(props) {
   return (
     <View>
       <View style={{ marginLeft: 15, marginTop: 5 }}>
-        <View style={{ paddingVertical: 20, borderBottomLeftRadius: 50, borderTopLeftRadius: 50, flexDirection: 'row', width: '100%', backgroundColor: theme.colors.widgetBG }}>
-          <TouchableRipple onPress={() => { navigation.navigate("Chatting", {contactName: props.contactName, profilePicURL: props.profilePicURL}) }}>
+        <TouchableWithoutFeedback onPress={() => { navigation.navigate("Chatting", { contactName: props.contactName, profilePicURL: props.profilePicURL }) }}>
+          <View style={{ paddingVertical: 20, borderBottomLeftRadius: 50, borderTopLeftRadius: 50, flexDirection: 'row', width: '100%', backgroundColor: theme.colors.widgetBG }}>
             <View style={{ flexDirection: 'column' }}>
               <View>
                 <View style={{ position: 'relative', left: 3, top: 1, flexDirection: 'row' }}>
@@ -37,8 +37,8 @@ function Contact(props) {
                 </View>
               </View>
             </View>
-          </TouchableRipple>
-        </View>
+          </View>
+        </TouchableWithoutFeedback>
       </View>
     </View>
   );

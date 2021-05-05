@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Platform, Animated } from 'react-native'
+import { View, Platform, Animated, ScrollView } from 'react-native'
 import { Appbar, Text } from 'react-native-paper'
 import VisualStories from '../components/VisualStories'
 import TextStories from '../components/TextStories'
@@ -16,20 +16,20 @@ const Stories = () => {
 
     const { open } = state;
 
-    const FABbottom = 380;
+    const FABbottom = 30;
 
     const navigation = useNavigation();
 
     return (
-        <View>
-            <View>
+        <View style={{flex: 1}}> 
+            <View style={{flex: 1}}>
                 <Appbar.Header>
                     <Appbar.Content title="Quicks" subtitle={''} />
                     <Appbar.Action icon="magnify" onPress={() => { }} />
                     <Appbar.Action icon={MORE_ICON} onPress={() => { }} />
                 </Appbar.Header>
 
-                <View style={{ marginTop: 0, marginLeft: "2.5%", paddingBottom: 150, marginBottom: 150 }}>
+                <View style={{ marginTop: 0, marginLeft: "2.5%" }}>
                     <View>
                         <Text style={{ fontSize: 25, marginTop: "4%" }}>QuickPics:</Text>
                     </View>
@@ -39,10 +39,12 @@ const Stories = () => {
                     <View>
                         <Text style={{ fontSize: 25, marginTop: "4%" }}>QuickText:</Text>
                     </View>
-                    <View style={{ marginBottom: 20}}>
+                </View>
+                <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+                    <View style={{ flex: 1 }}>
                         <TextStories></TextStories>
                     </View>
-                </View>
+                </ScrollView>
             </View>
             <FAB
                 big
