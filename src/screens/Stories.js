@@ -31,13 +31,13 @@ const Stories = () => {
 
                 <View style={{ marginTop: 0, marginLeft: "2.5%" }}>
                     <View>
-                        <Text style={{ fontSize: 25, marginTop: "4%" }}>QuickPics:</Text>
+                        <Text style={{ fontSize: 25, marginTop: "4%", marginBottom: 5 }}>QuickPics:</Text>
                     </View>
                     <View>
                         <VisualStories></VisualStories>
                     </View>
                     <View>
-                        <Text style={{ fontSize: 25, marginTop: "4%" }}>QuickText:</Text>
+                        <Text style={{ fontSize: 25, marginTop: "4%", marginBottom: 5 }}>QuickText:</Text>
                     </View>
                 </View>
                 <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
