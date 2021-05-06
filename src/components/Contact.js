@@ -10,7 +10,7 @@ function Contact(props) {
   //onPress={() => { navigation.navigate("Chat", {contactName: props.contactName, profilePicURL: props.profilePicURL}); }}
   return (
     <View>
-      <View style={{ marginLeft: 15, marginTop: 5 }}>
+      <View style={{ marginLeft: 15, marginVertical: 3.5 }}>
         <TouchableWithoutFeedback onPress={() => { navigation.navigate("Chatting", { contactName: props.contactName, profilePicURL: props.profilePicURL }) }}>
           <View style={{ paddingVertical: 20, borderBottomLeftRadius: 50, borderTopLeftRadius: 50, flexDirection: 'row', width: '100%', backgroundColor: theme.colors.widgetBG }}>
             <View style={{ flexDirection: 'column' }}>

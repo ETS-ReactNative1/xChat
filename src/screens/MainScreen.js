@@ -38,11 +38,11 @@ const MyNavigator = () => {
     const theme = useTheme();
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
-        { key: 'Stories', title: 'Stories', icon: () => { return (<SuperIcon type="Entypo" size={20} color={"#cfcfcf"} name="circular-graph" ></SuperIcon>); }, color: '#264653' }, // Custom icon
-        //{ key: 'Stories', title: 'Stories', icon: 'restore', color: '#264653' },
-        { key: 'chats', title: 'Chats', icon: 'chat', color: theme.colors.primary },
-        { key: 'Profile', title: 'Profile', icon: 'account-circle', color: '#706937' },
-        { key: 'Settings', title: 'Settings', icon: 'bolt', color: '#513770' },
+        { key: 'Stories', title: 'Stories', icon: () => { return (<SuperIcon type="Entypo" size={20} color={"#cfcfcf"} name="circular-graph" ></SuperIcon>); }, color: '#34803d' }, // Custom icon
+        //{ key: 'Stories', title: 'Stories', icon: 'restore', color: '#34803d' },
+        { key: 'chats', title: 'Chats', icon: 'chat', color: "#a84848" },
+        { key: 'Profile', title: 'Profile', icon: 'account-circle', color: '#7a48a8' },
+        { key: 'Settings', title: 'Settings', icon: () => { return (<SuperIcon type="Feather" size={20} color={"#cfcfcf"} name="settings" ></SuperIcon>); }, color: '#404040' },
     ]);
 
     const renderScene = BottomNavigation.SceneMap({

@@ -42,7 +42,7 @@ function Profile(props) {
                         </View>
                         <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5 }}>QuickPics:</Text>
 
-                        <View style={{ paddingLeft: 20 }}>
+                        <View>
                             <VisualStories></VisualStories>
                         </View>
 

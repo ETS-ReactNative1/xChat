@@ -2,10 +2,14 @@ import React from 'react'
 import { View, Text, FlatList } from 'react-native'
 import VisualStoryUnit from './VisualStoryUnit'
 
+const Separator = () => {
+    return (<View style={{width: 10}}/>)
+}
+
 const VisualStories = () => {
     return (
         <View>
-            <FlatList style={{}} horizontal showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}
+            <FlatList ListHeaderComponent={Separator} style={{}} horizontal showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}
                 data={[
                     { key: "https://cataas.com/cat/says/10d10", profilePicURL: "https://cataas.com/cat/says/1a05" },
                     { key: "https://cataas.com/cat/says/1as020", profilePicURL: "https://cataas.com/cat/says/10sd06" },

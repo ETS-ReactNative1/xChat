@@ -29,15 +29,15 @@ const Stories = () => {
                     <Appbar.Action icon={MORE_ICON} onPress={() => { }} />
                 </Appbar.Header>
 
-                <View style={{ marginTop: 0, marginLeft: "2.5%" }}>
-                    <View>
+                <View style={{ marginTop: 0 }}>
+                    <View style={{ marginLeft: "2.5%"}}>
                         <Text style={{ fontSize: 25, marginTop: "4%", marginBottom: 5 }}>QuickPics:</Text>
                     </View>
                     <View>
                         <VisualStories></VisualStories>
                     </View>
                     <View>
-                        <Text style={{ fontSize: 25, marginTop: "4%", marginBottom: 5 }}>QuickText:</Text>
+                        <Text style={{ fontSize: 25, marginTop: "4%", marginBottom: 5, marginLeft: "2.5%" }}>QuickText:</Text>
                     </View>
                 </View>
                 <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
