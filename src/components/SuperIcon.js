@@ -1,3 +1,9 @@
+/*
+ * @Author: @LiLPandemio 
+ * @Date: 2021-05-08 18:30:02 
+ * @Last Modified by:   @LiLPandemio 
+ * @Last Modified time: 2021-05-08 18:30:02 
+ */
 import React from 'react';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';

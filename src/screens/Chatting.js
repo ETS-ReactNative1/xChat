@@ -1,3 +1,9 @@
+/*
+ * @Author: @LiLPandemio 
+ * @Date: 2021-05-08 18:31:19 
+ * @Last Modified by:   @LiLPandemio 
+ * @Last Modified time: 2021-05-08 18:31:19 
+ */
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { Text, Avatar, TouchableRipple, useTheme } from 'react-native-paper';

@@ -1,3 +1,9 @@
+/*
+ * @Author: @LiLPandemio 
+ * @Date: 2021-05-08 18:31:01 
+ * @Last Modified by:   @LiLPandemio 
+ * @Last Modified time: 2021-05-08 18:31:01 
+ */
 import React from 'react'
 import { View, Text } from 'react-native'
 import { Button } from 'react-native-paper'

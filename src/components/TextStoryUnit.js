@@ -1,3 +1,9 @@
+/*
+ * @Author: @LiLPandemio 
+ * @Date: 2021-05-08 18:30:21 
+ * @Last Modified by:   @LiLPandemio 
+ * @Last Modified time: 2021-05-08 18:30:21 
+ */
 import React, { useState } from 'react'
 import { View } from 'react-native'
 import { Text, TouchableRipple, Avatar, useTheme, Button } from 'react-native-paper'

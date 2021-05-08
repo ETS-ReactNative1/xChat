@@ -1,3 +1,9 @@
+/*
+ * @Author: @LiLPandemio 
+ * @Date: 2021-05-08 18:30:24 
+ * @Last Modified by:   @LiLPandemio 
+ * @Last Modified time: 2021-05-08 18:30:24 
+ */
 import React from 'react'
 import { View, Text, FlatList } from 'react-native'
 import VisualStoryUnit from './VisualStoryUnit'

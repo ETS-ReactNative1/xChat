@@ -1,3 +1,9 @@
+/*
+ * @Author: @LiLPandemio 
+ * @Date: 2021-05-08 18:31:24 
+ * @Last Modified by:   @LiLPandemio 
+ * @Last Modified time: 2021-05-08 18:31:24 
+ */
 import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 import { Platform, RefreshControl } from 'react-native';

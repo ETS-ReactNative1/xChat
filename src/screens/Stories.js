@@ -1,3 +1,9 @@
+/*
+ * @Author: @LiLPandemio 
+ * @Date: 2021-05-08 18:31:43 
+ * @Last Modified by:   @LiLPandemio 
+ * @Last Modified time: 2021-05-08 18:31:43 
+ */
 import React from 'react'
 import { View, Platform, Animated, ScrollView } from 'react-native'
 import { Appbar, Text } from 'react-native-paper'

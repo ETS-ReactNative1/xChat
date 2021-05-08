@@ -1,3 +1,9 @@
+/*
+ * @Author: @LiLPandemio 
+ * @Date: 2021-05-08 18:31:48 
+ * @Last Modified by:   @LiLPandemio 
+ * @Last Modified time: 2021-05-08 18:31:48 
+ */
 'use strict';
 import React, { PureComponent } from 'react';
 import { AppRegistry, StyleSheet, TouchableOpacity, View } from 'react-native';

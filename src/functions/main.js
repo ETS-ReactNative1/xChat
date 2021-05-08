@@ -1,3 +1,9 @@
+/*
+ * @Author: @LiLPandemio 
+ * @Date: 2021-05-08 18:30:34 
+ * @Last Modified by:   @LiLPandemio 
+ * @Last Modified time: 2021-05-08 18:30:34 
+ */
 export function getTextStoriesJSON() {
     const JSONTEXTSTORIES = [
         { key: 1, profilePicURL: 'https://cataas.com/cat/says/1', time: '19:51', txt: 'Tengo que comprar 1 barra de pan, que perezaaaaa' },

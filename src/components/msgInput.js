@@ -1,9 +1,9 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+/*
+ * @Author: @LiLPandemio 
+ * @Date: 2021-05-08 18:29:46 
+ * @Last Modified by:   @LiLPandemio 
+ * @Last Modified time: 2021-05-08 18:29:46 
  */
-
 import React, { Component } from 'react';
 import { View, TextInput, Image, Animated, Keyboard, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 import DeviceInfo from "react-native-device-info";

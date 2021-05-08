@@ -1,3 +1,9 @@
+/*
+ * @Author: @LiLPandemio 
+ * @Date: 2021-05-08 18:29:17 
+ * @Last Modified by:   @LiLPandemio 
+ * @Last Modified time: 2021-05-08 18:29:17 
+ */
 import React, { useState } from "react";
 import { Badge, useTheme, Text, Avatar } from 'react-native-paper';
 import { View, TouchableNativeFeedback, TouchableWithoutFeedback } from 'react-native';
