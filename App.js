@@ -1,4 +1,12 @@
-//Author: @LiLPandemio
+// +------------------------------------------------------------------------+
+// | @author Marc Moreno (LiLPandemio)
+// | @author_url 1: https://www.societyplus.net/
+// | @author_url 2: http://dl.societyplus.net/LiLPandemio
+// | @author_email: admin@societyplus.net 
+// +------------------------------------------------------------------------+
+// | xChat - Meet people anonymously!
+// | Copyright (c) 2021 xChat. All rights reserved.
+// +------------------------------------------------------------------------+
 import React from 'react';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 
@@ -9,7 +17,6 @@ import {
   DefaultTheme as NavigationDefaultTheme,
 } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
-
 //Stacked screens import:
 import Chat from './src/screens/Chat';                //Importing screen: Chat
 import Chatting from './src/screens/Chatting';                //Importing screen: Chatting (OLD)
