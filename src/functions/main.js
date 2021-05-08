@@ -1,8 +1,8 @@
 /*
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:30:34 
- * @Last Modified by:   @LiLPandemio 
- * @Last Modified time: 2021-05-08 18:30:34 
+ * @Last Modified by: @LiLPandemio
+ * @Last Modified time: 2021-05-08 19:23:04
  */
 export function getTextStoriesJSON() {
     const JSONTEXTSTORIES = [
@@ -26,6 +26,14 @@ export function getLastMessagesJSON() {
         { key: 'Dominic', lastMSG: 'Le recogo a las 7 sr?', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/6' },
         { key: 'CR7', lastMSG: 'El proximo gol te lo dedico', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/7' },
         { key: 'Messi', lastMSG: 'Te presto a mi esposa', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/8' },
+        { key: 'Sr. LiLPandemio🚀', lastMSG: 'La beta pa cuando?', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/1' },
+        { key: 'Sr. Will Smith', lastMSG: 'Voy a rodar una peli, n...', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/2' },
+        { key: 'Sr. Papa', lastMSG: 'El hamster esta hibernando', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/3' },
+        { key: 'Sr. Jesucristo', lastMSG: 'Hola papá', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/4' },
+        { key: 'Sr. Mia Khalifa', lastMSG: 'Te echo de menos 7w7', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/5' },
+        { key: 'Sr. Dominic', lastMSG: 'Le recogo a las 7 sr?', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/6' },
+        { key: 'Sr. CR7', lastMSG: 'El proximo gol te lo dedico', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/7' },
+        { key: 'Sr. Messi', lastMSG: 'Te presto a mi esposa', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/8' },
     ]
     return LastMessages;
 }

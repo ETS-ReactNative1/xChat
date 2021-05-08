@@ -1,9 +1,3 @@
-/*
- * @Author: @LiLPandemio 
- * @Date: 2021-05-08 18:30:09 
- * @Last Modified by:   @LiLPandemio 
- * @Last Modified time: 2021-05-08 18:30:09 
- */
 import React from 'react'
 import { View, FlatList, Dimensions } from 'react-native'
 import TextStoryUnit from './TextStoryUnit'
