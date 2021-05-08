@@ -2,7 +2,7 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:31:43 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-08 19:25:34
+ * @Last Modified time: 2021-05-08 19:37:31
  */
 import React from 'react'
 import { View, Platform, Animated, ScrollView, RefreshControl } from 'react-native'
@@ -50,9 +50,7 @@ const Stories = () => {
                     <View style={{ marginLeft: "2.5%" }}>
                         <Text style={{ fontSize: 25, marginTop: "4%", marginBottom: 5 }}>QuickPics:</Text>
                     </View>
-                    <View>
-                        <VisualStories></VisualStories>
-                    </View>
+                    <VisualStories></VisualStories>
                     <View>
                         <Text style={{ fontSize: 25, marginTop: "4%", marginBottom: 5, marginLeft: "2.5%" }}>QuickText:</Text>
                     </View>

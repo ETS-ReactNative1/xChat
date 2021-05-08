@@ -1,8 +1,8 @@
 /*
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:30:27 
- * @Last Modified by:   @LiLPandemio 
- * @Last Modified time: 2021-05-08 18:30:27 
+ * @Last Modified by: @LiLPandemio
+ * @Last Modified time: 2021-05-08 19:43:14
  */
 import React from 'react'
 import { View, ImageBackground } from 'react-native'
@@ -18,7 +18,7 @@ const VisualStoryUnit = (props) => {
     } else {
         return (
             <View style={{ borderRadius: 10 }}>
-                <TouchableRipple style={{ marginRight: 5, borderRadius: 10, backgroundColor: theme.colors.widgetBG, width: 108, height: 192 }} onPress={() => navigation.navigate("Story", {storyImageContent: props.StoryPreview})}>
+                <TouchableRipple style={{ marginHorizontal: 4, borderRadius: 10, backgroundColor: theme.colors.widgetBG, width: 108, height: 192 }} onPress={() => navigation.navigate("Story", {storyImageContent: props.StoryPreview})}>
                     <ImageBackground imageStyle={{ borderRadius: 10 }} source={{ uri: props.StoryPreview }} style={{ borderRadius: 10, flex: 1, resizeMode: "cover", justifyContent: "center" }}>
                         <View style={{ width: 108, height: 192, borderRadius: 10, backgroundColor: "#8888" }}>
                             <Avatar.Image style={{ marginLeft: 30, marginTop: 120 }} size={48} source={{ uri: props.ProfilePicture }} />

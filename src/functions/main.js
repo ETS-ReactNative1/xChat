@@ -2,7 +2,7 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:30:34 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-08 19:23:04
+ * @Last Modified time: 2021-05-08 19:29:41
  */
 export function getTextStoriesJSON() {
     const JSONTEXTSTORIES = [
@@ -14,6 +14,20 @@ export function getTextStoriesJSON() {
         { key: 6, profilePicURL: 'https://cataas.com/cat/says/6', time: '19:56', txt: 'Tengo que comprar 6 barras de pan, que perezaaaaa' },
     ]
     return JSONTEXTSTORIES;
+}
+
+export function getVisualStoriesJSON() {
+    const JSONVISUALSTORIES = [
+        { key: "https://cataas.com/cat/says/10d10", profilePicURL: "https://cataas.com/cat/says/1a05" },
+        { key: "https://cataas.com/cat/says/1as020", profilePicURL: "https://cataas.com/cat/says/10sd06" },
+        { key: "https://cataas.com/cat/says/1d030", profilePicURL: "https://cataas.com/cat/says/10as07" },
+        { key: "https://cataas.com/cat/says/1d0as40", profilePicURL: "https://cataas.com/cat/says/10da08" },
+        { key: "https://cataas.com/cat/says/1asd0100", profilePicURL: "https://cataas.com/cat/says/1sd0055" },
+        { key: "https://cataas.com/cat/says/1as0200", profilePicURL: "https://cataas.com/cat/says/10as065" },
+        { key: "https://cataas.com/cat/says/10da300", profilePicURL: "https://cataas.com/cat/says/10ds075" },
+        { key: "https://cataas.com/cat/says/1ds0400", profilePicURL: "https://cataas.com/cat/says/10ad085" },
+    ]
+    return JSONVISUALSTORIES;
 }
 
 export function getLastMessagesJSON() {
