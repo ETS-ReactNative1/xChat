@@ -11,7 +11,7 @@ const TextStories = (props) => {
     return (
         <View>
             {TextStoryListJSON.map((TextStory, index) => (
-                <TextStoryUnit key={TextStory.key} profilePicURL={TextStory.profilePicURL} time={TextStory.time} txt={TextStory.txt}/>
+                <TextStoryUnit key={TextStory.key} profilePicURL={TextStory.profilePicURL} time={TextStory.time} txt={TextStory.txt} />
             ))}
         </View>
     )

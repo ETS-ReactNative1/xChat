@@ -1,8 +1,8 @@
 /*
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:31:37 
- * @Last Modified by:   @LiLPandemio 
- * @Last Modified time: 2021-05-08 18:31:37 
+ * @Last Modified by: @LiLPandemio
+ * @Last Modified time: 2021-05-09 00:49:35
  */
 import React from 'react';
 import { Avatar, Text, useTheme, TouchableRipple } from 'react-native-paper';
@@ -20,7 +20,7 @@ function Profile(props) {
     const navigation = useNavigation();
     return (
         <View>
-            <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: 50, width: '100%', backgroundColor: theme.colors.primary }}>
+            <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: 50, width: '100%', backgroundColor: "#7a48a8" }}>
                 <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'center', color: theme.colors.lightText }}>@Admin</Text>
             </View>
             <ScrollView>
