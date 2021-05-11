@@ -2,7 +2,7 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:30:24 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-08 19:42:34
+ * @Last Modified time: 2021-05-09 00:26:49
  */
 import React from 'react'
 import { View, Text, ScrollView, RefreshControl } from 'react-native'
@@ -29,7 +29,7 @@ const VisualStories = () => {
         <View>
             <ScrollView horizontal={true} hide showsHorizontalScrollIndicator={false} StickyHeaderComponent={Separator}>
                 {VisualStoriesJSON.map((VisualStory, index) => (
-                    <VisualStoryUnit ProfilePicture={VisualStory.profilePicURL} StoryPreview={VisualStory.key} />
+                    <VisualStoryUnit key={VisualStory.key} ProfilePicture={VisualStory.profilePicURL} StoryPreview={VisualStory.StoryContent} />
                 ))}
             </ScrollView>
         </View>

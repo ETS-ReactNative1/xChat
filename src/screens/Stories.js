@@ -2,7 +2,7 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:31:43 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-08 19:37:31
+ * @Last Modified time: 2021-05-12 00:38:57
  */
 import React from 'react'
 import { View, Platform, Animated, ScrollView, RefreshControl } from 'react-native'
@@ -48,11 +48,17 @@ const Stories = () => {
 
                 <View style={{ marginTop: 0 }}>
                     <View style={{ marginLeft: "2.5%" }}>
-                        <Text style={{ fontSize: 25, marginTop: "4%", marginBottom: 5 }}>QuickPics:</Text>
+                        <View style={{ flexDirection: 'row-reverse', alignItems: 'center' }}>
+                            <Text style={{ fontSize: 14, color: "#7a48a8", marginRight: 10 }} onPress={() => { console.log("LMAO") }}>Refresh</Text>
+                            <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5, flexGrow: 1 }}>QuickPics:</Text>
+                        </View>
                     </View>
                     <VisualStories></VisualStories>
                     <View>
-                        <Text style={{ fontSize: 25, marginTop: "4%", marginBottom: 5, marginLeft: "2.5%" }}>QuickText:</Text>
+                        <View style={{ flexDirection: 'row-reverse', alignItems: 'center' }}>
+                            <Text style={{ fontSize: 14, color: "#7a48a8", top: 8, marginRight: 10 }} onPress={() => { console.log("LMAO") }}>Refresh</Text>
+                            <Text style={{ fontSize: 25, marginTop: "4%", marginLeft: 10, marginBottom: 5, flexGrow: 1 }}>QuickText:</Text>
+                        </View>
                     </View>
                 </View>
                 <ScrollView contentContainerStyle={{ flexGrow: 1 }}

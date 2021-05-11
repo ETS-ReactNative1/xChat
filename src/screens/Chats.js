@@ -2,7 +2,7 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:31:24 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-08 19:24:44
+ * @Last Modified time: 2021-05-09 00:26:09
  */
 import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
@@ -41,7 +41,7 @@ const Chats = () => {
                     />
                 }>
                 {LastMessagesJSON.map((LastMessages, index) => (
-                    <Contact profilePicURL={LastMessages.profilePicURL} contactName={LastMessages.key} time={LastMessages.time} lastMSG={LastMessages.lastMSG} />
+                    <Contact key={LastMessages.key} profilePicURL={LastMessages.profilePicURL} contactName={LastMessages.userName} time={LastMessages.time} lastMSG={LastMessages.lastMSG} />
                 ))}
             </ScrollView>
         </View>

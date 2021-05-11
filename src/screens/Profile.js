@@ -2,7 +2,7 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:31:37 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-09 00:49:35
+ * @Last Modified time: 2021-05-12 00:47:50
  */
 import React from 'react';
 import { Avatar, Text, useTheme, TouchableRipple } from 'react-native-paper';
@@ -46,13 +46,21 @@ function Profile(props) {
                                 <Text style={{ fontWeight: "bold" }}>El / Los</Text>
                             </View>
                         </View>
-                        <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5 }}>QuickPics:</Text>
+                        <View style={{ flexDirection: 'row-reverse', alignItems: 'center' }}>
+                            <Text style={{ fontSize: 14, color: "#7a48a8", marginRight: 10 }} onPress={() => { console.log("LMAO") }}>Refresh</Text>
+                            <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5, flexGrow: 1 }}>My QuickPics:</Text>
+                        </View>
 
                         <View>
                             <VisualStories></VisualStories>
                         </View>
 
-                        <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5 }}>QuickTexts:</Text>
+                        <View>
+                            <View style={{ flexDirection: 'row-reverse', alignItems: 'center' }}>
+                                <Text style={{ fontSize: 14, position: 'relative', top: 8, color: "#7a48a8", marginRight: 12.5 }} onPress={() => { console.log("LMAO") }}>Refrescar</Text>
+                                <Text style={{ fontSize: 25, marginTop: "4%", marginLeft: 10, marginBottom: 5, flexGrow: 1 }}>My QuickTexts:</Text>
+                            </View>
+                        </View>
 
                         <View style={{ paddingLeft: 10 }}>
                             <TextStories bottomPadding={10}></TextStories>
@@ -94,7 +102,7 @@ function Profile(props) {
                     bottom: 60,
                 }}
                 icon="pencil"
-                onPress={() => navigation.navigate("EditProfile") }
+                onPress={() => navigation.navigate("EditProfile")}
             />
         </View>
     );
