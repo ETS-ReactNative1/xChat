@@ -1,8 +1,8 @@
 /*
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:31:12 
- * @Last Modified by:   @LiLPandemio 
- * @Last Modified time: 2021-05-08 18:31:12 
+ * @Last Modified by: @LiLPandemio
+ * @Last Modified time: 2021-05-12 00:54:31
  */
 import * as React from 'react';
 import { View, useWindowDimensions } from 'react-native';
@@ -10,7 +10,7 @@ import { TabView, SceneMap } from 'react-native-tab-view';
 import EditPublicProfile from './EditPublicProfile'
 import EditPrivateProfile from './EditPrivateProfile'
 import {useTheme, FAB, Text} from 'react-native-paper'
-
+import SuperIcon from '../components/SuperIcon'
 const EditProfile = () => {
     const layout = useWindowDimensions();
 
@@ -45,8 +45,8 @@ const EditProfile = () => {
                     right: 20,
                     bottom: 20,
                 }}
-                icon="pencil"
-                onPress={() => { }}
+                icon={() => { return (<SuperIcon size={20} type="Ionicons" color="#048d81" name="save"/>); }}
+                onPress={() => { console.log("Saving data") }}
             />
         </View>
     )
