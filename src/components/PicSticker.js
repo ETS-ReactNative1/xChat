@@ -2,7 +2,7 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:29:56 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-13 15:44:18
+ * @Last Modified time: 2021-05-13 16:10:14
  */
 import React, { Component } from 'react';
 import {
@@ -50,7 +50,10 @@ export class PicSticker extends Component {
                             maximumValue={300}
                             minimumValue={10}
                             onValueChange={(value) => this.setState({ value })}
-                            onSlidingComplete={() => { console.log(this.state.value) }} //TODO
+                            onSlidingComplete={() => { 
+                                console.log("TOGGLE OPACITY!")
+                                this.setState({ showingController: toggleOpacity() })
+                             }}
                         />
                     </View>
                 </View>
