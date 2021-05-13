@@ -1,8 +1,8 @@
 /*
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:32:08 
- * @Last Modified by:   @LiLPandemio 
- * @Last Modified time: 2021-05-08 18:32:08 
+ * @Last Modified by: @LiLPandemio
+ * @Last Modified time: 2021-05-13 14:01:11
  */
 import React, { Component } from 'react';
 import { View, Image, ImageBackground, FlatList, Alert, Dimensions, TouchableWithoutFeedback } from 'react-native'
@@ -10,6 +10,7 @@ import { Avatar, Text, TouchableRipple } from 'react-native-paper';
 import { StickerPicker } from 'react-native-stickers';
 import PicSticker from '../components/PicSticker';
 import SuperIcon from '../components/SuperIcon'
+import Draggable from 'react-native-draggable';
 
 
 
@@ -26,7 +27,7 @@ export default class VisualStoryEditor extends Component {
         this.state = { stickers };
     }
     render() {
-        const imgURI = this.props.route.params.cameraOutput.uri;
+        const imgURI = this.props.route.params.cameraOutput.uri; //Debug purposes
         //console.log(imgURI)
         return (
             <View style={{ flex: 1 }}>
@@ -63,7 +64,8 @@ export default class VisualStoryEditor extends Component {
                                     uri: "https://cataas.com/cat/says/" + last + 1,
                                     x: Dimensions.get('window').width / 2 - 75,
                                     y: Dimensions.get('window').height / 2 - 75,
-                                    size: 150
+                                    size: 150,
+                                    sizeController: false,
                                 }]
                             }))
                         }} >
@@ -73,27 +75,35 @@ export default class VisualStoryEditor extends Component {
                     <View style={{ height: "100%", width: "100%", position: 'absolute' }}>
 
                         {this.state.stickers.map((sticker, index) => (
-                            <PicSticker onPress={() => {
-                                //Toggle size slide control
-                                console.log("Controlador de tamaño (Soon...)")
-                            }} onLongPress={() => {
-                                //Eliminar el sticker
-                                console.log("Deleting sticker: " + sticker.id)
-                                //Current sticker array
-                                var array = this.state.stickers
-                                //The new array
-                                var newArray = []
-                                for (let i = 0; i < array.length; i++) {
-                                    if (array[i].id !== sticker.id) {
-                                        newArray.push(array[i])         //No es el que busco
-                                    } else {
-                                        //Simplemente no lo copio
+                            <Draggable
+                                renderSize={sticker.size}
+                                onDragRelease={(bounds) => {
+                                    //console.log(bounds)
+                                }}
+                                x={sticker.x}
+                                y={sticker.y}
+                                onLongPress={() => {
+                                    //Eliminar el sticker
+                                    console.log("Deleting stasdicker: " + sticker.id)
+                                    //Current sticker array
+                                    var array = this.state.stickers
+                                    //The new array
+                                    var newArray = []
+                                    for (let i = 0; i < array.length; i++) {
+                                        if (array[i].id !== sticker.id) {
+                                            newArray.push(array[i])         //No es el que busco
+                                        } else {
+                                            //Simplemente no lo copio
+                                        }
                                     }
-                                }
-                                this.setState({
-                                    stickers: newArray
-                                })
-                            }} />
+                                    this.setState({
+                                        stickers: newArray
+                                    })
+                                }}
+                                onShortPressRelease={() => {}}
+                            >
+                                <PicSticker daddystate={this.state} stickerid={sticker.id} setState={p=>{this.setState(p)}} size={sticker.size} sizeController={true} imgURI={sticker.uri} />
+                            </Draggable>
                         ))}
                     </View>
                 </ImageBackground>
