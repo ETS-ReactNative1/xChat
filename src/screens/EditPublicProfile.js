@@ -2,7 +2,7 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:31:10 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-14 16:26:16
+ * @Last Modified time: 2021-05-14 16:39:22
  */
 import React from 'react'
 import { View, Text, Image } from 'react-native'
@@ -14,7 +14,7 @@ const EditPublicProfile = () => {
 
     return (
         <View style={{ flex: 1, marginHorizontal: 20, marginTop: 10 }}>
-            <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+            <View style={{ alignItems: 'center', justifyContent: 'center', marginTop: 15 }}>
                 <TouchableRipple borderless style={{ borderRadius: 100 }} onPress={() => { console.log("ShowPic") }}>
                     <View>
                         <Avatar.Image size={150} source={{ uri: 'https://cataas.com/cat' }} />
