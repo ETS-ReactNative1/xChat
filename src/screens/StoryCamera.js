@@ -1,11 +1,12 @@
 /*
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:31:48 
- * @Last Modified by:   @LiLPandemio 
- * @Last Modified time: 2021-05-08 18:31:48 
+ * @Last Modified by: @LiLPandemio
+ * @Last Modified time: 2021-05-14 17:55:24
  */
 'use strict';
 import React, { PureComponent } from 'react';
+import { TouchableWithoutFeedback } from 'react-native';
 import { AppRegistry, StyleSheet, TouchableOpacity, View } from 'react-native';
 import { RNCamera } from 'react-native-camera';
 import { Text, useTheme, TouchableRipple } from 'react-native-paper'
@@ -23,23 +24,40 @@ const PendingView = () => (
     </View>
 );
 
-
 export default class StoryCamera extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
             cameraType: 'back',
-            mirrorMode: true
+            mirrorMode: true,
+            flashMode: RNCamera.Constants.FlashMode.on,
+            flashModeColor: "#ff0" //#f00 para amarillo
         };
     }
     render() {
         return (
             <View style={styles.container}>
+                <View style={styles.commanderPannelTop}>
+                    <TouchableRipple onPress={() => {
+                        console.log("PRESSED")
+                        if (this.state.flashMode === RNCamera.Constants.FlashMode.on) {
+                            console.log("Disabled flash")
+                            this.setState({ flashMode: RNCamera.Constants.FlashMode.off })
+                            this.setState({ flashModeColor: "#666" })
+                        } else {
+                            console.log("Enabled flash")
+                            this.setState({ flashMode: RNCamera.Constants.FlashMode.on })
+                            this.setState({ flashModeColor: "#ff0" })
+                        }
+                    }}>
+                        <SuperIcon type="MaterialCommunity" color={this.state.flashModeColor} name="lightning-bolt" size={24}></SuperIcon>
+                    </TouchableRipple>
+                </View >
                 <RNCamera
                     style={styles.preview}
                     type={this.state.cameraType}
                     mirrorImage={this.state.mirrorMode}
-                    flashMode={RNCamera.Constants.FlashMode.on}
+                    flashMode={this.state.flashMode}
                     androidCameraPermissionOptions={{
                         title: 'Permission to use camera',
                         message: 'We need your permission to use your camera',
@@ -128,6 +146,15 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 15,
         borderTopLeftRadius: 15,
         flexDirection: "row",
+    },
+    commanderPannelTop: {
+        width: "100%",
+        zIndex: 3,
+        backgroundColor: "#333",
+        height: 45,
+        flexDirection: "row",
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     threeZones: {
         width: "30%", //30 * 3 = 90 (Quedan 10 para margen horizontal)

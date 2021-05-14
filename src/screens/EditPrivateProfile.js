@@ -2,7 +2,7 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:31:18 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-14 16:46:26
+ * @Last Modified time: 2021-05-14 17:31:21
  */
 import React from 'react'
 import { View, Text, Keyboard } from 'react-native'
