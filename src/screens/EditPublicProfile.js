@@ -2,10 +2,10 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:31:10 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-14 16:39:22
+ * @Last Modified time: 2021-05-14 16:46:21
  */
 import React from 'react'
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, Keyboard } from 'react-native'
 import { TextInput, withTheme, useTheme, Avatar, TouchableRipple, FAB } from 'react-native-paper';
 import SuperIcon from '../components/SuperIcon';
 //<SuperIcon type="ionicons" name="image" color="#fff" size={20}></SuperIcon>
