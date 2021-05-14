@@ -2,15 +2,14 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:31:12 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-14 16:25:30
+ * @Last Modified time: 2021-05-14 20:25:09
  */
 import * as React from 'react';
-import { View, useWindowDimensions, Keyboard } from 'react-native';
+import { View, useWindowDimensions } from 'react-native';
 import { TabView, SceneMap } from 'react-native-tab-view';
 import EditPublicProfile from './EditPublicProfile'
 import EditPrivateProfile from './EditPrivateProfile'
-import {useTheme, FAB, Text} from 'react-native-paper'
-import SuperIcon from '../components/SuperIcon'
+import { useTheme } from 'react-native-paper'
 const EditProfile = () => {
     const layout = useWindowDimensions();
 

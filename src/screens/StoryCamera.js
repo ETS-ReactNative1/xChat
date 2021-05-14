@@ -2,14 +2,13 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:31:48 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-14 17:58:18
+ * @Last Modified time: 2021-05-14 20:23:49
  */
 'use strict';
 import React, { PureComponent } from 'react';
-import { TouchableWithoutFeedback } from 'react-native';
-import { AppRegistry, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { RNCamera } from 'react-native-camera';
-import { Text, useTheme, TouchableRipple } from 'react-native-paper'
+import { Text, TouchableRipple } from 'react-native-paper'
 import SuperIcon from '../components/SuperIcon'
 
 const PendingView = () => (
@@ -31,14 +30,14 @@ export default class StoryCamera extends PureComponent {
             cameraType: 'back',
             mirrorMode: true,
             flashMode: RNCamera.Constants.FlashMode.off,
-            flashModeColor: "#ff0" //#f00 para amarillo
+            flashModeColor: "#666" //#f00 para amarillo
         };
     }
     render() {
         return (
             <View style={styles.container}>
                 <View style={styles.commanderPannelTop}>
-                    <TouchableRipple onPress={() => {
+                    <TouchableRipple style={{height: 45, width: 45, justifyContent: 'center', alignItems: 'center', borderRadius: 100}} borderless onPress={() => {
                         console.log("PRESSED")
                         if (this.state.flashMode === RNCamera.Constants.FlashMode.on) {
                             console.log("Disabled flash")
@@ -50,7 +49,7 @@ export default class StoryCamera extends PureComponent {
                             this.setState({ flashModeColor: "#ff0" })
                         }
                     }}>
-                        <SuperIcon type="MaterialCommunity" color={this.state.flashModeColor} name="lightning-bolt" size={24}></SuperIcon>
+                        <SuperIcon type="MaterialCommunity" color={this.state.flashModeColor} name="lightning-bolt" size={24}/>
                     </TouchableRipple>
                 </View >
                 <RNCamera
