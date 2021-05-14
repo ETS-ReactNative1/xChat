@@ -20,6 +20,8 @@ target 'xChat' do
 
   pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
 
+  pod 'RNSnackbar', :path => '../node_modules/react-native-snackbar'
+
   target 'xChatTests' do
     inherit! :complete
     # Pods for testing

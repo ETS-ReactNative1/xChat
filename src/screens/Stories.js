@@ -2,7 +2,7 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:31:43 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-12 00:38:57
+ * @Last Modified time: 2021-05-13 16:32:33
  */
 import React from 'react'
 import { View, Platform, Animated, ScrollView, RefreshControl } from 'react-native'
@@ -11,6 +11,7 @@ import VisualStories from '../components/VisualStories'
 import TextStories from '../components/TextStories'
 import { FAB, Portal } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
+import Snackbar from 'react-native-snackbar';
 
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
@@ -20,6 +21,13 @@ const wait = (timeout) => {
 
 //<VisualStoryUnit StoryPreview="https://cataas.com/cat/says/1000" ProfilePicture="https://cataas.com/cat/says/1001"></VisualStoryUnit>
 const Stories = () => {
+
+    const [visible, setVisible] = React.useState(false);
+
+    const onToggleSnackBar = () => setVisible(!visible);
+
+    const onDismissSnackBar = () => setVisible(false);
+
     const [state, setState] = React.useState({ open: false });
 
     const onStateChange = ({ open }) => setState({ open });
@@ -84,7 +92,12 @@ const Stories = () => {
                     zIndex: 3
                 }}
                 icon="text"
-                onPress={() => { }}
+                onPress={() => {
+                    Snackbar.show({
+                        text: 'Subiendo...',
+                        duration: Snackbar.LENGTH_SHORT,
+                    });
+                }}
             />
             <FAB
                 big
