@@ -2,7 +2,7 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:31:48 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-14 17:55:24
+ * @Last Modified time: 2021-05-14 17:58:18
  */
 'use strict';
 import React, { PureComponent } from 'react';
@@ -30,7 +30,7 @@ export default class StoryCamera extends PureComponent {
         this.state = {
             cameraType: 'back',
             mirrorMode: true,
-            flashMode: RNCamera.Constants.FlashMode.on,
+            flashMode: RNCamera.Constants.FlashMode.off,
             flashModeColor: "#ff0" //#f00 para amarillo
         };
     }
