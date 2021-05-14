@@ -2,7 +2,7 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:32:08 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-14 23:44:45
+ * @Last Modified time: 2021-05-15 01:01:12
  */
 import React, { Component } from 'react';
 import { View, Image, ImageBackground, FlatList, Alert, Dimensions, TouchableWithoutFeedback } from 'react-native'
@@ -58,9 +58,9 @@ export default class VisualStoryEditor extends Component {
         ]
         //console.log(imgURI)
         return (
-            <View style={{ flex: 1 }}>
-                <ImageBackground source={{ uri: imgURI }} style={{ flex: 1, width: "100%", height: "100%", zIndex: 5, resizeMode: "cover", justifyContent: "center" }}>
-                    <Provider>
+            <Provider>
+                <View style={{ flex: 1 }}>
+                    <ImageBackground source={{ uri: imgURI }} style={{ flex: 1, width: "100%", height: "100%", zIndex: 5, resizeMode: "cover", justifyContent: "center" }}>
                         <Portal>
                             <Modal visible={this.state.visibleStickerPicker} onDismiss={() => { this.setState({ visibleStickerPicker: false }) }}
                                 contentContainerStyle={{ backgroundColor: '#888', padding: 20, width: "80%", marginLeft: "10%", borderRadius: 10, height: "60%" }}>
@@ -89,71 +89,71 @@ export default class VisualStoryEditor extends Component {
                                 </ScrollView>
                             </Modal>
                         </Portal>
-                    </Provider>
-                    <View style={{ flexDirection: "row", position: "absolute", top: 20, right: 210, borderRadius: 20, backgroundColor: "#0008", padding: 5, paddingHorizontal: 10 }}>
-                        <TouchableRipple style={{}} onPress={() => {
-                            this.props.navigation.navigate('MainScreen')
-                            //console.log(this.props.navigation.navigate)
-                        }} >
-                            <SuperIcon type="MaterialCommunity" name="progress-upload" color="white" size={40}></SuperIcon>
-                        </TouchableRipple>
-                    </View>
-                    <View style={{ flexDirection: "row", position: "absolute", top: 20, right: 280, borderRadius: 20, backgroundColor: "#0008", padding: 5, paddingHorizontal: 10 }}>
-                        <TouchableRipple style={{}} onPress={() => {
-                            alert("Añade stickers con los controles de la derecha.\nEdita los stickers tocando sobre ellos.\nManten pulsado un sticker para eliminarlo")
+                        <View style={{ flexDirection: "row", position: "absolute", top: 20, right: 210, borderRadius: 20, backgroundColor: "#0008", padding: 5, paddingHorizontal: 10 }}>
+                            <TouchableRipple style={{}} onPress={() => {
+                                this.props.navigation.navigate('MainScreen')
+                                //console.log(this.props.navigation.navigate)
+                            }} >
+                                <SuperIcon type="MaterialCommunity" name="progress-upload" color="white" size={40}></SuperIcon>
+                            </TouchableRipple>
+                        </View>
+                        <View style={{ flexDirection: "row", position: "absolute", top: 20, right: 280, borderRadius: 20, backgroundColor: "#0008", padding: 5, paddingHorizontal: 10 }}>
+                            <TouchableRipple style={{}} onPress={() => {
+                                alert("Añade stickers con los controles de la derecha.\nEdita los stickers tocando sobre ellos.\nManten pulsado un sticker para eliminarlo")
 
-                        }} >
-                            <SuperIcon type="AntDesign" name="infocirlceo" color="white" size={40}></SuperIcon>
-                        </TouchableRipple>
-                    </View>
-                    <View style={{ flexDirection: "row", position: "absolute", top: 20, right: 20, borderRadius: 20, backgroundColor: "#0008", padding: 5, paddingHorizontal: 15 }}>
-                        <TouchableRipple style={{ paddingHorizontal: 2.5, marginHorizontal: 2.5 }} onPress={() => { console.log("DOWNLOAD PRESSED") }} >
-                            <SuperIcon type="MaterialCommunity" name="download-circle-outline" color="white" size={40}></SuperIcon>
-                        </TouchableRipple>
-                        <TouchableRipple style={{ paddingHorizontal: 2.5, marginHorizontal: 2.5 }} onPress={() => { console.log("TEXT STICKER PRESSED") }} >
-                            <SuperIcon type="Material" name="text-fields" color="white" size={40}></SuperIcon>
-                        </TouchableRipple>
-                        {/* this.state.stickers.push({ id: 112, uri: "https://cataas.com/cat/says/" + 112}); */}
-                        <TouchableRipple style={{ paddingHorizontal: 2.5, marginHorizontal: 2.5 }} onPress={() => { this.setState({ visibleStickerPicker: true }); this.setState() }}>
-                            <SuperIcon type="MaterialCommunity" name="sticker-plus-outline" color="white" size={40}></SuperIcon>
-                        </TouchableRipple>
-                    </View>
-                    <View style={{ height: "100%", width: "100%", position: 'absolute' }}>
+                            }} >
+                                <SuperIcon type="AntDesign" name="infocirlceo" color="white" size={40}></SuperIcon>
+                            </TouchableRipple>
+                        </View>
+                        <View style={{ flexDirection: "row", position: "absolute", top: 20, right: 20, borderRadius: 20, backgroundColor: "#0008", padding: 5, paddingHorizontal: 15 }}>
+                            <TouchableRipple style={{ paddingHorizontal: 2.5, marginHorizontal: 2.5 }} onPress={() => { console.log("DOWNLOAD PRESSED") }} >
+                                <SuperIcon type="MaterialCommunity" name="download-circle-outline" color="white" size={40}></SuperIcon>
+                            </TouchableRipple>
+                            <TouchableRipple style={{ paddingHorizontal: 2.5, marginHorizontal: 2.5 }} onPress={() => { console.log("TEXT STICKER PRESSED") }} >
+                                <SuperIcon type="Material" name="text-fields" color="white" size={40}></SuperIcon>
+                            </TouchableRipple>
+                            {/* this.state.stickers.push({ id: 112, uri: "https://cataas.com/cat/says/" + 112}); */}
+                            <TouchableRipple style={{ paddingHorizontal: 2.5, marginHorizontal: 2.5 }} onPress={() => { this.setState({ visibleStickerPicker: true }); this.setState() }}>
+                                <SuperIcon type="MaterialCommunity" name="sticker-plus-outline" color="white" size={40}></SuperIcon>
+                            </TouchableRipple>
+                        </View>
+                        <View style={{ height: "100%", width: "100%", position: 'absolute' }}>
 
-                        {this.state.stickers.map((sticker, index) => (
-                            <Draggable
-                                renderSize={sticker.size}
-                                onDragRelease={(bounds) => {
-                                    //console.log(bounds)
-                                }}
-                                x={sticker.x}
-                                y={sticker.y}
-                                onLongPress={() => {
-                                    //Eliminar el sticker
-                                    console.log("Deleting stasdicker: " + sticker.id)
-                                    //Current sticker array
-                                    var array = this.state.stickers
-                                    //The new array
-                                    var newArray = []
-                                    for (let i = 0; i < array.length; i++) {
-                                        if (array[i].id !== sticker.id) {
-                                            newArray.push(array[i])         //No es el que busco
-                                        } else {
-                                            //Simplemente no lo copio
+                            {this.state.stickers.map((sticker, index) => (
+                                <Draggable
+                                    renderSize={sticker.size}
+                                    onDragRelease={(bounds) => {
+                                        //console.log(bounds)
+                                    }}
+                                    x={sticker.x}
+                                    y={sticker.y}
+                                    onLongPress={() => {
+                                        //Eliminar el sticker
+                                        console.log("Deleting stasdicker: " + sticker.id)
+                                        //Current sticker array
+                                        var array = this.state.stickers
+                                        //The new array
+                                        var newArray = []
+                                        for (let i = 0; i < array.length; i++) {
+                                            if (array[i].id !== sticker.id) {
+                                                newArray.push(array[i])         //No es el que busco
+                                            } else {
+                                                //Simplemente no lo copio
+                                            }
                                         }
-                                    }
-                                    this.setState({
-                                        stickers: newArray
-                                    })
-                                }}
-                                onShortPressRelease={() => { }}
-                            >
-                                <PicSticker daddystate={this.state} visible={sticker.isVisible} stickerid={sticker.id} setState={p => { this.setState(p) }} size={sticker.size} sizeController={true} imgURI={sticker.uri} />
-                            </Draggable>
-                        ))}
-                    </View>
-                </ImageBackground>
-            </View>
+                                        this.setState({
+                                            stickers: newArray
+                                        })
+                                    }}
+                                    onShortPressRelease={() => { }}
+                                >
+                                    <PicSticker daddystate={this.state} visible={sticker.isVisible} stickerid={sticker.id} setState={p => { this.setState(p) }} size={sticker.size} sizeController={true} imgURI={sticker.uri} />
+                                </Draggable>
+                            ))}
+                        </View>
+                    </ImageBackground>
+                </View>
+            </Provider>
         );
     }
 }
