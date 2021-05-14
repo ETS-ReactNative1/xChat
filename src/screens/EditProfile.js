@@ -2,10 +2,10 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:31:12 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-12 00:54:31
+ * @Last Modified time: 2021-05-14 16:25:30
  */
 import * as React from 'react';
-import { View, useWindowDimensions } from 'react-native';
+import { View, useWindowDimensions, Keyboard } from 'react-native';
 import { TabView, SceneMap } from 'react-native-tab-view';
 import EditPublicProfile from './EditPublicProfile'
 import EditPrivateProfile from './EditPrivateProfile'
@@ -35,18 +35,6 @@ const EditProfile = () => {
                 renderScene={renderScene}
                 onIndexChange={setIndex}
                 initialLayout={{ width: layout.width }}
-            />
-            <FAB
-                big
-                label="Guardar"
-                style={{
-                    position: 'absolute',
-                    margin: 16,
-                    right: 20,
-                    bottom: 20,
-                }}
-                icon={() => { return (<SuperIcon size={20} type="Ionicons" color="#048d81" name="save"/>); }}
-                onPress={() => { console.log("Saving data") }}
             />
         </View>
     )
