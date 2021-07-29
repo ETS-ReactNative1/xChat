@@ -7,6 +7,14 @@
 // | xChat - Meet people anonymously!
 // | Copyright (c) 2021 xChat. All rights reserved.
 // +------------------------------------------------------------------------+
+/**
+ *                    --PENDING FEATURES--
+ * //TODO: App translation (JSON)
+ * 
+ * 
+ * 
+ * 
+ */
 import React from 'react';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 
