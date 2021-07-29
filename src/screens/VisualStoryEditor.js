@@ -28,7 +28,8 @@ export default class VisualStoryEditor extends Component {
         this.state = { stickers };
     }
     render() {
-        const imgURI = this.props.route.params.cameraOutput.uri; //Debug purposes
+        const imgURI = this.props.route.params.cameraOutput; //Debug purposes
+        console.log("URI DE LA IMAGEN: " + imgURI)
         const stickersOnline = [
             { id: 1, uri: "https://cataas.com/cat/says/1" },
             { id: 2, uri: "https://cataas.com/cat/says/2" },
@@ -40,7 +41,6 @@ export default class VisualStoryEditor extends Component {
             { id: 8, uri: "https://cataas.com/cat/says/8" },
             { id: 9, uri: "https://cataas.com/cat/says/9" }
         ]
-        //console.log(imgURI)
         return (
             <Provider>
                 <View style={{ flex: 1 }}>

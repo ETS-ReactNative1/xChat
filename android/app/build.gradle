@@ -153,6 +153,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file('xchat.keystore')
+            storePassword System.console().readLine("\nKeystore password:")
+            keyAlias 'xchatalias'
+            keyPassword System.console().readLine("\Alias password: ")
+        }
     }
     buildTypes {
         debug {

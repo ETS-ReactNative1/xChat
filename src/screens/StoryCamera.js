@@ -10,6 +10,9 @@ import { StyleSheet, View } from 'react-native';
 import { RNCamera } from 'react-native-camera';
 import { Text, TouchableRipple } from 'react-native-paper'
 import SuperIcon from '../components/SuperIcon'
+import PhotoEditor from 'react-native-photo-editor'
+import CameraRoll from "@react-native-community/cameraroll";
+
 
 const PendingView = () => (
     <View
@@ -37,7 +40,7 @@ export default class StoryCamera extends PureComponent {
         return (
             <View style={styles.container}>
                 <View style={styles.commanderPannelTop}>
-                    <TouchableRipple style={{height: 45, width: 45, justifyContent: 'center', alignItems: 'center', borderRadius: 100}} borderless onPress={() => {
+                    <TouchableRipple style={{ height: 45, width: 45, justifyContent: 'center', alignItems: 'center', borderRadius: 100 }} borderless onPress={() => {
                         console.log("PRESSED")
                         if (this.state.flashMode === RNCamera.Constants.FlashMode.on) {
                             console.log("Disabled flash")
@@ -49,7 +52,7 @@ export default class StoryCamera extends PureComponent {
                             this.setState({ flashModeColor: "#ff0" })
                         }
                     }}>
-                        <SuperIcon type="MaterialCommunity" color={this.state.flashModeColor} name="lightning-bolt" size={24}/>
+                        <SuperIcon type="MaterialCommunity" color={this.state.flashModeColor} name="lightning-bolt" size={24} />
                     </TouchableRipple>
                 </View >
                 <RNCamera
@@ -110,10 +113,27 @@ export default class StoryCamera extends PureComponent {
             </View >
         );
     }
+
+   
+
     takePicture = async function (camera) {
-        const options = { quality: 0.5, base64: true };
-        this.props.navigator.navigate('VisualStoryEditor', { cameraOutput: await camera.takePictureAsync(options) })
+        
+        const options = { quality: 0.5, base64: true, fixOrientation: true };
+
+        const picture = await camera.takePictureAsync(options)
+
+        const saveToDevice = await CameraRoll.saveToCameraRoll(picture.uri)
+
+        const picturePath = picture.uri.replace('file://', '');
+
+        PhotoEditor.Edit({
+            path: picturePath,
+            onDone: (imagePath) => {this.props.navigator.navigate('VisualStoryEditor', { cameraOutput: "file://"+imagePath })},
+            //onCancel: props.navigation.navigate('MainScreen')
+        });
     };
+
+
 }
 
 const styles = StyleSheet.create({
