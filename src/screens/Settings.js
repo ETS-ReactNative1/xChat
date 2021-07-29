@@ -9,7 +9,6 @@ import { View } from 'react-native'
 import { useTheme, TouchableRipple, Switch, Text } from 'react-native-paper';
 import { PreferencesContext } from '../../PreferencesContext';
 import SettingUnit from '../components/SettingUnit';
-// TODO: Input HEX COLOR -> Override default Primary color
 function Settings() {
     const theme = useTheme();
     const { toggleTheme, isThemeDark } = React.useContext(PreferencesContext);
