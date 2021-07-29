@@ -41,7 +41,7 @@ const TextStoryUnit = (props) => {
                     </View>
                 </View>
             </Modal>
-            <TouchableRipple style={{ marginBottom: 10, padding: 10, backgroundColor: theme.colors.widgetBG, borderRadius: 10, width: "95%", marginLeft: "2.5%" }} onPress={() => toggleModal()}>
+            <TouchableRipple borderless style={{ marginBottom: 10, padding: 10, backgroundColor: theme.colors.widgetBG, borderRadius: 10, width: "95%", marginLeft: "2.5%" }} onPress={() => toggleModal()}>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={{ marginHorizontal: 7.5, justifyContent: "center", alignItems: "center", flexDirection: 'column' }}>
                         <Avatar.Image size={48} source={{ uri: props.profilePicURL }} />

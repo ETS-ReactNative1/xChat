@@ -14,6 +14,7 @@ import TextStories from '../components/TextStories'
 import { ScrollView } from 'react-native-gesture-handler';
 import { FAB } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
+import { Dimensions } from 'react-native';
 
 function Profile(props) {
     const theme = useTheme();
@@ -25,14 +26,10 @@ function Profile(props) {
             </View>
             <ScrollView>
                 <View style={{ flexDirection: 'column' }}>
-                    <View style={{ justifyContent: 'center', position: 'relative', top: 50, alignItems: 'center' }}>
-                        <Image source={require('../../assets/img/chroma.gif')} style={{ position: "absolute", width: 250, height: 250 }}
-                        />
-                        <Avatar.Image style={{ position: "relative" }} size={130} source={{ uri: 'https://cataas.com/cat' }} />
-                    </View>
-                    <View style={{ flexDirection: 'column', marginTop: "25%" }}>
+                    <View style={{ flexDirection: 'column' }}>
+                        <Avatar.Image style={{position: 'relative', top: 10, marginLeft: Dimensions.get('window').width/2-60}} size={120} source={{ uri: 'https://cataas.com/cat' }} />
                         <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5 }}>Resumen:</Text>
-                        <View style={{ flexDirection: 'row', justifyContent: "center", alignItems: "center" }}>
+                        <View style={{  flexDirection: 'row', justifyContent: "center", alignItems: "center" }}>
                             <View style={{ backgroundColor: theme.colors.widgetBG, paddingVertical: 10, paddingHorizontal: 20, width: "35%", borderTopLeftRadius: 10, borderBottomLeftRadius: 10, }} >
                                 <Text>Nombre:</Text>
                                 <Text>Edad:</Text>
@@ -100,6 +97,7 @@ function Profile(props) {
                     margin: 16,
                     right: 20,
                     bottom: 60,
+                    backgroundColor: "#7a48a8"
                 }}
                 icon="pencil"
                 onPress={() => navigation.navigate("EditProfile")}

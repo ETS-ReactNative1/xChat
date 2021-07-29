@@ -5,8 +5,8 @@
  * @Last Modified time: 2021-05-08 18:29:17 
  */
 import React, { useState } from "react";
-import { Badge, useTheme, Text, Avatar } from 'react-native-paper';
-import { View, TouchableNativeFeedback, TouchableWithoutFeedback } from 'react-native';
+import { Badge, useTheme, Text, Avatar, TouchableRipple } from 'react-native-paper';
+import { View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/AntDesign'
 
@@ -15,38 +15,35 @@ function Contact(props) {
   const navigation = useNavigation();
   //onPress={() => { navigation.navigate("Chat", {contactName: props.contactName, profilePicURL: props.profilePicURL}); }}
   return (
-    <View>
-      <View style={{ marginLeft: 15, marginVertical: 3.5 }}>
-        <TouchableWithoutFeedback onPress={() => { navigation.navigate("Chatting", { contactName: props.contactName, profilePicURL: props.profilePicURL }) }}>
-          <View style={{ paddingVertical: 20, borderBottomLeftRadius: 50, borderTopLeftRadius: 50, flexDirection: 'row', width: '100%', backgroundColor: theme.colors.widgetBG }}>
-            <View style={{ flexDirection: 'column' }}>
-              <View>
-                <View style={{ position: 'relative', left: 3, top: 1, flexDirection: 'row' }}>
-                  <View style={{ flexDirection: 'row', width: 57.5 }}>
-                    <Avatar.Image style={{ marginTop: -2, marginLeft: 15 }} size={48} source={{ uri: props.profilePicURL }} />
-                  </View>
-                  <View style={{ flexDirection: 'column', width: '67.5%', marginLeft: 15, flexGrow: 1, }}>
-                    <View style={{ flexDirection: 'row' }}>
-                      <View style={{ flexDirection: 'row' }}>
-                        <View>
-                          <Text>{props.contactName}</Text>
-                        </View>
-                      </View>
-                    </View>
-                    <View style={{ flexDirection: 'row', paddingBottom: 6 }}>
-                      <Text style={{ fontWeight: 'bold' }}>{props.lastMSG} <Text style={{ color: '#888' }}>{props.time}</Text></Text>
-                    </View>
-                  </View>
-                  <View style={{ position: 'relative', top: 6, width: 30 }}>
-                    <Icon color={theme.colors.text} name='rightcircleo' size={28}></Icon>
-                  </View>
+    <TouchableRipple style={{
+      marginTop: 5,
+      borderRadius: 10,
+      backgroundColor: theme.colors.widgetBG,
+      height: 65
+    }} borderless onPress={() => { navigation.navigate("Chatting", { contactName: props.contactName, profilePicURL: props.profilePicURL }) }}>
+      <View style={{ flexDirection: 'row', width: '100%',  }}>
+        <View style={{ flexDirection: 'column' }}>
+          <View>
+            <View style={{ position: 'relative', left: 3, top: 1, flexDirection: 'row' }}>
+              <View style={{ marginLeft: 6, marginTop: 6 }}>
+                <TouchableRipple rippleColor="rgba(0,0,0,0.8)" style={{ borderRadius: 50 }} borderless onPress={() => { console.log("PRESSED") }}>
+                  <Avatar.Image size={50} source={{ uri: props.profilePicURL }} />
+                </TouchableRipple>
+              </View>
+              <View style={{ flexDirection: 'column', width: '83.5%', marginLeft: 15, flexGrow: 1, marginTop: 10 }}>
+                <View style={{ flexDirection: 'row' }}>
+                  <Text numberOfLines={1} style={{ width: "80%" }}>{props.contactName}</Text>
+                  <Text style={{ color: '#888', width: "20%" }}>{props.time}</Text>
+                </View>
+                <View style={{ flexDirection: 'row', paddingBottom: 6 }}>
+                  <Text numberOfLines={1} style={{ fontWeight: 'bold' }}>{props.lastMSG}</Text>
                 </View>
               </View>
             </View>
           </View>
-        </TouchableWithoutFeedback>
+        </View>
       </View>
-    </View>
+    </TouchableRipple>
   );
 }
 

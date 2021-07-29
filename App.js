@@ -54,8 +54,8 @@ const CombinedDarkTheme = merge(PaperDarkTheme, NavigationDarkTheme);
 CombinedDefaultTheme.colors.primary = '#a84848';
 CombinedDefaultTheme.colors.text = '#000';
 CombinedDefaultTheme.colors.secondary = '#a84848';
-CombinedDefaultTheme.colors.background = '#ffffffff';
-CombinedDefaultTheme.colors.widgetBG = '#ffffff88';
+CombinedDefaultTheme.colors.background = '#dddf';
+CombinedDefaultTheme.colors.widgetBG = '#ffff';
 CombinedDefaultTheme.colors.ok = '#cfcfcfff';
 CombinedDefaultTheme.colors.error = '#a84848';
 CombinedDefaultTheme.colors.warning = '#cfcfcfff';
@@ -68,7 +68,7 @@ CombinedDarkTheme.colors.primary = '#a84848';
 CombinedDarkTheme.colors.text = '#fff';
 CombinedDarkTheme.colors.secondary = '#5700a8';
 CombinedDarkTheme.colors.background = '#292929ff';
-CombinedDarkTheme.colors.widgetBG = '#11111188';
+CombinedDarkTheme.colors.widgetBG = '#11111166';
 CombinedDarkTheme.colors.ok = '#292929ff';
 CombinedDarkTheme.colors.error = '#a84848';
 CombinedDarkTheme.colors.warning = '#292929ff';
@@ -81,8 +81,8 @@ function App() {
   const [isThemeDark, setIsThemeDark] = React.useState(false);
 
   //! LEAVE ONLY 1 UNCOMMENTED
-  //let theme = isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme; //Default theme is light
-  let theme = isThemeDark ? CombinedDefaultTheme : CombinedDarkTheme; //Default theme is dark
+  let theme = isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme; //Default theme is light
+  //let theme = isThemeDark ? CombinedDefaultTheme : CombinedDarkTheme; //Default theme is dark
 
   const toggleTheme = React.useCallback(() => {
     return setIsThemeDark(!isThemeDark);

@@ -18,7 +18,7 @@ const VisualStoryUnit = (props) => {
     } else {
         return (
             <View style={{ borderRadius: 10 }}>
-                <TouchableRipple style={{ marginHorizontal: 4, borderRadius: 10, backgroundColor: theme.colors.widgetBG, width: 108, height: 192 }} onPress={() => navigation.navigate("Story", {storyImageContent: props.StoryPreview})}>
+                <TouchableRipple borderless style={{ marginHorizontal: 4, borderRadius: 10, backgroundColor: theme.colors.widgetBG, width: 108, height: 192 }} onPress={() => navigation.navigate("Story", {storyImageContent: props.StoryPreview})}>
                     <ImageBackground imageStyle={{ borderRadius: 10 }} source={{ uri: props.StoryPreview }} style={{ borderRadius: 10, flex: 1, resizeMode: "cover", justifyContent: "center" }}>
                         <View style={{ width: 108, height: 192, borderRadius: 10, backgroundColor: "#8888" }}>
                             <Avatar.Image style={{ marginLeft: 30, marginTop: 120 }} size={48} source={{ uri: props.ProfilePicture }} />

@@ -33,7 +33,7 @@ const Chats = () => {
                 <Appbar.Action icon="magnify" onPress={() => { }} />
                 <Appbar.Action icon={MORE_ICON} onPress={() => { }} />
             </Appbar.Header>
-            <ScrollView contentContainerStyle={{ flexGrow: 1, marginTop: 10 }}
+            <ScrollView contentContainerStyle={{ flexGrow: 1, marginBottom: 10, width: "97.5%", marginLeft: "1.25%" }}
                 refreshControl={
                     <RefreshControl
                         refreshing={refreshing}
@@ -43,6 +43,7 @@ const Chats = () => {
                 {LastMessagesJSON.map((LastMessages, index) => (
                     <Contact key={LastMessages.key} profilePicURL={LastMessages.profilePicURL} contactName={LastMessages.userName} time={LastMessages.time} lastMSG={LastMessages.lastMSG} />
                 ))}
+                <View style={{height: 10}}></View>
             </ScrollView>
         </View>
     )
