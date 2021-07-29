@@ -49,7 +49,7 @@ const Stories = () => {
         <View style={{ flex: 1 }}>
             <View style={{ flex: 1 }}>
                 <Appbar.Header>
-                    <Appbar.Content title="Quicks" subtitle={''} />
+                    <Appbar.Content title="Quick Meet" subtitle={''} />
                     <Appbar.Action icon="magnify" onPress={() => { }} />
                     <Appbar.Action icon={MORE_ICON} onPress={() => { }} />
                 </Appbar.Header>
@@ -57,14 +57,14 @@ const Stories = () => {
                 <View style={{ marginTop: 0 }}>
                     <View style={{ marginLeft: "2.5%" }}>
                         <View style={{ flexDirection: 'row-reverse', alignItems: 'center' }}>
-                            <Text style={{ fontSize: 14, color: "#7a48a8", marginRight: 10 }} onPress={() => { console.log("LMAO") }}>Refresh</Text>
+                            <Text style={{ fontSize: 14, color: "#34803d", marginRight: 10 }} onPress={() => { console.log("LMAO") }}>Refresh</Text>
                             <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5, flexGrow: 1 }}>QuickPics:</Text>
                         </View>
                     </View>
                     <VisualStories></VisualStories>
                     <View>
                         <View style={{ flexDirection: 'row-reverse', alignItems: 'center' }}>
-                            <Text style={{ fontSize: 14, color: "#7a48a8", top: 8, marginRight: 10 }} onPress={() => { console.log("LMAO") }}>Refresh</Text>
+                            <Text style={{ fontSize: 14, color: "#34803d", top: 8, marginRight: 10 }} onPress={() => { console.log("LMAO") }}>Refresh</Text>
                             <Text style={{ fontSize: 25, marginTop: "4%", marginLeft: 10, marginBottom: 5, flexGrow: 1 }}>QuickText:</Text>
                         </View>
                     </View>
