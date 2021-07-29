@@ -8,7 +8,8 @@ import React, { useState } from "react";
 import { Badge, useTheme, Text, Avatar, TouchableRipple, Chip, Button } from 'react-native-paper';
 import { View, TouchableNativeFeedback, Image, Alert } from 'react-native';
 import SuperIcon from './SuperIcon'
-import Icon from 'react-native-vector-icons/AntDesign'
+//TODO: Implement pagination to avoid visual overcharge
+//TODO: Re color borders to match current tab
 // custom badge () => { return (<SuperIcon type="Entypo" size={20} color={"#cfcfcf"} name="circular-graph" ></SuperIcon>); }
 function ContactPresentationCard(props) {
   const ProfilePictureSize = 60;
