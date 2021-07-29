@@ -89,7 +89,8 @@ const Stories = () => {
                     margin: 0,
                     right: 25,
                     bottom: FABbottom + 80,
-                    zIndex: 3
+                    zIndex: 3,
+                    backgroundColor: '#34803d'
                 }}
                 icon="text"
                 onPress={() => {
@@ -107,7 +108,8 @@ const Stories = () => {
                     margin: 0,
                     right: 25,
                     bottom: FABbottom,
-                    zIndex: 3
+                    zIndex: 3,
+                    backgroundColor: '#34803d'
                 }}
                 icon="camera"
                 onPress={() => { navigation.navigate("StoryCamera") }} //Go to camera!
