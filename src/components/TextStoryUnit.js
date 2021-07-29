@@ -28,6 +28,11 @@ const TextStoryUnit = (props) => {
                     <ContactPresentationCard></ContactPresentationCard>
                     <View style={{ flexDirection: "row", borderTopWidth: 1, borderTopColor: theme.colors.error }}>
                         <View style={{ width: "50%", alignItems: "center" }} >
+                            {
+                                /**
+                                 * //FIXME: Follow/OpenChat buttons ripples overflows¡ing container.
+                                 */
+                            }
                             <Button style={{ width: "100%" }} color={theme.colors.error} onPress={() => { }}>Seguir</Button>
                         </View>
                         <View style={{ width: "50%", alignItems: "center" }} >

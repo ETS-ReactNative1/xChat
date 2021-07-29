@@ -12,7 +12,9 @@ import PicSticker from '../components/PicSticker';
 import SuperIcon from '../components/SuperIcon'
 import Draggable from 'react-native-draggable';
 import { ScrollView } from 'react-native';
-
+//TODO: Remove sticker option, text...
+//TODO: Ripple underflows buttons
+//TODO: Remove info button
 export default class VisualStoryEditor extends Component {
     constructor(props) {
         super(props);

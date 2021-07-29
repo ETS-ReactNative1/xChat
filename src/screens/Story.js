@@ -8,7 +8,8 @@ import React, { Component } from 'react';
 import { View, ImageBackground } from 'react-native'
 import { ProgressBar } from 'react-native-paper';
 //props.storyImageContent has the image!
-
+//TODO: Find&Download external library for stories
+//TODO: Implement external library for stories
 export class Story extends Component {
     constructor(props) {
         super(props);

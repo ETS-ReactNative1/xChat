@@ -40,6 +40,9 @@ export default class StoryCamera extends PureComponent {
         return (
             <View style={styles.container}>
                 <View style={styles.commanderPannelTop}>
+                    {
+                        //TODO: Add mirror option and others (EXPOSITION AND MORE)
+                    }
                     <TouchableRipple style={{ height: 45, width: 45, justifyContent: 'center', alignItems: 'center', borderRadius: 100 }} borderless onPress={() => {
                         console.log("PRESSED")
                         if (this.state.flashMode === RNCamera.Constants.FlashMode.on) {
@@ -117,7 +120,9 @@ export default class StoryCamera extends PureComponent {
    
 
     takePicture = async function (camera) {
-        
+        /**
+         * //FIXME: On shoot photo camera takes a few seconds, smooth it.
+         */
         const options = { quality: 0.5, base64: true, fixOrientation: true };
 
         const picture = await camera.takePictureAsync(options)
