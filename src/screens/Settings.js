@@ -6,17 +6,23 @@
  */
 import * as React from 'react';
 import { View } from 'react-native'
-import { useTheme, TouchableRipple, Switch, Text } from 'react-native-paper';
+import { useTheme, TouchableRipple, Switch, Button, Text } from 'react-native-paper';
 import { PreferencesContext } from '../../PreferencesContext';
 import SettingUnit from '../components/SettingUnit';
+import { StackActions } from '@react-navigation/native';
+import SuperIcon from '../components/SuperIcon';
+import EncryptedStorage from 'react-native-encrypted-storage';
+import { useNavigation } from '@react-navigation/native';
+
 function Settings() {
     const theme = useTheme();
     const { toggleTheme, isThemeDark } = React.useContext(PreferencesContext);
-
+    const navigation = useNavigation();
     //Settings screen
     return (
         <View>
             <View>
+                {/* ---------------------------THEME------------------------------ */}
                 <View style={{
                     flexDirection: 'row-reverse',
                     backgroundColor: theme.colors.widgetBG,
@@ -40,9 +46,32 @@ function Settings() {
                         </View>
                     </View>
                 </View>
+                {/* -----------------------------BUTTON---------------------------- */}
+                <View style={{
+                    backgroundColor: "#0000",
+                    marginHorizontal: 10,
+                    marginTop: 10,
+                    height: 75,
+                    paddingVertical: "3.5%",
+                    paddingHorizontal: "5%",
+                    borderRadius: 10
+                }}>
+                    <Button
+                        icon={() => { return (<SuperIcon type="AntDesign" color={"#ffff"} name="logout"></SuperIcon>); }}
+                        mode="contained"
+                        style={{ width: "80%", marginVertical: 0, marginLeft: "10%" }}
+                        onPress={() => {
+                            EncryptedStorage.removeItem("user_session");
+                            navigation.dispatch(StackActions.popToTop());
+                        }}>
+                        Cerrar sesion
+                    </Button>
+
+                </View>
+                {/* --------------------------------------------------------- */}
 
             </View>
-        </View>
+        </View >
     )
 }
 

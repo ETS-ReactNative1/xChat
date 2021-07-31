@@ -83,8 +83,8 @@ function App() {
   const [isThemeDark, setIsThemeDark] = React.useState(false);
 
   //! LEAVE ONLY 1 UNCOMMENTED
-  let theme = isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme; //Default theme is light
-  //let theme = isThemeDark ? CombinedDefaultTheme : CombinedDarkTheme; //Default theme is dark
+  //let theme = isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme; //Default theme is light
+  let theme = isThemeDark ? CombinedDefaultTheme : CombinedDarkTheme; //Default theme is dark
 
   const toggleTheme = React.useCallback(() => {
     return setIsThemeDark(!isThemeDark);
