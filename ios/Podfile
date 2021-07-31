@@ -26,6 +26,8 @@ target 'xChat' do
 
   pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
 
+  pod 'react-native-encrypted-storage', :path => '../node_modules/react-native-encrypted-storage'
+
   target 'xChatTests' do
     inherit! :complete
     # Pods for testing
