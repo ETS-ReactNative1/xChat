@@ -48,7 +48,7 @@ const Stories = () => {
     return (
         <View style={{ flex: 1 }}>
             <View style={{ flex: 1 }}>
-                <Appbar.Header>
+                <Appbar.Header style={{backgroundColor: "#34803d"}}>
                     <Appbar.Content title="Quick Meet" subtitle={''} />
                     <Appbar.Action icon="magnify" onPress={() => { }} />
                     <Appbar.Action icon={MORE_ICON} onPress={() => { }} />
