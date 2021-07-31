@@ -51,6 +51,7 @@ const CombinedDefaultTheme = merge(PaperDefaultTheme, NavigationDefaultTheme);
 const CombinedDarkTheme = merge(PaperDarkTheme, NavigationDarkTheme);
 
 //Custimizing light theme
+CombinedDefaultTheme.themeName = "light"
 CombinedDefaultTheme.colors.primary = '#a84848';
 CombinedDefaultTheme.colors.text = '#000';
 CombinedDefaultTheme.colors.secondary = '#a84848';
@@ -64,6 +65,7 @@ CombinedDefaultTheme.colors.lightText = '#cfcfcfff';
 CombinedDefaultTheme.colors.leftChatBubbleBG = '#b887e633';
 
 //Custimizing dark theme
+CombinedDefaultTheme.themeName = "dark"
 CombinedDarkTheme.colors.primary = '#a84848';
 CombinedDarkTheme.colors.text = '#fff';
 CombinedDarkTheme.colors.secondary = '#5700a8';
@@ -113,7 +115,7 @@ const Stack = createStackNavigator();  //Creating the stack navigator.
 function MyStack() {                    //Main app component
   return (
     <Stack.Navigator
-      initialRouteName="MainScreen" // !set this to MainScreen on production! ---------------------------------------------------------------------------------------
+      initialRouteName="Login" // !set this to MainScreen on production! ---------------------------------------------------------------------------------------
       headerMode="none"
       >
       <Stack.Screen name="Login" component={Login} />

@@ -12,7 +12,7 @@ import SuperIcon from './SuperIcon'
 //TODO: Re color borders to match current tab
 // custom badge () => { return (<SuperIcon type="Entypo" size={20} color={"#cfcfcf"} name="circular-graph" ></SuperIcon>); }
 function ContactPresentationCard(props) {
-  const ProfilePictureSize = 60;
+  const ProfilePictureSize = 80;
   const theme = useTheme()
   if (props.profilePicURL == undefined) {
     props.profilePicURL == "https://www.societyplus.net/upload/photos/d-avatar.jpg";
@@ -22,11 +22,8 @@ function ContactPresentationCard(props) {
       <View style={{ flexDirection: "row", padding: 10 }}>
         <View style={{ flexDirection: "column", width: "30%", textAlign: "center", alignItems: "center" }}>
           <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 10 }}>
-            <Image source={require('../../assets/img/chroma.gif')} style={{ position: "absolute", width: ProfilePictureSize * 2, height: ProfilePictureSize * 2 }}
-            />
             <Avatar.Image style={{ position: "relative" }} size={ProfilePictureSize} source={{ uri: 'https://cataas.com/cat' }} />
           </View>
-          <Text style={{ marginTop: 10 }}>LiLPandemio <SuperIcon type="MaterialCommunity" name="check-decagram"></SuperIcon></Text>
         </View>
         <View style={{ flexDirection: "column", width: "70%" }}>
           <View style={{ flexDirection: "row", width: "95%", marginHorizontal: 2.5 }}>
@@ -46,6 +43,7 @@ function ContactPresentationCard(props) {
         </View>
       </View>
       <View style={{ flexDirection: "column", padding: 10 }}>
+        <Text style={{ marginVertical: 6, marginLeft: 0 }}>LiLPandemio <SuperIcon type="MaterialCommunity" name="check-decagram"></SuperIcon></Text>
         <Text style={{ color: theme.colors.text, fontSize: 16, fontWeight: "bold" }}>Biografía:</Text>
         <Text>Wubba lubba dub dub!</Text>
       </View>

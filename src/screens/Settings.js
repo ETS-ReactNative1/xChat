@@ -41,30 +41,6 @@ function Settings() {
                     </View>
                 </View>
 
-                <View style={{
-                    flexDirection: 'row-reverse',
-                    backgroundColor: theme.colors.widgetBG,
-                    marginHorizontal: 10,
-                    marginTop: 10,
-                    height: 75,
-                    paddingVertical: "3.5%",
-                    paddingHorizontal: "5%",
-                    borderRadius: 10
-                }}>
-                    <View style={{
-                        flexDirection: "row-reverse",
-
-                    }}>
-                        <View style={{ width: "30%" }}>
-                            <Switch color={theme.colors.primary} value={isThemeDark} onValueChange={() => { toggleTheme() }}></Switch>
-                        </View>
-                        <View style={{ width: "70%", flexGrow: 1, flexDirection: "column", justifyContent: "center" }}>
-                            <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Color primario</Text>
-                            <Text style={{ fontSize: 16, fontWeight: '100' }}>¡Personaliza la app!</Text>
-                        </View>
-                    </View>
-                </View>
-
             </View>
         </View>
     )
