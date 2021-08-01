@@ -26,7 +26,7 @@ const TextStoryCreator = () => {
                 marginHorizontal: "5%"
             }}>
                 {/* MAIN VIEW */}
-                <TextInput onChangeText={text => setText(text)} multiline={true} numberOfLines={6} style={{marginTop: 10}} mode='outlined' label="QuickText"></TextInput>
+                <TextInput onChangeText={text => setText(text)} maxLength={1200} multiline={true} numberOfLines={6} style={{marginTop: 10}} mode='outlined' label="QuickText"></TextInput>
                 <Button style={{marginTop: 10}} mode="contained" disabled={false} onPress={() => console.log('Pressed')}>Publicar</Button>
             </View>
         </View>
