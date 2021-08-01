@@ -51,10 +51,35 @@ function Settings() {
                     backgroundColor: "#0000",
                     marginHorizontal: 10,
                     marginTop: 10,
-                    height: 75,
-                    paddingVertical: "3.5%",
+                    height: 50,
+                    paddingVertical: "1%",
                     paddingHorizontal: "5%",
-                    borderRadius: 10
+                    borderRadius: 10,
+                    width: "100%"
+                }}>
+                    <Button
+                        icon={() => { return (<SuperIcon type="AntDesign" color={"#ffff"} name="logout"></SuperIcon>); }}
+                        mode="contained"
+                        style={{ width: "80%", marginVertical: 0, marginLeft: "10%" }}
+                        onPress={() => {
+                            
+                            EncryptedStorage.removeItem("user_session");
+                            navigation.dispatch(StackActions.popToTop());
+                        }}>
+                        Cerrar sesion
+                    </Button>
+
+                </View>
+                {/* --------------------------------------------------------- */}
+                <View style={{
+                    backgroundColor: "#0000",
+                    marginHorizontal: 10,
+                    marginTop: 5,
+                    height: 50,
+                    paddingVertical: "1%",
+                    paddingHorizontal: "5%",
+                    borderRadius: 10,
+                    width: "100%"
                 }}>
                     <Button
                         icon={() => { return (<SuperIcon type="AntDesign" color={"#ffff"} name="logout"></SuperIcon>); }}
@@ -64,7 +89,7 @@ function Settings() {
                             EncryptedStorage.removeItem("user_session");
                             navigation.dispatch(StackActions.popToTop());
                         }}>
-                        Cerrar sesion
+                        Cerrar todas las sesiones
                     </Button>
 
                 </View>
