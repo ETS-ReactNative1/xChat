@@ -4,6 +4,10 @@
  * @Last Modified by: @LiLPandemio
  * @Last Modified time: 2021-05-09 00:25:05
  */
+import EncryptedStorage from 'react-native-encrypted-storage';
+import Snackbar from 'react-native-snackbar';
+import { StackActions, useNavigation } from '@react-navigation/native';
+
 export function getTextStoriesJSON() {
     const JSONTEXTSTORIES = [
         { key: 1, profilePicURL: 'https://cataas.com/cat/says/1', time: '19:51', txt: 'Tengo que comprar 1 barra de pan, que perezaaaaa' },
@@ -14,6 +18,42 @@ export function getTextStoriesJSON() {
         { key: 6, profilePicURL: 'https://cataas.com/cat/says/6', time: '19:56', txt: 'Tengo que comprar 6 barras de pan, que perezaaaaa' },
     ]
     return JSONTEXTSTORIES;
+}
+
+export async function authControl() {
+    const session = await EncryptedStorage.getItem("user_session");
+    if (session !== undefined || session !== null) {
+        // Congrats! You've just retrieved your first value!
+        const sesdata = JSON.parse(session);
+        let token = sesdata.token;
+        fetch('http://192.168.1.200/index.php', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                do: 'istokenalive',
+                token: token,
+            })
+        })
+            .then(response => response.json())
+            .then(response => {
+                if (response.response == true) {
+                    return true;
+                } else {
+                    EncryptedStorage.removeItem("user_session");
+                    Snackbar.show({
+                        text: 'Su sesion fué cerrada.',
+                        duration: Snackbar.LENGTH_SHORT,
+                    });
+                    return false;
+                }
+            })
+            .catch(err => console.error(err));
+    } else {
+        return false;
+    }
 }
 
 export function getVisualStoriesJSON() {
@@ -29,7 +69,6 @@ export function getVisualStoriesJSON() {
     ]
     return JSONVISUALSTORIES;
 }
-
 export function getLastMessagesJSON() {
     const LastMessages = [
         { key: 1, userName: 'LiLPandemio🚀', lastMSG: 'La beta pa cuando?', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/1' },

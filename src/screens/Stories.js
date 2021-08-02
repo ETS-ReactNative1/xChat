@@ -12,6 +12,7 @@ import TextStories from '../components/TextStories'
 import { FAB, Portal } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import Snackbar from 'react-native-snackbar';
+import { authControl } from '../functions/main'
 
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
@@ -21,19 +22,19 @@ const wait = (timeout) => {
 
 //<VisualStoryUnit StoryPreview="https://cataas.com/cat/says/1000" ProfilePicture="https://cataas.com/cat/says/1001"></VisualStoryUnit>
 const Stories = () => {
-
-    const [visible, setVisible] = React.useState(false);
-
-    const onToggleSnackBar = () => setVisible(!visible);
-
-    const onDismissSnackBar = () => setVisible(false);
-
-    const [state, setState] = React.useState({ open: false });
-
-    const onStateChange = ({ open }) => setState({ open });
-
-    const { open } = state;
-
+    async function authme() {
+        let auth = authControl();
+        if (auth === false) {
+            console.log("SESSION ERROR");
+        } else {
+            console.log("SESSION OK");
+        }
+    }
+    setTimeout(() => {
+        setInterval(() => {
+            authme();
+        }, 6000);
+    }, 1000);
     const FABbottom = 30;
 
     const navigation = useNavigation();
