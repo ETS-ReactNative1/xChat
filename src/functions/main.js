@@ -22,11 +22,10 @@ export function getTextStoriesJSON() {
 
 export async function authControl() {
     const session = await EncryptedStorage.getItem("user_session");
-    if (session !== undefined || session !== null) {
-        // Congrats! You've just retrieved your first value!
+    if (session !== undefined && session !== null) {
         const sesdata = JSON.parse(session);
         let token = sesdata.token;
-        fetch('http://192.168.1.200/index.php', {
+        let outp = await fetch('http://192.168.1.200/index.php', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -42,17 +41,13 @@ export async function authControl() {
                 if (response.response == true) {
                     return true;
                 } else {
-                    EncryptedStorage.removeItem("user_session");
-                    Snackbar.show({
-                        text: 'Su sesion fué cerrada.',
-                        duration: Snackbar.LENGTH_SHORT,
-                    });
                     return false;
                 }
             })
             .catch(err => console.error(err));
+            return outp;
     } else {
-        return false;
+        console.error("ERROR #0x000001")
     }
 }
 
