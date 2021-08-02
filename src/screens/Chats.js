@@ -28,7 +28,7 @@ const Chats = () => {
 
     return (
         <View style={{ flex: 1 }}>
-            <Appbar.Header>
+            <Appbar.Header style={{backgroundColor: "#a84848"}}>
                 <Appbar.Content title="Chats" subtitle={''} />
                 <Appbar.Action icon="magnify" onPress={() => { }} />
                 <Appbar.Action icon={MORE_ICON} onPress={() => { }} />
