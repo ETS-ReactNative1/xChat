@@ -20,9 +20,10 @@ export function getTextStoriesJSON() {
     return JSONTEXTSTORIES;
 }
 
-export async function authControl() {
+export async function tokenStatus() {
     const session = await EncryptedStorage.getItem("user_session");
     if (session !== undefined && session !== null) {
+        //SESION HAS A TOKEN!, PROCEED TO VERIFY IT
         const sesdata = JSON.parse(session);
         let token = sesdata.token;
         let outp = await fetch('http://192.168.1.200/index.php', {
@@ -39,17 +40,18 @@ export async function authControl() {
             .then(response => response.json())
             .then(response => {
                 if (response.response == true) {
-                    return true;
+                    return "TOKEN_OK";
                 } else {
-                    return false;
+                    return "TOKEN_EXPIRED";
                 }
             })
             .catch(err => console.error(err));
-            return outp;
+        return outp;
     } else {
-        console.error("ERROR #0x000001")
+        return "NOT_FOUND"
     }
 }
+
 
 export function getVisualStoriesJSON() {
     const JSONVISUALSTORIES = [

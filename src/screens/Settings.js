@@ -62,9 +62,7 @@ function Settings() {
                         mode="contained"
                         style={{ width: "80%", marginVertical: 0, marginLeft: "10%" }}
                         onPress={() => {
-                            
                             EncryptedStorage.removeItem("user_session");
-                            navigation.dispatch(StackActions.popToTop());
                         }}>
                         Cerrar sesion
                     </Button>
@@ -87,7 +85,6 @@ function Settings() {
                         style={{ width: "80%", marginVertical: 0, marginLeft: "10%" }}
                         onPress={() => {
                             EncryptedStorage.removeItem("user_session");
-                            navigation.dispatch(StackActions.popToTop());
                         }}>
                         Cerrar todas las sesiones
                     </Button>

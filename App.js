@@ -15,7 +15,7 @@
  * 
  * 
  */
-import React from 'react';
+import React, { useState } from 'react';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 
 //Stack navigator container import:
@@ -39,12 +39,16 @@ import StoryCamera from './src/screens/StoryCamera';  //Importing: StoryCamera
 import StoryViewer from './src/screens/StoryViewer';  //Importing: StoryViewer
 import TextStoryCreator from './src/screens/TextStoryCreator';  //Importing: TextStoryCreator
 import VisualStoryEditor from './src/screens/VisualStoryEditor';  //Importing: VisualStoryEditor
+import SplashScreen from './src/screens/SplashScreen'; //IMporting: The splash screen when loading
+//import { authControl } from '../functions/main'
 
 //Preferences context import + Tools
 import { withTheme, Card, Text, Title, Paragraph, DefaultTheme as PaperDefaultTheme, DarkTheme as PaperDarkTheme, Appbar, Provider as PaperProvider } from 'react-native-paper';
 import { PreferencesContext } from './PreferencesContext';
 import merge from 'deepmerge';
 import Profile from './src/screens/Profile';
+import { tokenStatus } from './src/functions/main';
+import { baseProps } from 'react-native-gesture-handler/lib/typescript/handlers/gestureHandlers';
 
 //Mixing libraries
 const CombinedDefaultTheme = merge(PaperDefaultTheme, NavigationDefaultTheme);
@@ -78,9 +82,28 @@ CombinedDarkTheme.colors.info = '#292929ff';
 CombinedDarkTheme.colors.lightText = '#cfcfcfff';
 CombinedDarkTheme.colors.leftChatBubbleBG = '#ffffff88';
 
-
 function App() {
   const [isThemeDark, setIsThemeDark] = React.useState(false);
+
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+
+  React.useEffect(() => {
+    async function loadToken() {
+      let token_status = await tokenStatus();
+      console.log(token_status);
+      if (token_status === "TOKEN_OK") {
+        setIsLoading(false);
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+        setIsLoading(false);
+      }
+    };
+    loadToken();
+  }, [])
+
+
 
   //! LEAVE ONLY 1 UNCOMMENTED
   //let theme = isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme; //Default theme is light
@@ -97,12 +120,14 @@ function App() {
     }),
     [toggleTheme, isThemeDark]
   );
-
+  const switchLoginStatus = () => {
+    setIsLoggedIn(!isLoggedIn);
+  }
   return (
     <PreferencesContext.Provider value={preferences}>
       <PaperProvider theme={theme}>
         <NavigationContainer theme={theme}>
-          <MyStack></MyStack>
+          {isLoading ? <SplashScreen></SplashScreen> : isLoggedIn ? <MyStack></MyStack> : <AuthStack></AuthStack>}
         </NavigationContainer>
       </PaperProvider>
     </PreferencesContext.Provider>
@@ -112,19 +137,29 @@ function App() {
 
 const Stack = createStackNavigator();  //Creating the stack navigator.
 
+function AuthStack() {
+  return (
+    <Stack.Navigator
+      initialRouteName="Login"
+      headerMode="none"
+    >
+      <Stack.Screen name="Login" component={Login} />
+    </Stack.Navigator>
+  );
+}
+
 function MyStack() {                    //Main app component
   return (
     <Stack.Navigator
-      initialRouteName="Login" // !set this to MainScreen on production! ---------------------------------------------------------------------------------------
+      initialRouteName="MainScreen"
       headerMode="none"
-      >
-      <Stack.Screen name="Login" component={Login} />
+    >
       <Stack.Screen name="MainScreen" component={MainScreen} />
       <Stack.Screen name="EditProfile" component={EditProfile} />
       <Stack.Screen name="Chat" component={Chat} />
-      <Stack.Screen options={{gestureEnabled: true, gestureDirection: 'vertical', gestureResponseDistance: 30}} name="Chatting" component={Chatting} />
+      <Stack.Screen options={{ gestureEnabled: true, gestureDirection: 'vertical', gestureResponseDistance: 30 }} name="Chatting" component={Chatting} />
       <Stack.Screen name="FlashChat" component={FlashChat} />
-      <Stack.Screen options={{gestureEnabled: true, gestureDirection: 'vertical', gestureResponseDistance: 1000}} name="Story" component={Story} />
+      <Stack.Screen options={{ gestureEnabled: true, gestureDirection: 'vertical', gestureResponseDistance: 1000 }} name="Story" component={Story} />
       <Stack.Screen name="ViewProfile" component={ViewProfile} />
       <Stack.Screen name="PicEditor" component={PicEditor} />
       <Stack.Screen name="StoryCamera" component={NavStoryCamera} />
