@@ -5,11 +5,11 @@
  * @Last Modified time: 2021-05-08 18:30:59 
  */
 //Main components
-import React from 'react'
+import React, { Component } from 'react'
 import { View } from 'react-native'
 
 //Main styling library
-import {useTheme, BottomNavigation, Text } from 'react-native-paper'
+import { useTheme, BottomNavigation, Text } from 'react-native-paper'
 
 //Easier way to use Icons
 import SuperIcon from '../components/SuperIcon'
@@ -18,17 +18,33 @@ import Chats from './Chats';
 import Stories from './Stories';
 import Profile from './Profile';
 import Settings from './Settings';
+import { useRoute, useNavigation } from '@react-navigation/native';
 
 
 
-
-const MainScreen = () => {
+const MainScreen = (params) => {
     return (
-        <View style={{flex: 1}}>
+        <View style={{ flex: 1 }}>
             <MyNavigator></MyNavigator>
         </View>
-    )
+    );
 }
+
+// class MainScreen extends Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//         };
+//     }
+//     render() {
+//         //const navigation = useNavigation();
+//         // setInterval(() => {
+//         //     authControl(navigation);
+//         // }, 5000);
+
+//     }
+// }
+
 
 //-------------------------------------------------------TAB NAVIGATOR
 
@@ -64,7 +80,7 @@ const MyNavigator = () => {
             navigationState={{ index, routes }}
             onIndexChange={setIndex}
             renderScene={renderScene}
-            
+
         />
     );
 };
