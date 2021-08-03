@@ -8,14 +8,32 @@ import EncryptedStorage from 'react-native-encrypted-storage';
 import Snackbar from 'react-native-snackbar';
 import { StackActions, useNavigation } from '@react-navigation/native';
 
+export async function getQuickTexts() {
+    let outp = await fetch('http://192.168.1.200/index.php', {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            do: 'getQuickTexts',
+            token: await getToken(),
+        })
+    })
+        .then(response => response.json())
+        .then(response => {
+            return response;
+        })
+        return outp;
+}
 export function getTextStoriesJSON() {
     const JSONTEXTSTORIES = [
-        { key: 1, profilePicURL: 'https://cataas.com/cat/says/1', time: '19:51', txt: 'Tengo que comprar 1 barra de pan, que perezaaaaa' },
-        { key: 2, profilePicURL: 'https://cataas.com/cat/says/2', time: '19:52', txt: 'Tengo que comprar 2 barras de pan, que perezaaaaa' },
-        { key: 3, profilePicURL: 'https://cataas.com/cat/says/3', time: '19:53', txt: 'Tengo que comprar 3 barras de pan, que perezaaaaa' },
-        { key: 4, profilePicURL: 'https://cataas.com/cat/says/4', time: '19:54', txt: 'Tengo que comprar 4 barras de pan, que perezaaaaa' },
-        { key: 5, profilePicURL: 'https://cataas.com/cat/says/5', time: '19:55', txt: 'Tengo que comprar 5 barras de pan, que perezaaaaa' },
-        { key: 6, profilePicURL: 'https://cataas.com/cat/says/6', time: '19:56', txt: 'Tengo que comprar 6 barras de pan, que perezaaaaa' },
+        // { key: 1, profilePicURL: 'https://cataas.com/cat/says/1', time: '19:51', txt: 'Tengo que comprar 1 barra de pan, que perezaaaaa' },
+        // { key: 2, profilePicURL: 'https://cataas.com/cat/says/2', time: '19:52', txt: 'Tengo que comprar 2 barras de pan, que perezaaaaa' },
+        // { key: 3, profilePicURL: 'https://cataas.com/cat/says/3', time: '19:53', txt: 'Tengo que comprar 3 barras de pan, que perezaaaaa' },
+        // { key: 4, profilePicURL: 'https://cataas.com/cat/says/4', time: '19:54', txt: 'Tengo que comprar 4 barras de pan, que perezaaaaa' },
+        // { key: 5, profilePicURL: 'https://cataas.com/cat/says/5', time: '19:55', txt: 'Tengo que comprar 5 barras de pan, que perezaaaaa' },
+        // { key: 6, profilePicURL: 'https://cataas.com/cat/says/6', time: '19:56', txt: 'Tengo que comprar 6 barras de pan, que perezaaaaa' },
     ]
     return JSONTEXTSTORIES;
 }

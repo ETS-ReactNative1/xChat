@@ -12,6 +12,8 @@ import TextStories from '../components/TextStories'
 import { FAB, Portal } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import Snackbar from 'react-native-snackbar';
+import { getQuickTexts } from '../functions/main'
+import TextStoryUnit from '../components/TextStoryUnit'
 
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
@@ -33,6 +35,12 @@ const Stories = () => {
         wait(2000).then(() => setRefreshing(false));
     }, []);
 
+    const TextStoryListJSON = [] //! ----------------------- LIST
+    const [textStories, setTextStories] = React.useState([]);
+    async function refreshQuickTexts(){
+        setTextStories(await getQuickTexts())
+    }
+
     return (
         <View style={{ flex: 1 }}>
             <View style={{ flex: 1 }}>
@@ -52,7 +60,7 @@ const Stories = () => {
                     <VisualStories></VisualStories>
                     <View>
                         <View style={{ flexDirection: 'row-reverse', alignItems: 'center' }}>
-                            <Text style={{ fontSize: 14, color: "#34803d", top: 8, marginRight: 10 }} onPress={() => { console.log("LMAO") }}>Refresh</Text>
+                            <Text style={{ fontSize: 14, color: "#34803d", top: 8, marginRight: 10 }} onPress={() => { refreshQuickTexts() }}>Refresh</Text>
                             <Text style={{ fontSize: 25, marginTop: "4%", marginLeft: 10, marginBottom: 5, flexGrow: 1 }}>QuickText:</Text>
                         </View>
                     </View>
@@ -65,7 +73,11 @@ const Stories = () => {
                         />
                     }>
                     <View style={{ flex: 1 }}>
-                        <TextStories></TextStories>
+                        <View>
+                            {textStories.map((TextStory, index) => (
+                                <TextStoryUnit key={TextStory.key} profilePicURL={TextStory.profilePicURL} time={TextStory.time} txt={TextStory.txt} />
+                            ))}
+                        </View>
                     </View>
                 </ScrollView>
             </View>

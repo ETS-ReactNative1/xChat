@@ -19,7 +19,10 @@ const TextStoryUnit = (props) => {
         setModalVisible(!isModalVisible);
     };
     const navigation = useNavigation();
-
+    let time = props.time;
+    time = time.substring(11);
+    time = time.substring(0,5);
+    console.log(props.profilePicURL);
     return (
         <View>
             <Modal onBackdropPress={(isModalVisible) => { if (isModalVisible) { toggleModal() } }} onBackButtonPress={(isModalVisible) => { if (isModalVisible) { toggleModal() } }} isVisible={isModalVisible} style={{ alignItems: "center" }} animationIn="zoomIn" animationOut="fadeOutDown">
@@ -45,7 +48,7 @@ const TextStoryUnit = (props) => {
                 <View style={{ flexDirection: 'row' }}>
                     <View style={{ marginHorizontal: 7.5, justifyContent: "center", alignItems: "center", flexDirection: 'column' }}>
                         <Avatar.Image size={48} source={{ uri: props.profilePicURL }} />
-                        <Text style={{ color: theme.colors.text }}>{props.time}</Text>
+                        <Text style={{ color: theme.colors.text }}>{time}</Text>
                     </View>
                     <View style={{ justifyContent: "center" }}>
                         <Text style={{ marginRight: "25%", marginLeft: "2.5%" }} >{props.txt}</Text>
