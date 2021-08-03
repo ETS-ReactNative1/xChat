@@ -43,8 +43,8 @@ function Settings() {
                             <Switch color={theme.colors.primary} value={isThemeDark} onValueChange={() => { toggleTheme() }}></Switch>
                         </View>
                         <View style={{ width: "70%", flexGrow: 1, flexDirection: "column", justifyContent: "center" }}>
-                            <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Modo oscuro</Text>
-                            <Text style={{ fontSize: 16, fontWeight: '100' }}>¡Únete al lado oscuro!</Text>
+                            <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Modo claro</Text>
+                            <Text style={{ fontSize: 16, fontWeight: '100' }}>Acaso alguien lo usa?</Text>
                         </View>
                     </View>
                 </View>
