@@ -13,6 +13,8 @@ import SuperIcon from '../components/SuperIcon';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Snackbar from 'react-native-snackbar';
 import EncryptedStorage from 'react-native-encrypted-storage';
+import AuthProvider, { AppContext } from '../context/AuthProvider';
+
 
 //<Button onPress={() => { navigation.push('MainScreen'); }}>Login!</Button>
 const Login = (props) => {
@@ -22,6 +24,7 @@ const Login = (props) => {
     const navigation = useNavigation();
     const onToggleSnackBar = () => setVisible(!visible);
     const onDismissSnackBar = () => setVisible(false);
+    const [IsLoggedIn, setIsLoggedIn] = React.useContext(AppContext);
     async function doLogin() {
         setbuttonEnable(!buttonEnable);
         //**************************************************************************************
@@ -54,16 +57,20 @@ const Login = (props) => {
                             username: textUsername,
                         })
                     );
-                    navigation.push('MainScreen');
+                    setIsLoggedIn(true);
                 } else {
                     Snackbar.show({
                         text: 'Sus credenciales no coinciden.',
                         duration: Snackbar.LENGTH_SHORT,
                     });
+                    setTimeout(() => {
+                        setbuttonEnable(false);
+                    }, 1000);
                 }
             })
             .catch(err => console.error(err));
         //**************************************************************************************
+
     }
 
     const [textUsername, setTextUsername] = React.useState('');
@@ -98,9 +105,6 @@ const Login = (props) => {
                     <Button icon={() => { return (<SuperIcon type="FontAwesome5" color={"#ffff"} name="bolt"></SuperIcon>); }} mode="contained" disabled={buttonEnable} style={{ width: "80%", marginVertical: 0, marginLeft: "10%" }} onPress={() => {
                         setbuttonEnable(true);
                         doLogin()
-                        setTimeout(() => {
-                            setbuttonEnable(false);
-                        }, 1000);
                     }}>
                         Iniciar sesion
                     </Button>
@@ -109,7 +113,6 @@ const Login = (props) => {
                     </Button>
                     <Button mode="text" disabled={buttonEnable} icon={() => { return (<SuperIcon type="AntDesign" size={24} name="questioncircleo"></SuperIcon>); }} onPress={() => {
                         setbuttonEnable(true);
-                        navigation.push('MainScreen')
                         setTimeout(() => {
                             setbuttonEnable(false);
                         }, 1000);

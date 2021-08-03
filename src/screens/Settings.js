@@ -13,11 +13,13 @@ import { StackActions } from '@react-navigation/native';
 import SuperIcon from '../components/SuperIcon';
 import EncryptedStorage from 'react-native-encrypted-storage';
 import { useNavigation } from '@react-navigation/native';
-
+import AuthProvider, { AppContext } from '../context/AuthProvider';
 function Settings() {
     const theme = useTheme();
     const { toggleTheme, isThemeDark } = React.useContext(PreferencesContext);
     const navigation = useNavigation();
+    const [IsLoggedIn, setIsLoggedIn] = React.useContext(AppContext);
+
     //Settings screen
     return (
         <View>
@@ -62,6 +64,7 @@ function Settings() {
                         mode="contained"
                         style={{ width: "80%", marginVertical: 0, marginLeft: "10%" }}
                         onPress={() => {
+                            setIsLoggedIn(false)
                             EncryptedStorage.removeItem("user_session");
                         }}>
                         Cerrar sesion
@@ -84,6 +87,7 @@ function Settings() {
                         mode="contained"
                         style={{ width: "80%", marginVertical: 0, marginLeft: "10%" }}
                         onPress={() => {
+                            setIsLoggedIn(false)
                             EncryptedStorage.removeItem("user_session");
                         }}>
                         Cerrar todas las sesiones

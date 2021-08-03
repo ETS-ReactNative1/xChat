@@ -40,6 +40,7 @@ import StoryViewer from './src/screens/StoryViewer';  //Importing: StoryViewer
 import TextStoryCreator from './src/screens/TextStoryCreator';  //Importing: TextStoryCreator
 import VisualStoryEditor from './src/screens/VisualStoryEditor';  //Importing: VisualStoryEditor
 import SplashScreen from './src/screens/SplashScreen'; //IMporting: The splash screen when loading
+import AuthProvider, { AppContext } from './src/context/AuthProvider';
 //import { authControl } from '../functions/main'
 
 //Preferences context import + Tools
@@ -84,9 +85,11 @@ CombinedDarkTheme.colors.leftChatBubbleBG = '#ffffff88';
 
 function App() {
   const [isThemeDark, setIsThemeDark] = React.useState(false);
-
+  
   const [isLoading, setIsLoading] = React.useState(true);
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const [IsLoggedIn, setIsLoggedIn] = React.useContext(AppContext);
+
+
 
   React.useEffect(() => {
     async function loadToken() {
@@ -127,7 +130,7 @@ function App() {
     <PreferencesContext.Provider value={preferences}>
       <PaperProvider theme={theme}>
         <NavigationContainer theme={theme}>
-          {isLoading ? <SplashScreen></SplashScreen> : isLoggedIn ? <MyStack></MyStack> : <AuthStack></AuthStack>}
+          {isLoading ? <SplashScreen></SplashScreen> : IsLoggedIn ? <MyStack></MyStack> : <AuthStack></AuthStack>}
         </NavigationContainer>
       </PaperProvider>
     </PreferencesContext.Provider>
@@ -169,10 +172,14 @@ function MyStack() {                    //Main app component
     </Stack.Navigator>
   );
 }
-
+function AuthControlledApp({ children }) {
+  return <AuthProvider>
+    <App></App>
+  </AuthProvider>
+}
 function NavStoryCamera() {
   const navigator = useNavigation();
   return <StoryCamera navigator={navigator} />
 }
 
-export default withTheme(App)
+export default withTheme(AuthControlledApp)
