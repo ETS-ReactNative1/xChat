@@ -14,12 +14,43 @@ import SuperIcon from '../components/SuperIcon';
 import EncryptedStorage from 'react-native-encrypted-storage';
 import { useNavigation } from '@react-navigation/native';
 import AuthProvider, { AppContext } from '../context/AuthProvider';
+import { getToken } from '../functions/main';
 function Settings() {
     const theme = useTheme();
     const { toggleTheme, isThemeDark } = React.useContext(PreferencesContext);
     const navigation = useNavigation();
     const [IsLoggedIn, setIsLoggedIn] = React.useContext(AppContext);
 
+    //Kill tokens
+    async function removeUserSession() {
+        try {
+            await EncryptedStorage.removeItem("user_session");
+            // Congrats! You've just removed your first value!
+        } catch (error) {
+            // There was an error on the native side
+        }
+    }
+    async function logOut(all = false) {
+        let token = await getToken();
+        if (token === null) {
+            //ERR
+            alert("No token provided");
+        } else {
+            const out = await fetch('http://192.168.1.200/index.php', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    do: all ? "logout_all" : "logout",
+                    kill_token: token,
+                })
+            })
+            removeUserSession()
+            setIsLoggedIn(false)
+        }
+    }
     //Settings screen
     return (
         <View>
@@ -64,8 +95,7 @@ function Settings() {
                         mode="contained"
                         style={{ width: "80%", marginVertical: 0, marginLeft: "10%" }}
                         onPress={() => {
-                            setIsLoggedIn(false)
-                            EncryptedStorage.removeItem("user_session");
+                            logOut(false);
                         }}>
                         Cerrar sesion
                     </Button>
@@ -87,8 +117,7 @@ function Settings() {
                         mode="contained"
                         style={{ width: "80%", marginVertical: 0, marginLeft: "10%" }}
                         onPress={() => {
-                            setIsLoggedIn(false)
-                            EncryptedStorage.removeItem("user_session");
+                            logOut(true);
                         }}>
                         Cerrar todas las sesiones
                     </Button>

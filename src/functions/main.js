@@ -51,6 +51,17 @@ export async function tokenStatus() {
         return "NOT_FOUND"
     }
 }
+export async function getToken() {
+    const session = await EncryptedStorage.getItem("user_session");
+    if (session !== undefined && session !== null) {
+        //SESION HAS A TOKEN!, PROCEED TO VERIFY IT
+        const sesdata = JSON.parse(session);
+        let token = sesdata.token;
+        return token;
+    } else {
+        return "NOT_FOUND"
+    }
+}
 
 
 export function getVisualStoriesJSON() {
