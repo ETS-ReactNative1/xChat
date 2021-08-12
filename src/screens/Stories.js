@@ -14,7 +14,7 @@ import { useNavigation } from '@react-navigation/native';
 import Snackbar from 'react-native-snackbar';
 import { getQuickTexts } from '../functions/main'
 import TextStoryUnit from '../components/TextStoryUnit'
-
+import StickyParallaxHeader from 'react-native-sticky-parallax-header'
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
 const wait = (timeout) => {
@@ -32,7 +32,7 @@ const Stories = () => {
 
     const onRefresh = React.useCallback(() => {
         setRefreshing(true);
-        wait(2000).then(() => setRefreshing(false));
+        refreshQuickTexts().then(() => setRefreshing(false));
     }, []);
 
     const TextStoryListJSON = [] //! ----------------------- LIST
@@ -60,7 +60,10 @@ const Stories = () => {
                     <VisualStories></VisualStories>
                     <View>
                         <View style={{ flexDirection: 'row-reverse', alignItems: 'center' }}>
-                            <Text style={{ fontSize: 14, color: "#34803d", top: 8, marginRight: 10 }} onPress={() => { refreshQuickTexts() }}>Refresh</Text>
+                            <Text style={{ fontSize: 14, color: "#34803d", top: 8, marginRight: 10 }} onPress={() => { 
+                                setRefreshing(true);
+                                refreshQuickTexts()
+                                setRefreshing(false); }}>Refresh</Text>
                             <Text style={{ fontSize: 25, marginTop: "4%", marginLeft: 10, marginBottom: 5, flexGrow: 1 }}>QuickText:</Text>
                         </View>
                     </View>
