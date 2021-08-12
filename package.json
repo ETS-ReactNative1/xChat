@@ -38,6 +38,7 @@
     "react-native-slider": "^0.11.0",
     "react-native-snackbar": "^2.4.0",
     "react-native-stickers": "^0.0.2",
+    "react-native-sticky-parallax-header": "^0.4.0",
     "react-native-svg": "^12.1.1",
     "react-native-tab-view": "^3.0.1",
     "react-native-vector-icons": "^8.1.0",
