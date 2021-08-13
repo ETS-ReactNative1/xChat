@@ -10,7 +10,7 @@
 /**
  *                    --PENDING FEATURES--
  * //TODO: App translation (JSON)
- * 
+ * //TODO: Handle no connection
  * 
  * 
  * 
@@ -64,7 +64,7 @@ function App() {
   React.useEffect(() => {
     async function loadToken() {
       let token_status = await tokenStatus();
-      console.log(token_status);
+      // console.log(token_status);
       if (token_status === "TOKEN_OK") {
         setIsLoading(false);
         setIsLoggedIn(true);

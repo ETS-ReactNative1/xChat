@@ -13,6 +13,7 @@ export const DarkSea = merge(PaperDarkTheme, NavigationDarkTheme);
 
 //Custimizing light theme
 LightTheme.themeName = "Classic Light"
+LightTheme.colors.disabled = '#888';
 LightTheme.colors.primary = '#a84848';
 LightTheme.colors.text = '#000';
 LightTheme.colors.secondary = '#a84848';
@@ -27,6 +28,7 @@ LightTheme.colors.leftChatBubbleBG = '#b887e633';
 
 //Custimizing dark theme
 DarkTheme.themeName = "Classic Dark"
+DarkTheme.colors.disabled = '#888';
 DarkTheme.colors.primary = '#a84848';
 DarkTheme.colors.text = '#fff';
 DarkTheme.colors.secondary = '#5700a8';
@@ -41,6 +43,7 @@ DarkTheme.colors.leftChatBubbleBG = '#ffffff88';
 
 //Light Candy theme
 LightCandy.themeName = "Light Candy";
+LightCandy.colors.disabled = '#888';
 LightCandy.colors.primary = '#ea899a';
 LightCandy.colors.text = '#000';
 LightCandy.colors.secondary = '#ea899a';
@@ -55,6 +58,7 @@ LightCandy.colors.leftChatBubbleBG = '#b887e633';
 
 //Dark Candy theme
 DarkCandy.themeName = "Dark candy"
+DarkCandy.colors.disabled = '#888';
 DarkCandy.colors.primary = '#ea899a';
 DarkCandy.colors.text = '#fff';
 DarkCandy.colors.secondary = '#5700a8';
@@ -69,6 +73,7 @@ DarkCandy.colors.leftChatBubbleBG = '#ffffff88';
 
 //Light Candy theme
 LightSea.themeName = "Light sea"
+LightSea.colors.disabled = '#888';
 LightSea.colors.primary = '#2d567c';
 LightSea.colors.text = '#000';
 LightSea.colors.secondary = '#2d567c';
@@ -83,6 +88,7 @@ LightSea.colors.leftChatBubbleBG = '#b887e633';
 
 //Dark Candy theme
 DarkSea.themeName = "Dark sea"
+DarkSea.colors.disabled = '#888';
 DarkSea.colors.primary = '#2d567c';
 DarkSea.colors.text = '#fff';
 DarkSea.colors.secondary = '#5700a8';

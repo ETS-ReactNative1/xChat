@@ -24,7 +24,7 @@ const wait = (timeout) => {
 //<VisualStoryUnit StoryPreview="https://cataas.com/cat/says/1000" ProfilePicture="https://cataas.com/cat/says/1001"></VisualStoryUnit>
 const Stories = () => {
 
-    const FABbottom = 30;
+    const FABbottom = 100;
 
     const navigation = useNavigation();
 
@@ -52,7 +52,7 @@ const Stories = () => {
         <View style={{ flex: 1 }}>
             <View style={{ flex: 1 }}>
                 <Appbar.Header style={{ backgroundColor: theme.colors.primary }}>
-                    <Appbar.Content title="Quick Meet" subtitle={''} />
+                    <Appbar.Content title="Quick Meet" color="#fff" subtitle={''} />
                     <Appbar.Action icon="magnify" onPress={() => { }} />
                     <Appbar.Action icon={MORE_ICON} onPress={() => { }} />
                 </Appbar.Header>
@@ -89,6 +89,7 @@ const Stories = () => {
                                 <TextStoryUnit key={TextStory.key} profilePicURL={TextStory.profilePicURL} time={TextStory.time} txt={TextStory.txt} />
                             ))}
                         </View>
+                        <View style={{height: 80}}/>
                     </View>
                 </ScrollView>
             </View>
@@ -105,7 +106,8 @@ const Stories = () => {
                 }}
                 icon="text"
                 onPress={() => {
-                    navigation.navigate("TextStoryCreator")
+                    navigation.navigate("TextStoryCreator");
+                    refreshQuickTexts()
                 }}
             />
             <FAB

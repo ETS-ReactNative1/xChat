@@ -42,7 +42,7 @@ const Login = (props) => {
         })
             .then(response => response.json())
             .then(response => {
-                console.log(response);
+                //console.log(response);
                 let token = response.token;
                 let respo = response.response;
                 if (respo === undefined) {

@@ -36,7 +36,7 @@ const TextStoryCreator = () => {
                 quicktext: text,
             })
         })
-            .then(response => response.json())
+            .then(response => {console.log(response); return response.json()})
             .then(response => {
                 if (response.response === "StoryUploaded") {
                     Snackbar.show({
@@ -45,9 +45,14 @@ const TextStoryCreator = () => {
                     });
                     setText("");
                     navigation.dispatch(popAction)
+                } else if (response.response == "InvalidChars") {
+                    Snackbar.show({
+                        text: 'Su quicktext parece estar vacio o tener caracteres prohibidos',
+                        duration: Snackbar.LENGTH_SHORT,
+                    });
                 } else {
                     Snackbar.show({
-                        text: 'Something went wrong :(',
+                        text: 'Algo salió mal :(',
                         duration: Snackbar.LENGTH_SHORT,
                     });
                 }

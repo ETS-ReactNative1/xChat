@@ -25,6 +25,7 @@ export async function getQuickTexts() {
             return response;
         })
         return outp;
+        console.log(outp);
 }
 export function getTextStoriesJSON() {
     const JSONTEXTSTORIES = [
