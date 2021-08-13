@@ -44,7 +44,6 @@ export async function tokenStatus() {
         //SESION HAS A TOKEN!, PROCEED TO VERIFY IT
         const sesdata = JSON.parse(session);
         let token = sesdata.token;
-        console.log(token);
         let outp = await fetch('http://192.168.1.200/index.php', {
             method: 'POST',
             headers: {
@@ -77,7 +76,6 @@ export async function getToken() {
         //SESION HAS A TOKEN!, PROCEED TO VERIFY IT
         const sesdata = JSON.parse(session);
         let token = sesdata.token;
-        console.log(token);
         return token;
     } else {
         return "NOT_FOUND"

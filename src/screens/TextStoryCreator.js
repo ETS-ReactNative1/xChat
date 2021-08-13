@@ -5,7 +5,7 @@
  * @Last Modified time: 2021-05-08 18:32:00 
  */
 import React from 'react'
-import { TextInput, Button, Appbar } from 'react-native-paper'
+import { TextInput, Button, Appbar, useTheme } from 'react-native-paper'
 import Snackbar from 'react-native-snackbar';
 import { View, Text } from 'react-native'
 import SuperIcon from '../components/SuperIcon'
@@ -18,6 +18,7 @@ const TextStoryCreator = () => {
     const popAction = StackActions.pop(1);
     const navigation = useNavigation();
     const [text, setText] = React.useState('');
+    const theme = useTheme()
     async function UploadQuicktext() {
         const session = await EncryptedStorage.getItem("user_session");
         const sesdata = JSON.parse(session);
@@ -57,7 +58,7 @@ const TextStoryCreator = () => {
     }
     return (
         <View style={{ flex: 1 }}>
-            <Appbar.Header style={{ backgroundColor: "#34803d" }}>
+            <Appbar.Header style={{ backgroundColor: theme.colors.primary }}>
                 <Appbar.Content title="Publicar QuickText" subtitle={''} />
                 <Appbar.Action icon={() => { return <SuperIcon type="Entypo" name="cross" size={23} color="#ffff"></SuperIcon> }} onPress={() => { navigation.dispatch(popAction) }} />
             </Appbar.Header>

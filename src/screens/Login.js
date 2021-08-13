@@ -79,9 +79,9 @@ const Login = (props) => {
     const [buttonEnable, setbuttonEnable] = React.useState(false);
     return (
         <View style={{ flex: 1, backgroundColor: theme.colors.background }}>
-            <Appbar.Header style={{ backgroundColor: "#34803d" }}>
+            <Appbar.Header style={{ backgroundColor: theme.colors.primary }}>
                 <Appbar.Content title="Quick Meet" subtitle={''} />
-                <Appbar.Action icon={() => { return (<SuperIcon type="Feather" size={20} color={"#cfcfcf"} name="moon" ></SuperIcon>); }} onPress={() => { toggleTheme() }} />
+                <Appbar.Action icon={() => { return (<SuperIcon type="Entypo" size={20} color={"#cfcfcf"} name="brush" ></SuperIcon>); }} onPress={() => { toggleTheme() }} />
             </Appbar.Header>
             <View style={{ flex: 1, paddingHorizontal: "15%", paddingTop: "2%" }}>
                 <Image source={require('../../assets/img/LOGO.png')} style={{ width: "100%", height: "20%", resizeMode: 'center' }} />

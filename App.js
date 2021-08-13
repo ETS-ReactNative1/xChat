@@ -20,9 +20,7 @@ import { createStackNavigator, TransitionPresets } from '@react-navigation/stack
 
 //Stack navigator container import:
 import {
-  NavigationContainer,
-  DarkTheme as NavigationDarkTheme,
-  DefaultTheme as NavigationDefaultTheme,
+  NavigationContainer
 } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 //Stacked screens import:
@@ -31,6 +29,7 @@ import Chatting from './src/screens/Chatting';                //Importing screen
 import EditProfile from './src/screens/EditProfile';  //Importing screen: EditProfile
 import FlashChat from './src/screens/FlashChat';      //Importing screen: FlashChat
 import Login from './src/screens/Login';              //Importing screen: Login
+import ThemeRoom from './src/screens/ThemeRoom';              //Importing screen: Login
 import Story from './src/screens/Story';              //Importing screen: Story
 import ViewProfile from './src/screens/ViewProfile';  //Importing screen: ViewProfile
 import MainScreen from './src/screens/MainScreen';  //Importing screen: MainScreen
@@ -41,50 +40,21 @@ import TextStoryCreator from './src/screens/TextStoryCreator';  //Importing: Tex
 import VisualStoryEditor from './src/screens/VisualStoryEditor';  //Importing: VisualStoryEditor
 import SplashScreen from './src/screens/SplashScreen'; //IMporting: The splash screen when loading
 import AuthProvider, { AppContext } from './src/context/AuthProvider';
-//import { authControl } from '../functions/main'
+
+//Import themes
+import {LightTheme, DarkTheme, LightCandy, DarkCandy, LightSea, DarkSea} from './src/themes/themes'
+
 
 //Preferences context import + Tools
-import { withTheme, Card, Text, Title, Paragraph, DefaultTheme as PaperDefaultTheme, DarkTheme as PaperDarkTheme, Appbar, Provider as PaperProvider } from 'react-native-paper';
+import { withTheme, Card, Text, Title, Paragraph, Appbar, Provider as PaperProvider } from 'react-native-paper';
 import { PreferencesContext } from './PreferencesContext';
-import merge from 'deepmerge';
 import Profile from './src/screens/Profile';
 import { tokenStatus } from './src/functions/main';
 import { baseProps } from 'react-native-gesture-handler/lib/typescript/handlers/gestureHandlers';
 
-//Mixing libraries
-const CombinedDefaultTheme = merge(PaperDefaultTheme, NavigationDefaultTheme);
-const CombinedDarkTheme = merge(PaperDarkTheme, NavigationDarkTheme);
-
-//Custimizing light theme
-CombinedDefaultTheme.themeName = "light"
-CombinedDefaultTheme.colors.primary = '#a84848';
-CombinedDefaultTheme.colors.text = '#000';
-CombinedDefaultTheme.colors.secondary = '#a84848';
-CombinedDefaultTheme.colors.background = '#dddf';
-CombinedDefaultTheme.colors.widgetBG = '#ffff';
-CombinedDefaultTheme.colors.ok = '#cfcfcfff';
-CombinedDefaultTheme.colors.error = '#a84848';
-CombinedDefaultTheme.colors.warning = '#cfcfcfff';
-CombinedDefaultTheme.colors.info = '#cfcfcfff';
-CombinedDefaultTheme.colors.lightText = '#cfcfcfff';
-CombinedDefaultTheme.colors.leftChatBubbleBG = '#b887e633';
-
-//Custimizing dark theme
-CombinedDefaultTheme.themeName = "dark"
-CombinedDarkTheme.colors.primary = '#a84848';
-CombinedDarkTheme.colors.text = '#fff';
-CombinedDarkTheme.colors.secondary = '#5700a8';
-CombinedDarkTheme.colors.background = '#292929ff';
-CombinedDarkTheme.colors.widgetBG = '#11111166';
-CombinedDarkTheme.colors.ok = '#292929ff';
-CombinedDarkTheme.colors.error = '#a84848';
-CombinedDarkTheme.colors.warning = '#292929ff';
-CombinedDarkTheme.colors.info = '#292929ff';
-CombinedDarkTheme.colors.lightText = '#cfcfcfff';
-CombinedDarkTheme.colors.leftChatBubbleBG = '#ffffff88';
 
 function App() {
-  const [isThemeDark, setIsThemeDark] = React.useState(false);
+  const [Theme, setTheme] = React.useState(DarkTheme);
   
   const [isLoading, setIsLoading] = React.useState(true);
   const [IsLoggedIn, setIsLoggedIn] = React.useContext(AppContext);
@@ -109,27 +79,26 @@ function App() {
 
 
   //! LEAVE ONLY 1 UNCOMMENTED
-  //let theme = isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme; //Default theme is light
-  let theme = isThemeDark ? CombinedDefaultTheme : CombinedDarkTheme; //Default theme is dark
+  //let theme = Theme ? DarkTheme : LightTheme; //Default theme is light
 
-  const toggleTheme = React.useCallback(() => {
-    return setIsThemeDark(!isThemeDark);
-  }, [isThemeDark]);
+  // const toggleTheme = React.useCallback(() => {
+  //   return setTheme(!Theme);
+  // }, [Theme]);
 
   const preferences = React.useMemo(
     () => ({
-      toggleTheme,
-      isThemeDark,
+      setTheme,
+      Theme,
     }),
-    [toggleTheme, isThemeDark]
+    [setTheme, Theme]
   );
   const switchLoginStatus = () => {
     setIsLoggedIn(!isLoggedIn);
   }
   return (
     <PreferencesContext.Provider value={preferences}>
-      <PaperProvider theme={theme}>
-        <NavigationContainer theme={theme}>
+      <PaperProvider theme={Theme}>
+        <NavigationContainer theme={Theme}>
           {isLoading ? <SplashScreen></SplashScreen> : IsLoggedIn ? <MyStack></MyStack> : <AuthStack></AuthStack>}
         </NavigationContainer>
       </PaperProvider>
@@ -160,6 +129,7 @@ function MyStack() {                    //Main app component
       <Stack.Screen name="MainScreen" component={MainScreen} />
       <Stack.Screen name="EditProfile" component={EditProfile} />
       <Stack.Screen name="Chat" component={Chat} />
+      <Stack.Screen name="ThemeRoom" component={ThemeRoom} />
       <Stack.Screen options={{ gestureEnabled: true, gestureDirection: 'vertical', gestureResponseDistance: 30 }} name="Chatting" component={Chatting} />
       <Stack.Screen name="FlashChat" component={FlashChat} />
       <Stack.Screen options={{ gestureEnabled: true, gestureDirection: 'vertical', gestureResponseDistance: 1000 }} name="Story" component={Story} />
