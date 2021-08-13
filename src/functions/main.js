@@ -25,6 +25,7 @@ export async function getQuickTexts() {
             return response;
         })
         return outp;
+        console.log(outp);
 }
 export function getTextStoriesJSON() {
     const JSONTEXTSTORIES = [
@@ -57,6 +58,7 @@ export async function tokenStatus() {
         })
             .then(response => response.json())
             .then(response => {
+
                 if (response.response == true) {
                     return "TOKEN_OK";
                 } else {

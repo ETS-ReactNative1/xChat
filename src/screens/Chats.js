@@ -7,7 +7,7 @@
 import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 import { Platform, RefreshControl, ScrollView } from 'react-native';
-import { Appbar } from 'react-native-paper';
+import { Appbar, useTheme } from 'react-native-paper';
 import Contact from '../components/Contact'
 import { getLastMessagesJSON } from "../functions/main"
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
@@ -25,10 +25,10 @@ const Chats = () => {
         setRefreshing(true);
         wait(2000).then(() => setRefreshing(false));
     }, []);
-
+    const theme = useTheme()
     return (
         <View style={{ flex: 1 }}>
-            <Appbar.Header style={{backgroundColor: "#a84848"}}>
+            <Appbar.Header style={{backgroundColor: theme.colors.primary}}>
                 <Appbar.Content title="Chats" subtitle={''} />
                 <Appbar.Action icon="magnify" onPress={() => { }} />
                 <Appbar.Action icon={MORE_ICON} onPress={() => { }} />

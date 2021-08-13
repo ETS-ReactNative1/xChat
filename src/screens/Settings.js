@@ -17,7 +17,7 @@ import AuthProvider, { AppContext } from '../context/AuthProvider';
 import { getToken } from '../functions/main';
 function Settings() {
     const theme = useTheme();
-    const { toggleTheme, isThemeDark } = React.useContext(PreferencesContext);
+    const { Theme, SetTheme } = React.useContext(PreferencesContext);
     const navigation = useNavigation();
     const [IsLoggedIn, setIsLoggedIn] = React.useContext(AppContext);
 
@@ -56,7 +56,11 @@ function Settings() {
         <View>
             <View>
                 {/* ---------------------------THEME------------------------------ */}
-                <View style={{
+                <TouchableRipple 
+                onPress={() => {
+                    navigation.navigate("ThemeRoom");
+                }}
+                style={{
                     flexDirection: 'row-reverse',
                     backgroundColor: theme.colors.widgetBG,
                     marginHorizontal: 10,
@@ -71,14 +75,14 @@ function Settings() {
 
                     }}>
                         <View style={{ width: "30%" }}>
-                            <Switch color={theme.colors.primary} value={isThemeDark} onValueChange={() => { toggleTheme() }}></Switch>
+                            <Text>THEME_PICKER_SOON</Text>
                         </View>
                         <View style={{ width: "70%", flexGrow: 1, flexDirection: "column", justifyContent: "center" }}>
-                            <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Modo claro</Text>
-                            <Text style={{ fontSize: 16, fontWeight: '100' }}>Acaso alguien lo usa?</Text>
+                            <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Tema</Text>
+                            <Text style={{ fontSize: 16, fontWeight: '100' }}>Personaliza la app!</Text>
                         </View>
                     </View>
-                </View>
+                </TouchableRipple>
                 {/* -----------------------------BUTTON---------------------------- */}
                 <View style={{
                     backgroundColor: "#0000",

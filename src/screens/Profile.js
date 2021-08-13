@@ -21,7 +21,7 @@ function Profile(props) {
     const navigation = useNavigation();
     return (
         <View>
-            <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: 50, width: '100%', backgroundColor: "#7a48a8" }}>
+            <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: 50, width: '100%', backgroundColor: theme.colors.primary }}>
                 <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'center', color: theme.colors.lightText }}>@Admin</Text>
             </View>
             <ScrollView>
@@ -44,7 +44,7 @@ function Profile(props) {
                             </View>
                         </View>
                         <View style={{ flexDirection: 'row-reverse', alignItems: 'center' }}>
-                            <Text style={{ fontSize: 14, color: "#7a48a8", marginRight: 10 }} onPress={() => { console.log("LMAO") }}>Refresh</Text>
+                            <Text style={{ fontSize: 14, color: theme.colors.primary, marginRight: 10 }} onPress={() => { console.log("LMAO") }}>Refresh</Text>
                             <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5, flexGrow: 1 }}>My QuickPics:</Text>
                         </View>
 
@@ -54,7 +54,7 @@ function Profile(props) {
 
                         <View>
                             <View style={{ flexDirection: 'row-reverse', alignItems: 'center' }}>
-                                <Text style={{ fontSize: 14, position: 'relative', top: 8, color: "#7a48a8", marginRight: 12.5 }} onPress={() => { console.log("LMAO") }}>Refrescar</Text>
+                                <Text style={{ fontSize: 14, position: 'relative', top: 8, color: theme.colors.primary, marginRight: 12.5 }} onPress={() => { console.log("LMAO") }}>Refrescar</Text>
                                 <Text style={{ fontSize: 25, marginTop: "4%", marginLeft: 10, marginBottom: 5, flexGrow: 1 }}>My QuickTexts:</Text>
                             </View>
                         </View>
@@ -97,7 +97,7 @@ function Profile(props) {
                     margin: 16,
                     right: 20,
                     bottom: 60,
-                    backgroundColor: "#7a48a8"
+                    backgroundColor: theme.colors.primary
                 }}
                 icon="pencil"
                 onPress={() => navigation.navigate("EditProfile")}

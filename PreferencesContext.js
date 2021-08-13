@@ -1,6 +1,7 @@
 import React from 'react';
-
+import {DefaultTheme as PaperDefaultTheme, DarkTheme as PaperDarkTheme} from 'react-native-paper'
+import {DarkTheme} from './src/themes/themes'
 export const PreferencesContext = React.createContext({
-  toggleTheme: () => {},
-  isThemeDark: false,
+  setTheme: () => {},
+  Theme: DarkTheme,
 });
