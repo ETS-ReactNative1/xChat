@@ -4,12 +4,14 @@
  * @Last Modified by:   @LiLPandemio 
  * @Last Modified time: 2021-05-08 18:32:05 
  */
-import React from 'react'
-import { View } from 'react-native'
+import React, { useEffect } from 'react'
+import { View, Image, Animated } from 'react-native'
 import { useTheme, Appbar, TouchableRipple, Text } from 'react-native-paper'
 import SuperIcon from '../components/SuperIcon'
 import { PreferencesContext } from '../../PreferencesContext';
-import {LightTheme, DarkTheme, LightCandy, DarkCandy, LightSea, DarkSea} from '../themes/themes'
+import { LightTheme, DarkTheme, LightCandy, DarkCandy, LightSea, DarkSea } from '../themes/themes'
+
+
 const ViewProfile = () => {
     const theme = useTheme()
     const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
@@ -21,8 +23,36 @@ const ViewProfile = () => {
         }),
         [setTheme, Theme]
     );
+
+    const FishOpacity = new Animated.Value(0);
+    const SharkOpacity = new Animated.Value(0);
+    const LCandyOpacity = new Animated.Value(0);
+    const DCandyOpacity = new Animated.Value(0);
+    const endValue = 1;
+    const duration = 1000;
+
     return (
         <View style={{ flex: 1 }}>
+            <View pointerEvents="none" style={{ position: 'absolute', zIndex: 5, flex: 1, left: 0, right: 0, }}>
+                <Animated.View style={{ opacity: FishOpacity }}>
+                    <Image style={{ width: 200, resizeMode: 'contain' }} source={require("../../assets/img/pez.png")}></Image>
+                </Animated.View>
+            </View>
+            <View pointerEvents="none" style={{ position: 'absolute', zIndex: 5, flex: 1, left: 0, right: 0, }}>
+                <Animated.View style={{ opacity: DCandyOpacity }}>
+                    <Image style={{ width: 200, marginLeft: "10%", resizeMode: 'contain' }} source={require("../../assets/img/DCandy.png")}></Image>
+                </Animated.View>
+            </View>
+            <View pointerEvents="none" style={{ position: 'absolute', zIndex: 5, flex: 1, left: 0, right: 0, }}>
+                <Animated.View style={{ opacity: LCandyOpacity }}>
+                    <Image style={{ width: 200, marginLeft: "10%", resizeMode: 'contain' }} source={require("../../assets/img/LCandy.png")}></Image>
+                </Animated.View>
+            </View>
+            <View pointerEvents="none" style={{ position: 'absolute', zIndex: 5, flex: 1, left: 0, right: 0, }}>
+                <Animated.View style={{ opacity: SharkOpacity }}>
+                    <Image style={{ width: 200, resizeMode: 'contain' }} source={require("../../assets/img/tiburon.png")}></Image>
+                </Animated.View>
+            </View>
             <Appbar.Header style={{ backgroundColor: theme.colors.primary }}>
                 <Appbar.Content title="Themes" subtitle={''} />
                 {/* <Appbar.Action icon="magnify" onPress={() => { }} /> */}
@@ -88,6 +118,19 @@ const ViewProfile = () => {
                 onPress={() => {
                     setTheme(LightCandy)
                 }}
+                onLongPress={() => {
+                    Animated.timing(LCandyOpacity, {
+                        toValue: endValue,
+                        duration: duration,
+                        useNativeDriver: true,
+                    }).start(() => {
+                        Animated.timing(LCandyOpacity, {
+                            toValue: 0,
+                            duration: duration * 2,
+                            useNativeDriver: true,
+                        }).start();
+                    });
+                }}
                 style={{
                     flexDirection: 'row-reverse',
                     backgroundColor: theme.colors.widgetBG,
@@ -115,6 +158,19 @@ const ViewProfile = () => {
             <TouchableRipple
                 onPress={() => {
                     setTheme(DarkCandy)
+                }}
+                onLongPress={() => {
+                    Animated.timing(DCandyOpacity, {
+                        toValue: endValue,
+                        duration: duration,
+                        useNativeDriver: true,
+                    }).start(() => {
+                        Animated.timing(DCandyOpacity, {
+                            toValue: 0,
+                            duration: duration * 2,
+                            useNativeDriver: true,
+                        }).start();
+                    });
                 }}
                 style={{
                     flexDirection: 'row-reverse',
@@ -144,6 +200,19 @@ const ViewProfile = () => {
                 onPress={() => {
                     setTheme(LightSea)
                 }}
+                onLongPress={() => {
+                    Animated.timing(FishOpacity, {
+                        toValue: endValue,
+                        duration: duration,
+                        useNativeDriver: true,
+                    }).start(() => {
+                        Animated.timing(FishOpacity, {
+                            toValue: 0,
+                            duration: duration * 2,
+                            useNativeDriver: true,
+                        }).start();
+                    });
+                }}
                 style={{
                     flexDirection: 'row-reverse',
                     backgroundColor: theme.colors.widgetBG,
@@ -163,12 +232,25 @@ const ViewProfile = () => {
                     </View>
                     <View style={{ width: "70%", flexGrow: 1, flexDirection: "column", justifyContent: "center" }}>
                         <Text style={{ fontSize: 18, fontWeight: 'bold' }}>Light sea</Text>
-                        <Text style={{ fontSize: 15, fontWeight: '100' }}>Muy azul!</Text>
+                        <Text style={{ fontSize: 15, fontWeight: '100' }}>Con este tema uno se siente como pez en el agua!</Text>
                     </View>
                 </View>
             </TouchableRipple>
 
             <TouchableRipple
+                onLongPress={() => {
+                    Animated.timing(SharkOpacity, {
+                        toValue: endValue,
+                        duration: duration,
+                        useNativeDriver: true,
+                    }).start(() => {
+                        Animated.timing(SharkOpacity, {
+                            toValue: 0,
+                            duration: duration * 2,
+                            useNativeDriver: true,
+                        }).start();
+                    });
+                }}
                 onPress={() => {
                     setTheme(DarkSea)
                 }}
