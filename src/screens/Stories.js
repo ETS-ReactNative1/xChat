@@ -86,7 +86,7 @@ const Stories = () => {
                     <View style={{ flex: 1 }}>
                         <View>
                             {textStories.map((TextStory, index) => (
-                                <TextStoryUnit key={TextStory.key} CreatorUsername={TextStory.username} CreatorDisplayname={TextStory.displayName} profilePicURL={TextStory.profilePicURL} time={TextStory.time} txt={TextStory.txt} />
+                                <TextStoryUnit key={TextStory.key} noQuickmeets={TextStory.noQuickmeets} CreatorUsername={TextStory.username} CreatorDisplayname={TextStory.displayName} profilePicURL={TextStory.profilePicURL} time={TextStory.time} txt={TextStory.txt} />
                             ))}
                         </View>
                         <View style={{height: 80}}/>
