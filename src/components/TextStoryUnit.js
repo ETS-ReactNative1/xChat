@@ -29,9 +29,6 @@ const TextStoryUnit = (props) => {
             <View style={{ marginTop: 12, marginHorizontal: 12 }}>
                 <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 20 }}>*Ruidos de grillos*</Text>
                 <Text style={{ textAlign: 'center', fontSize: 16 }}>Parece que no hay nada que ver aquí, porque no subes una story?</Text>
-                <View style={{position: 'absolute', bottom: -127, right: 80}}>
-                    <SuperIcon type="AntDesign" name="arrowright" size={80}></SuperIcon>
-                </View>
             </View>
         )
     } else {
