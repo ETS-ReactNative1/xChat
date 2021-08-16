@@ -24,9 +24,16 @@ export async function getQuickTexts() {
         .then(response => {
             return response;
         })
-        return outp;
-        console.log(outp);
+    return outp;
 }
+
+export async function getProfileData(rule, data, token) {
+    //Rule stands for what parameter you provide, can be mail, token...
+    //Data is the rule value
+    //Token is your token.
+    
+}
+
 export function getTextStoriesJSON() {
     const JSONTEXTSTORIES = [
         // { key: 1, profilePicURL: 'https://cataas.com/cat/says/1', time: '19:51', txt: 'Tengo que comprar 1 barra de pan, que perezaaaaa' },

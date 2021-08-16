@@ -22,6 +22,7 @@ const TextStoryUnit = (props) => {
     let time = props.time;
     time = time.substring(11);
     time = time.substring(0,5);
+    //{"CreatorUsername": "LiLPandemio", "profilePicURL": "http://192.168.1.200/userdata/profilepictures/admin.jpg", "time": "2021-08-13 02:40:44", "txt": "I will be there at the same time"}
     return (
         <View>
             <Modal onBackdropPress={(isModalVisible) => { if (isModalVisible) { toggleModal() } }} onBackButtonPress={(isModalVisible) => { if (isModalVisible) { toggleModal() } }} isVisible={isModalVisible} style={{ alignItems: "center" }} animationIn="zoomIn" animationOut="fadeOutDown">
@@ -35,7 +36,7 @@ const TextStoryUnit = (props) => {
                                  * //FIXME: Follow/OpenChat buttons ripples overflows¡ing container.
                                  */
                             }
-                            <Button style={{ width: "100%" }} color={theme.colors.error} onPress={() => navigation.navigate("ViewProfile", { userName: "The fucking name" })}>Ver perfil</Button>
+                            <Button style={{ width: "100%" }} color={theme.colors.error} onPress={() => navigation.push("ViewProfile", { username: props.CreatorUsername, imgUri: props.profilePicURL, creatorDisplayname: props.CreatorDisplayname })}>Ver perfil</Button>
                         </View>
                         <View style={{ width: "50%", alignItems: "center" }} >
                             <Button style={{ width: "100%" }} color={theme.colors.error} onPress={() => navigation.navigate("Chatting", { contactName: "The fucking name", profilePicURL: "https://cataas.com/cat" })}>Abrir chat</Button>

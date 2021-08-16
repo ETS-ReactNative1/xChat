@@ -130,15 +130,15 @@ function MyStack() {                    //Main app component
       <Stack.Screen name="EditProfile" component={EditProfile} />
       <Stack.Screen name="Chat" component={Chat} />
       <Stack.Screen name="ThemeRoom" component={ThemeRoom} />
-      <Stack.Screen options={{ gestureEnabled: true, gestureDirection: 'vertical', gestureResponseDistance: 30 }} name="Chatting" component={Chatting} />
       <Stack.Screen name="FlashChat" component={FlashChat} />
       <Stack.Screen options={{ gestureEnabled: true, gestureDirection: 'vertical', gestureResponseDistance: 1000 }} name="Story" component={Story} />
-      <Stack.Screen name="ViewProfile" component={ViewProfile} />
       <Stack.Screen name="PicEditor" component={PicEditor} />
       <Stack.Screen name="StoryCamera" component={NavStoryCamera} />
       <Stack.Screen name="StoryViewer" component={StoryViewer} />
       <Stack.Screen name="TextStoryCreator" component={TextStoryCreator} />
       <Stack.Screen name="VisualStoryEditor" component={VisualStoryEditor} />
+      <Stack.Screen options={{ gestureEnabled: true, gestureDirection: 'vertical', gestureResponseDistance: 30 }} name="Chatting" component={Chatting} />
+      <Stack.Screen options={{ gestureEnabled: false, gestureDirection: 'vertical', gestureResponseDistance: 30 }} name="ViewProfile" component={ViewProfile} />
     </Stack.Navigator>
   );
 }
