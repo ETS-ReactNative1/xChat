@@ -36,7 +36,7 @@ const TextStoryCreator = () => {
                 quicktext: text,
             })
         })
-            .then(response => {console.log(response); return response.json()})
+            .then(response => {return response.json()})
             .then(response => {
                 if (response.response === "StoryUploaded") {
                     Snackbar.show({
