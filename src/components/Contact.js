@@ -9,6 +9,7 @@ import { Badge, useTheme, Text, Avatar, TouchableRipple } from 'react-native-pap
 import { View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/AntDesign'
+import SuperIcon from "./SuperIcon";
 
 function Contact(props) {
   const theme = useTheme()
@@ -20,8 +21,9 @@ function Contact(props) {
       borderRadius: 10,
       backgroundColor: theme.colors.widgetBG,
       height: 65
-    }} borderless onPress={() => { navigation.navigate("Chatting", { contactName: props.contactName, profilePicURL: props.profilePicURL }) }}>
-      <View style={{ flexDirection: 'row', width: '100%',  }}>
+    }} borderless onPress={() => { navigation.navigate("Chatting", { contactName: props.contactName, profilePicURL: props.profilePicURL }) }}
+    onLongPress={() => {console.log(props.isPinned);}}>
+      <View style={{ flexDirection: 'row', width: '100%', }}>
         <View style={{ flexDirection: 'column' }}>
           <View>
             <View style={{ position: 'relative', left: 3, top: 1, flexDirection: 'row' }}>
@@ -36,7 +38,10 @@ function Contact(props) {
                   <Text style={{ color: '#888', width: "20%" }}>{props.time}</Text>
                 </View>
                 <View style={{ flexDirection: 'row', paddingBottom: 6 }}>
-                  <Text numberOfLines={1} style={{ fontWeight: 'bold' }}>{props.lastMSG}</Text>
+                  <Text numberOfLines={1} style={{ width: "80%", fontWeight: 'bold' }}>{props.lastMSG}</Text>
+                  <View style={{width: "20%", marginLeft: "5%"}}>
+                    {props.isPinned ? <SuperIcon size={20} type="AntDesign" name="pushpin" style={{ alignSelf: "center", height: 28 }}></SuperIcon> : <View/>}
+                  </View>
                 </View>
               </View>
             </View>

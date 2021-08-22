@@ -41,7 +41,7 @@ const Chats = () => {
                     />
                 }>
                 {LastMessagesJSON.map((LastMessages, index) => (
-                    <Contact key={LastMessages.key} profilePicURL={LastMessages.profilePicURL} contactName={LastMessages.userName} time={LastMessages.time} lastMSG={LastMessages.lastMSG} />
+                    <Contact key={LastMessages.key} isPinned={LastMessages.isPinned} profilePicURL={LastMessages.profilePicURL} contactName={LastMessages.userName} time={LastMessages.time} lastMSG={LastMessages.lastMSG} />
                 ))}
                 <View style={{height: 10}}></View>
             </ScrollView>

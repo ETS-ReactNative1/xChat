@@ -106,22 +106,22 @@ export function getVisualStoriesJSON() {
 }
 export function getLastMessagesJSON() {
     const LastMessages = [
-        { key: 1, userName: 'LiLPandemio🚀', lastMSG: 'La beta pa cuando?', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/1' },
-        { key: 2, userName: 'Will Smith', lastMSG: 'Voy a rodar una peli, nueva con la roca, te hago spoiler? xDDD', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/2' },
-        { key: 3, userName: 'Papa', lastMSG: 'El hamster esta hibernando', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/3' },
-        { key: 4, userName: 'Jesucristo', lastMSG: 'Hola papá', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/4' },
-        { key: 5, userName: 'Mia Khalifa', lastMSG: 'Te echo de menos 7w7', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/5' },
-        { key: 6, userName: 'Dominic', lastMSG: 'Le recogo a las 7 sr?', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/6' },
-        { key: 7, userName: 'CR7', lastMSG: 'El proximo gol te lo dedico', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/7' },
-        { key: 8, userName: 'Messi', lastMSG: 'Te presto a mi esposa', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/8' },
-        { key: 9, userName: 'LiLPandemio🚀', lastMSG: 'La beta pa cuando?', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/1' },
-        { key: 10, userName: 'D3RK0T', lastMSG: 'Maricon me encontrao al rubius comprando pan', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/2' },
-        { key: 11, userName: 'Papa', lastMSG: 'El hamster esta hibernando', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/3' },
-        { key: 12, userName: 'Jesucristo', lastMSG: 'Hola papá', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/4' },
-        { key: 13, userName: 'Mia Khalifa', lastMSG: 'Te echo de menos 7w7', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/5' },
-        { key: 14, userName: 'Dominic', lastMSG: 'Le recogo a las 7 sr?', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/6' },
-        { key: 15, userName: 'CR7', lastMSG: 'El proximo gol te lo dedico', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/7' },
-        { key: 16, userName: 'Triplemariconhijueputaremalpariodelaconchadelaquesalio', lastMSG: 'Te presto a mi esposa', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/8' },
+        { key: 1, isPinned: true, userName: 'LiLPandemio🚀', lastMSG: 'La beta pa cuando?', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/1' },
+        { key: 2, isPinned: true, userName: 'Will Smith', lastMSG: 'Voy a rodar una peli, nueva con la roca, te hago spoiler? xDDD', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/2' },
+        { key: 3, isPinned: false, userName: 'Papa', lastMSG: 'El hamster esta hibernando', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/3' },
+        { key: 4, isPinned: false, userName: 'Jesucristo', lastMSG: 'Hola papá', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/4' },
+        { key: 5, isPinned: false, userName: 'Mia Khalifa', lastMSG: 'Te echo de menos 7w7', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/5' },
+        { key: 6, isPinned: false, userName: 'Dominic', lastMSG: 'Le recogo a las 7 sr?', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/6' },
+        { key: 7, isPinned: false, userName: 'CR7', lastMSG: 'El proximo gol te lo dedico', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/7' },
+        { key: 8, isPinned: false, userName: 'Messi', lastMSG: 'Te presto a mi esposa', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/8' },
+        { key: 9, isPinned: false, userName: 'LiLPandemio🚀', lastMSG: 'La beta pa cuando?', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/1' },
+        { key: 10, isPinned: false, userName: 'D3RK0T', lastMSG: 'Maricon me encontrao al rubius comprando pan', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/2' },
+        { key: 11, isPinned: false, userName: 'Papa', lastMSG: 'El hamster esta hibernando', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/3' },
+        { key: 12, isPinned: false, userName: 'Jesucristo', lastMSG: 'Hola papá', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/4' },
+        { key: 13, isPinned: false, userName: 'Mia Khalifa', lastMSG: 'Te echo de menos 7w7', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/5' },
+        { key: 14, isPinned: false, userName: 'Dominic', lastMSG: 'Le recogo a las 7 sr?', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/6' },
+        { key: 15, isPinned: false, userName: 'CR7', lastMSG: 'El proximo gol te lo dedico', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/7' },
+        { key: 16, isPinned: false, userName: 'Triplemariconhijueputaremalpariodelaconchadelaquesalio', lastMSG: 'Te presto a mi esposa', time: '19:54', profilePicURL: 'https://cataas.com/cat/says/8' },
     ]
     return LastMessages;
 }
