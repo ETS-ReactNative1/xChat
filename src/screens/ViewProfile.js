@@ -43,14 +43,27 @@ const ViewProfile = (props) => {
                         props.route.params.username
                     }
                 </Text>
-                <FAB onPress={() => {navigation.navigate("Chatting", { contactName: "The fucking name", profilePicURL: "https://cataas.com/cat" })}} icon={() => { return (<SuperIcon size={22.5} type="Ionicons" color="white" name="chatbox" />); }} style={{ backgroundColor: theme.colors.primary, position: 'absolute', bottom: 15, left: 10}}></FAB>
+                <FAB onPress={() => { navigation.navigate("Chatting", { contactName: "The fucking name", profilePicURL: "https://cataas.com/cat" }) }} icon={() => { return (<SuperIcon size={22.5} type="Ionicons" color="white" name="chatbox" />); }} style={{ backgroundColor: theme.colors.primary, position: 'absolute', bottom: 15, left: 10 }}></FAB>
             </View>
         )
     }
     const Body = () => {
         return (
             <View>
-                <Text>Hello world</Text>
+                <View style={{ flexDirection: 'row', justifyContent: "center", marginTop:10, alignItems: "center" }}>
+                    <View style={{ backgroundColor: theme.colors.widgetBG, paddingVertical: 10, paddingHorizontal: 20, width: "35%", borderTopLeftRadius: 10, borderBottomLeftRadius: 10, }} >
+                        <Text>Nombre:</Text>
+                        <Text>Edad:</Text>
+                        <Text>Genero:</Text>
+                        <Text>Pronombre/s:</Text>
+                    </View>
+                    <View style={{ backgroundColor: theme.colors.widgetBG, paddingVertical: 10, paddingHorizontal: 20, width: "55%", borderTopRightRadius: 10, borderBottomRightRadius: 10 }} >
+                        <Text numberOfLines={1} style={{ fontWeight: "bold" }}>LiLPandemio</Text>
+                        <Text numberOfLines={1} style={{ fontWeight: "bold" }}>18</Text>
+                        <Text numberOfLines={1} style={{ fontWeight: "bold" }}>Masculino</Text>
+                        <Text numberOfLines={1} style={{ fontWeight: "bold" }}>El / Los</Text>
+                    </View>
+                </View>
             </View>
         )
     }
