@@ -12,7 +12,7 @@ import TextStories from '../components/TextStories'
 import { FAB, Portal } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import Snackbar from 'react-native-snackbar';
-import { getQuickTexts } from '../functions/main'
+import { getQuickTexts, checkAPIConnection } from '../functions/main'
 import TextStoryUnit from '../components/TextStoryUnit'
 import StickyParallaxHeader from 'react-native-sticky-parallax-header'
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
@@ -60,7 +60,7 @@ const Stories = () => {
                 <View style={{ marginTop: 0 }}>
                     <View style={{ marginLeft: "2.5%" }}>
                         <View style={{ flexDirection: 'row-reverse', alignItems: 'center' }}>
-                            <Text style={{ fontSize: 14, color: theme.colors.primary, marginRight: 10 }} onPress={() => { console.log("LMAO") }}>Refresh</Text>
+                            <Text style={{ fontSize: 14, color: theme.colors.primary, marginRight: 10 }} onPress={() => { checkAPIConnection() }}>Refresh</Text>
                             <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5, flexGrow: 1 }}>QuickPics:</Text>
                         </View>
                     </View>

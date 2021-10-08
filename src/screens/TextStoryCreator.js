@@ -24,7 +24,7 @@ const TextStoryCreator = () => {
         const sesdata = JSON.parse(session);
         //---------------------------------------------------------------------------- sesdata.token and text have the necessary info
 
-        fetch('http://192.168.1.201/index.php', {
+        fetch('https://quickmeet.societyplus.net/api/index.php', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

@@ -78,13 +78,6 @@ function App() {
 
 
 
-  //! LEAVE ONLY 1 UNCOMMENTED
-  //let theme = Theme ? DarkTheme : LightTheme; //Default theme is light
-
-  // const toggleTheme = React.useCallback(() => {
-  //   return setTheme(!Theme);
-  // }, [Theme]);
-
   const preferences = React.useMemo(
     () => ({
       setTheme,

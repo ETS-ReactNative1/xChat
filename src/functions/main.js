@@ -9,7 +9,7 @@ import Snackbar from 'react-native-snackbar';
 import { StackActions, useNavigation } from '@react-navigation/native';
 
 export async function getQuickTexts() {
-    let outp = await fetch('http://192.168.1.201/index.php', {
+    let outp = await fetch('https://quickmeet.societyplus.net/api/index.php', {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -26,12 +26,33 @@ export async function getQuickTexts() {
         })
     return outp;
 }
+export async function checkAPIConnection() {
+    //Returns true if api connects successfully and false if not.
+    let outp = await fetch('https://quickmeet.societyplus.net/api/index.php', {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
 
+    }).then(response => response.json())
+        .then(response => {
+            return response;
+        })
+    //{"response": "Server_OK"}
+    if (outp.response === "Server_OK") {
+        //console.log("SERVER OK");
+        return true;
+    } else {
+        //console.log("SERVER ERROR");
+        return false;
+    }
+}
 export async function getProfileData(rule, data, token) {
     //Rule stands for what parameter you provide, can be mail, token...
     //Data is the rule value
     //Token is your token.
-    
+
 }
 
 export function getTextStoriesJSON() {
@@ -52,7 +73,7 @@ export async function tokenStatus() {
         //SESION HAS A TOKEN!, PROCEED TO VERIFY IT
         const sesdata = JSON.parse(session);
         let token = sesdata.token;
-        let outp = await fetch('http://192.168.1.201/index.php', {
+        let outp = await fetch('https://quickmeet.societyplus.net/api/index.php', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

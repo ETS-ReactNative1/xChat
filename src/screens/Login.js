@@ -28,7 +28,7 @@ const Login = (props) => {
     async function doLogin() {
         setbuttonEnable(!buttonEnable);
         //**************************************************************************************
-        fetch('http://192.168.1.201/index.php', {
+        fetch('https://quickmeet.societyplus.net/api/index.php', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

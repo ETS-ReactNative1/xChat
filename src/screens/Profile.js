@@ -51,8 +51,8 @@ function Profile(props) {
                         <View>
                             <VisualStories></VisualStories>
                         </View>
-
-                        <View>
+                        {/* Esto solo debe aparecer cuando haya stories que mostar */}
+                        {/* <View>
                             <View style={{ flexDirection: 'row-reverse', alignItems: 'center' }}>
                                 <Text style={{ fontSize: 14, position: 'relative', top: 8, color: theme.colors.primary, marginRight: 12.5 }} onPress={() => { console.log("LMAO") }}>Refrescar</Text>
                                 <Text style={{ fontSize: 25, marginTop: "4%", marginLeft: 10, marginBottom: 5, flexGrow: 1 }}>My QuickTexts:</Text>
@@ -61,7 +61,7 @@ function Profile(props) {
 
                         <View style={{ paddingLeft: 10 }}>
                             <TextStories bottomPadding={10}></TextStories>
-                        </View>
+                        </View> */}
                         <Text style={{ fontSize: 25, marginTop: "1%", marginLeft: 10, marginBottom: 5 }}>Estadísticas de usuario:</Text>
                         <View style={{ marginTop: 10, marginBottom: 200 }}>
                             <View style={{ flexDirection: 'row', justifyContent: "center", alignItems: "center" }}>
