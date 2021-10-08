@@ -9,7 +9,7 @@ import Snackbar from 'react-native-snackbar';
 import { StackActions, useNavigation } from '@react-navigation/native';
 
 export async function getQuickTexts() {
-    let outp = await fetch('http://192.168.1.200/index.php', {
+    let outp = await fetch('http://192.168.1.201/index.php', {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -52,7 +52,7 @@ export async function tokenStatus() {
         //SESION HAS A TOKEN!, PROCEED TO VERIFY IT
         const sesdata = JSON.parse(session);
         let token = sesdata.token;
-        let outp = await fetch('http://192.168.1.200/index.php', {
+        let outp = await fetch('http://192.168.1.201/index.php', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

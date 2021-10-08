@@ -4,7 +4,7 @@
 // | @author_url 2: http://dl.societyplus.net/LiLPandemio
 // | @author_email: admin@societyplus.net 
 // +------------------------------------------------------------------------+
-// | xChat - Meet people anonymously!
+// | xChat - Meet people anonymously! - QuickMeet
 // | Copyright (c) 2021 xChat. All rights reserved.
 // +------------------------------------------------------------------------+
 /**

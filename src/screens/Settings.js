@@ -36,7 +36,7 @@ function Settings() {
             //ERR
             alert("No token provided");
         } else {
-            const out = await fetch('http://192.168.1.200/index.php', {
+            const out = await fetch('http://192.168.1.201/index.php', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
