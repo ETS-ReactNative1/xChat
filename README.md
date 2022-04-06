@@ -7,7 +7,7 @@ This is my first project. The objective is to learn React Native in app developm
 - How to use contexts
 - How to work with images and media
 - How do android permissions work
-- How to use GitHub and Git
+- How to use GitHub and Git (In depth)
 - And much more...
 
 ## App objective
