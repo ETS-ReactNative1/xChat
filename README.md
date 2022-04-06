@@ -1,6 +1,8 @@
 # xChat
 ## About the project
 This is my first project. The objective is to learn React Native in app development. This app envolves an API made by me with authentication protocols, multiple users handling, and much more...
+##Disclaimer
+This project has been a bit abandoned due to lack of time and it's bad architecture. I'm refactoring the code to make it easier and cleaner. BAD PRACTISES WERE DONE AND I'M AWARE OF IT, but I learned a lot with it too.
 ## What did I learned so far with this project:
 - Structuring a project
 - How do components work (Both class and functional)
