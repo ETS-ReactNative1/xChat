@@ -2,12 +2,26 @@
  * @Author: @LiLPandemio 
  * @Date: 2021-05-08 18:30:34 
  * @Last Modified by: @LiLPandemio
- * @Last Modified time: 2021-05-09 00:25:05
+ * @Last Modified time: 2022-03-31 11:03:04
  */
 import EncryptedStorage from 'react-native-encrypted-storage';
-import Snackbar from 'react-native-snackbar';
-import { StackActions, useNavigation } from '@react-navigation/native';
+import config from '../../config';
 
+export async function apiRequest(urlappendant, jsondata, method = "POST") {
+    let apiresponse = await fetch(config.apiurl + urlappendant, {
+        method: method,
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: jsondata
+    })
+        .then(response => response.json())
+        .then(response => {
+            return response;
+        })
+    return apiresponse;
+}
 export async function getQuickTexts() {
     let outp = await fetch('https://quickmeet.societyplus.net/api/index.php', {
         method: 'POST',
@@ -73,16 +87,15 @@ export async function tokenStatus() {
         //SESION HAS A TOKEN!, PROCEED TO VERIFY IT
         const sesdata = JSON.parse(session);
         let token = sesdata.token;
-        let outp = await fetch('https://quickmeet.societyplus.net/api/index.php', {
+        var fdata = new FormData();
+        fdata.append('token', token);
+        let outp = await fetch('https://quickmeet.societyplus.net/api/auth/tokenstatus', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                do: 'istokenalive',
-                token: token,
-            })
+            body: fdata
         })
             .then(response => response.json())
             .then(response => {

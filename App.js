@@ -44,13 +44,10 @@ import AuthProvider, { AppContext } from './src/context/AuthProvider';
 //Import themes
 import {LightTheme, DarkTheme, LightCandy, DarkCandy, LightSea, DarkSea} from './src/themes/themes'
 
-
 //Preferences context import + Tools
 import { withTheme, Card, Text, Title, Paragraph, Appbar, Provider as PaperProvider } from 'react-native-paper';
 import { PreferencesContext } from './PreferencesContext';
-import Profile from './src/screens/Profile';
 import { tokenStatus } from './src/functions/main';
-import { baseProps } from 'react-native-gesture-handler/lib/typescript/handlers/gestureHandlers';
 
 
 function App() {
@@ -58,8 +55,6 @@ function App() {
   
   const [isLoading, setIsLoading] = React.useState(true);
   const [IsLoggedIn, setIsLoggedIn] = React.useContext(AppContext);
-
-
 
   React.useEffect(() => {
     async function loadToken() {
